@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora de Precio para Productos Artesanales y Handmade — MiniTools</title>
+  <meta name="description" content="Calcula el precio justo para tus productos artesanales incluyendo materiales, tiempo, gastos fijos y margen de ganancia. Ideal para emprendedores creativos.">
+  <link rel="canonical" href="https://minitools.com/calculadora-precio-handmade.html">
+  <meta property="og:title" content="Calculadora de Precio para Productos Artesanales y Handmade — MiniTools">
+  <meta property="og:description" content="Calcula el precio justo para tus productos artesanales incluyendo materiales, tiempo, gastos fijos y margen de ganancia. Ideal para emprendedores creativos.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://minitools.com/calculadora-precio-handmade.html">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Calculadora de Precio para Productos Artesanales y Handmade — MiniTools",
+    "description": "Calcula el precio justo para tus productos artesanales incluyendo materiales, tiempo, gastos fijos y margen de ganancia. Ideal para emprendedores creativos.",
+    "url": "https://minitools.com/calculadora-precio-handmade.html",
+    "applicationCategory": "UtilityApplication",
+    "operatingSystem": "Web",
+    "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+    "inLanguage": "es"
+  }
+  </script>
+</head>
+<body>
+  <div class="toast" id="toast">✓ Copiado al portapapeles</div>
+  <nav>
+    <a class="logo" href="index.html">MiniTools ⚡</a>
+    <div class="nav-pills">
+      <a class="nav-pill" href="index.html#nombres">Nombres</a>
+      <a class="nav-pill" href="index.html#calculadoras">Calculadoras</a>
+      <a class="nav-pill" href="index.html#creators">Creators</a>
+    </div>
+  </nav>
+  <div class="tool-page standalone" id="tool-handmade" style="display:block">
+      <button class="back-btn" onclick="window.location.href='index.html'">← Volver al inicio</button>
+    <div class="tool-header">
+      <h1>Calculadora de precio para productos handmade</h1>
+      <p class="tool-intro">Uno de los mayores errores de los emprendedores creativos es fijar el precio de sus productos demasiado bajo, sin considerar el costo real de su tiempo. La fórmula correcta incluye el costo de materiales, el valor de las horas de trabajo, los gastos fijos del negocio (herramientas, plataformas, envíos) y el margen de ganancia. Esta calculadora te da el precio mínimo de venta y el precio sugerido considerando todos estos factores.</p>
+    </div>
+    
+    <div class="tool-panel">
+      <label>Costo de materiales por pieza (USD)</label>
+      <input type="number" id="hm-materiales" placeholder="Ej: 5.50" min="0" step="0.5" value="8">
+      <div class="range-wrap">
+        <div class="range-label"><span>Tiempo de producción</span><strong id="hm-tiempo-label">2 hrs</strong></div>
+        <input type="range" min="0.25" max="40" step="0.25" value="2" id="hm-tiempo"
+          oninput="document.getElementById('hm-tiempo-label').textContent=this.value+' hrs'">
+      </div>
+      <label>Tu tarifa por hora deseada (USD)</label>
+      <input type="number" id="hm-tarifa" placeholder="Ej: 15" min="1" value="15">
+      <div class="range-wrap">
+        <div class="range-label"><span>Gastos fijos mensuales (USD)</span><strong id="hm-fijos-label">$100</strong></div>
+        <input type="range" min="0" max="2000" step="10" value="100" id="hm-fijos"
+          oninput="document.getElementById('hm-fijos-label').textContent='$'+this.value">
+      </div>
+      <div class="range-wrap">
+        <div class="range-label"><span>Piezas que produces al mes</span><strong id="hm-piezas-label">20</strong></div>
+        <input type="range" min="1" max="500" value="20" id="hm-piezas"
+          oninput="document.getElementById('hm-piezas-label').textContent=this.value">
+      </div>
+      <label>Margen de ganancia adicional</label>
+      <select id="hm-margen">
+        <option value="0.2">20% — Precio competitivo</option>
+        <option value="0.3" selected>30% — Precio estándar</option>
+        <option value="0.5">50% — Precio premium</option>
+        <option value="0.7">70% — Precio de boutique</option>
+      </select>
+      <button class="btn" onclick="calcIncome('handmade')">🧶 Calcular precio justo</button>
+    </div>
+    <div class="results" id="results-handmade">
+      <h4>Tu precio sugerido</h4>
+      <div class="income-big">
+        <div class="label">Precio de venta sugerido</div>
+        <div class="amount" id="income-handmade-total">$0</div>
+      </div>
+      <div class="income-breakdown">
+        <div class="breakdown-item"><div class="bl">Costo de producción</div><div class="bv" id="hm-costo">$0</div></div>
+        <div class="breakdown-item"><div class="bl">Precio mínimo (sin ganancia)</div><div class="bv" id="hm-minimo">$0</div></div>
+        <div class="breakdown-item"><div class="bl">Ganancia por pieza</div><div class="bv" id="hm-ganancia">$0</div></div>
+      </div>
+      <p class="disclaimer">💡 Si tu precio sugerido parece alto para tu mercado, busca reducir el costo de materiales comprando al mayoreo o ajusta tu tarifa horaria gradualmente.</p>
+    </div>
+  </div>
+  <footer id="siteFooter">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="footer-logo">MiniTools ⚡</span>
+        <p>Herramientas gratuitas para emprendedores, creadores y negocios. Sin registro, sin complicaciones.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <span class="footer-col-title">Generadores de Nombres</span>
+          <a href="generador-nombres-empresas-tech.html">Empresas Tecnológicas</a>
+          <a href="generador-nombres-restaurantes.html">Restaurantes</a>
+          <a href="generador-nombres-barberias.html">Barberías</a>
+          <a href="generador-nombres-marcas-moda.html">Marcas de Moda</a>
+          <a href="generador-nombres-cafeterias.html">Cafeterías</a>
+          <a href="generador-nombres-podcasts.html">Podcasts y Canales</a>
+          <a href="generador-nombres-estudios-tatuajes.html">Estudios de Tatuajes</a>
+          <a href="generador-nombres-mascotas.html">Nombres de Mascotas</a>
+          <a href="generador-nombres-tiendas-ropa.html">Tiendas de Ropa</a>
+        </div>
+        <div class="footer-col">
+          <span class="footer-col-title">Calculadoras</span>
+          <a href="calculadora-ingresos-tiktok.html">Ingresos TikTok</a>
+          <a href="calculadora-ingresos-youtube.html">Ingresos YouTube</a>
+          <a href="calculadora-ingresos-instagram.html">Ingresos Instagram</a>
+          <a href="calculadora-ingresos-freelancer.html">Ingresos Freelancer</a>
+          <a href="calculadora-ingresos-tienda-online.html">Tienda Online</a>
+          <a href="calculadora-precio-handmade.html">Precio Handmade</a>
+          <a href="calculadora-roi-anuncios.html">ROI de Anuncios</a>
+        </div>
+        <div class="footer-col">
+          <span class="footer-col-title">Creators & Legal</span>
+          <a href="generador-bio-redes-sociales.html">Generador de Bio</a>
+          <a href="generador-hashtags.html">Generador de Hashtags</a>
+          <a href="generador-ideas-contenido.html">Ideas de Contenido</a>
+          <a href="privacidad.html">Política de Privacidad</a>
+          <a href="contacto.html">Contacto</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 MiniTools — Herramientas gratuitas para tu negocio.</span>
+      <div class="footer-bottom-links">
+        <a href="privacidad.html">Privacidad</a>
+        <a href="contacto.html">Contacto</a>
+      </div>
+    </div>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>

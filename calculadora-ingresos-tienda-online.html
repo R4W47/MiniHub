@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora de Ingresos Tienda Online y E-commerce — MiniTools</title>
+  <meta name="description" content="Estima los ingresos de tu tienda online según tráfico, tasa de conversión y ticket promedio. Calcula tu potencial de ventas mensual.">
+  <link rel="canonical" href="https://minitools.com/calculadora-ingresos-tienda-online.html">
+  <meta property="og:title" content="Calculadora de Ingresos Tienda Online y E-commerce — MiniTools">
+  <meta property="og:description" content="Estima los ingresos de tu tienda online según tráfico, tasa de conversión y ticket promedio. Calcula tu potencial de ventas mensual.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://minitools.com/calculadora-ingresos-tienda-online.html">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Calculadora de Ingresos Tienda Online y E-commerce — MiniTools",
+    "description": "Estima los ingresos de tu tienda online según tráfico, tasa de conversión y ticket promedio. Calcula tu potencial de ventas mensual.",
+    "url": "https://minitools.com/calculadora-ingresos-tienda-online.html",
+    "applicationCategory": "UtilityApplication",
+    "operatingSystem": "Web",
+    "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+    "inLanguage": "es"
+  }
+  </script>
+</head>
+<body>
+  <div class="toast" id="toast">✓ Copiado al portapapeles</div>
+  <nav>
+    <a class="logo" href="index.html">MiniTools ⚡</a>
+    <div class="nav-pills">
+      <a class="nav-pill" href="index.html#nombres">Nombres</a>
+      <a class="nav-pill" href="index.html#calculadoras">Calculadoras</a>
+      <a class="nav-pill" href="index.html#creators">Creators</a>
+    </div>
+  </nav>
+  <div class="tool-page standalone" id="tool-ecommerce" style="display:block">
+      <button class="back-btn" onclick="window.location.href='index.html'">← Volver al inicio</button>
+    <div class="tool-header">
+      <h1>Calculadora de ingresos para tienda online</h1>
+      <p class="tool-intro">El modelo de ingresos de un e-commerce se resume en tres números: visitas al mes, tasa de conversión (qué porcentaje compra) y ticket promedio (cuánto gasta cada cliente). Optimizar cualquiera de estos tres factores multiplica tus ingresos. Esta calculadora te permite jugar con estos valores para proyectar el potencial de tu tienda online, ya sea en Shopify, WooCommerce, Mercado Libre o Instagram Shopping.</p>
+    </div>
+    
+    <div class="tool-panel">
+      <div class="range-wrap">
+        <div class="range-label"><span>Visitantes mensuales</span><strong id="ec-visitas-label">5,000</strong></div>
+        <input type="range" min="100" max="500000" step="100" value="5000" id="ec-visitas"
+          oninput="document.getElementById('ec-visitas-label').textContent=Number(this.value).toLocaleString()">
+      </div>
+      <div class="range-wrap">
+        <div class="range-label"><span>Tasa de conversión (%)</span><strong id="ec-conv-label">2.0%</strong></div>
+        <input type="range" min="0.1" max="10" step="0.1" value="2" id="ec-conv"
+          oninput="document.getElementById('ec-conv-label').textContent=this.value+'%'">
+      </div>
+      <div class="range-wrap">
+        <div class="range-label"><span>Ticket promedio (USD)</span><strong id="ec-ticket-label">$45</strong></div>
+        <input type="range" min="5" max="500" step="5" value="45" id="ec-ticket"
+          oninput="document.getElementById('ec-ticket-label').textContent='$'+this.value">
+      </div>
+      <label>Margen de ganancia</label>
+      <select id="ec-margen">
+        <option value="0.2">Bajo (20%) — Electrónica / Productos importados</option>
+        <option value="0.35" selected>Medio (35%) — Ropa / Accesorios</option>
+        <option value="0.5">Alto (50%) — Handmade / Digital</option>
+        <option value="0.65">Muy alto (65%) — Cursos / Infoproductos</option>
+      </select>
+      <button class="btn" onclick="calcIncome('ecommerce')">💰 Calcular ingresos estimados</button>
+    </div>
+    <div class="results" id="results-ecommerce">
+      <h4>Proyección mensual</h4>
+      <div class="income-big">
+        <div class="label">Ganancia neta mensual estimada</div>
+        <div class="amount" id="income-ecommerce-total">$0</div>
+      </div>
+      <div class="income-breakdown">
+        <div class="breakdown-item"><div class="bl">Ventas totales</div><div class="bv" id="ec-ventas">0</div></div>
+        <div class="breakdown-item"><div class="bl">Ingresos brutos</div><div class="bv" id="ec-bruto">$0</div></div>
+        <div class="breakdown-item"><div class="bl">Ganancia neta</div><div class="bv" id="ec-neto">$0</div></div>
+      </div>
+      <p class="disclaimer">💡 El promedio de conversión de e-commerce es 1.5–3%. Si estás por debajo, enfócate en optimizar fichas de producto y el proceso de pago.</p>
+    </div>
+  </div>
+  <footer id="siteFooter">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="footer-logo">MiniTools ⚡</span>
+        <p>Herramientas gratuitas para emprendedores, creadores y negocios. Sin registro, sin complicaciones.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <span class="footer-col-title">Generadores de Nombres</span>
+          <a href="generador-nombres-empresas-tech.html">Empresas Tecnológicas</a>
+          <a href="generador-nombres-restaurantes.html">Restaurantes</a>
+          <a href="generador-nombres-barberias.html">Barberías</a>
+          <a href="generador-nombres-marcas-moda.html">Marcas de Moda</a>
+          <a href="generador-nombres-cafeterias.html">Cafeterías</a>
+          <a href="generador-nombres-podcasts.html">Podcasts y Canales</a>
+          <a href="generador-nombres-estudios-tatuajes.html">Estudios de Tatuajes</a>
+          <a href="generador-nombres-mascotas.html">Nombres de Mascotas</a>
+          <a href="generador-nombres-tiendas-ropa.html">Tiendas de Ropa</a>
+        </div>
+        <div class="footer-col">
+          <span class="footer-col-title">Calculadoras</span>
+          <a href="calculadora-ingresos-tiktok.html">Ingresos TikTok</a>
+          <a href="calculadora-ingresos-youtube.html">Ingresos YouTube</a>
+          <a href="calculadora-ingresos-instagram.html">Ingresos Instagram</a>
+          <a href="calculadora-ingresos-freelancer.html">Ingresos Freelancer</a>
+          <a href="calculadora-ingresos-tienda-online.html">Tienda Online</a>
+          <a href="calculadora-precio-handmade.html">Precio Handmade</a>
+          <a href="calculadora-roi-anuncios.html">ROI de Anuncios</a>
+        </div>
+        <div class="footer-col">
+          <span class="footer-col-title">Creators & Legal</span>
+          <a href="generador-bio-redes-sociales.html">Generador de Bio</a>
+          <a href="generador-hashtags.html">Generador de Hashtags</a>
+          <a href="generador-ideas-contenido.html">Ideas de Contenido</a>
+          <a href="privacidad.html">Política de Privacidad</a>
+          <a href="contacto.html">Contacto</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 MiniTools — Herramientas gratuitas para tu negocio.</span>
+      <div class="footer-bottom-links">
+        <a href="privacidad.html">Privacidad</a>
+        <a href="contacto.html">Contacto</a>
+      </div>
+    </div>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>

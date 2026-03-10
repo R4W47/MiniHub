@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Generador de Nombres para Mascotas — Perros, Gatos, Conejos — MiniTools</title>
+  <meta name="description" content="Encuentra el nombre perfecto para tu mascota. Tiernos, modernos, clásicos, mitológicos o gastronómicos para perros, gatos, conejos, pájaros y reptiles.">
+  <link rel="canonical" href="https://minitools.com/generador-nombres-mascotas.html">
+  <meta property="og:title" content="Generador de Nombres para Mascotas — Perros, Gatos, Conejos — MiniTools">
+  <meta property="og:description" content="Encuentra el nombre perfecto para tu mascota. Tiernos, modernos, clásicos, mitológicos o gastronómicos para perros, gatos, conejos, pájaros y reptiles.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://minitools.com/generador-nombres-mascotas.html">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Generador de Nombres para Mascotas — Perros, Gatos, Conejos — MiniTools",
+    "description": "Encuentra el nombre perfecto para tu mascota. Tiernos, modernos, clásicos, mitológicos o gastronómicos para perros, gatos, conejos, pájaros y reptiles.",
+    "url": "https://minitools.com/generador-nombres-mascotas.html",
+    "applicationCategory": "UtilityApplication",
+    "operatingSystem": "Web",
+    "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+    "inLanguage": "es"
+  }
+  </script>
+</head>
+<body>
+  <div class="toast" id="toast">✓ Copiado al portapapeles</div>
+  <nav>
+    <a class="logo" href="index.html">MiniTools ⚡</a>
+    <div class="nav-pills">
+      <a class="nav-pill" href="index.html#nombres">Nombres</a>
+      <a class="nav-pill" href="index.html#calculadoras">Calculadoras</a>
+      <a class="nav-pill" href="index.html#creators">Creators</a>
+    </div>
+  </nav>
+  <div class="tool-page standalone" id="tool-mascota" style="display:block">
+      <button class="back-btn" onclick="window.location.href='index.html'">← Volver al inicio</button>
+    <div class="tool-header">
+      <h1>Generador de nombres para mascotas</h1>
+      <p class="tool-intro">Ponerle nombre a una mascota es un momento especial. Puede ser tierno, épico, gracioso o único —lo importante es que sea perfecto para ese animal y esa personalidad. Este generador ofrece más de 100 nombres por combinación, organizados por tipo de mascota y estilo: desde nombres kawaii y modernos hasta mitológicos, gastronómicos y de naturaleza, para perros, gatos, conejos, pájaros y reptiles.</p>
+    </div>
+    
+    <div class="tool-panel">
+      <label>Tipo de mascota</label>
+      <select id="pet-animal">
+        <option value="perro">🐶 Perro</option>
+        <option value="gato">🐱 Gato</option>
+        <option value="conejo">🐰 Conejo</option>
+        <option value="pajaro">🐦 Pájaro</option>
+        <option value="reptil">🦎 Reptil</option>
+      </select>
+      <label>Estilo del nombre</label>
+      <select id="pet-estilo">
+        <option value="tiernos">🍬 Tiernos / Kawaii</option>
+        <option value="modernos">✨ Modernos / Aesthetic</option>
+        <option value="clasicos">🏛️ Clásicos / Tradicionales</option>
+        <option value="mitologicos">⚡ Mitológicos / Épicos</option>
+        <option value="gastronomicos">🍕 Gastronómicos / Divertidos</option>
+        <option value="naturaleza">🌿 Naturaleza / Elementos</option>
+      </select>
+      <button class="btn" onclick="generateNames('mascota')">🐾 Generar nombres</button>
+    </div>
+    <div class="results" id="results-mascota">
+      <h4>Nombres sugeridos — haz clic para copiar</h4>
+      <div class="name-grid" id="names-mascota"></div>
+    </div>
+  </div>
+  <footer id="siteFooter">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="footer-logo">MiniTools ⚡</span>
+        <p>Herramientas gratuitas para emprendedores, creadores y negocios. Sin registro, sin complicaciones.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <span class="footer-col-title">Generadores de Nombres</span>
+          <a href="generador-nombres-empresas-tech.html">Empresas Tecnológicas</a>
+          <a href="generador-nombres-restaurantes.html">Restaurantes</a>
+          <a href="generador-nombres-barberias.html">Barberías</a>
+          <a href="generador-nombres-marcas-moda.html">Marcas de Moda</a>
+          <a href="generador-nombres-cafeterias.html">Cafeterías</a>
+          <a href="generador-nombres-podcasts.html">Podcasts y Canales</a>
+          <a href="generador-nombres-estudios-tatuajes.html">Estudios de Tatuajes</a>
+          <a href="generador-nombres-mascotas.html">Nombres de Mascotas</a>
+          <a href="generador-nombres-tiendas-ropa.html">Tiendas de Ropa</a>
+        </div>
+        <div class="footer-col">
+          <span class="footer-col-title">Calculadoras</span>
+          <a href="calculadora-ingresos-tiktok.html">Ingresos TikTok</a>
+          <a href="calculadora-ingresos-youtube.html">Ingresos YouTube</a>
+          <a href="calculadora-ingresos-instagram.html">Ingresos Instagram</a>
+          <a href="calculadora-ingresos-freelancer.html">Ingresos Freelancer</a>
+          <a href="calculadora-ingresos-tienda-online.html">Tienda Online</a>
+          <a href="calculadora-precio-handmade.html">Precio Handmade</a>
+          <a href="calculadora-roi-anuncios.html">ROI de Anuncios</a>
+        </div>
+        <div class="footer-col">
+          <span class="footer-col-title">Creators & Legal</span>
+          <a href="generador-bio-redes-sociales.html">Generador de Bio</a>
+          <a href="generador-hashtags.html">Generador de Hashtags</a>
+          <a href="generador-ideas-contenido.html">Ideas de Contenido</a>
+          <a href="privacidad.html">Política de Privacidad</a>
+          <a href="contacto.html">Contacto</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 MiniTools — Herramientas gratuitas para tu negocio.</span>
+      <div class="footer-bottom-links">
+        <a href="privacidad.html">Privacidad</a>
+        <a href="contacto.html">Contacto</a>
+      </div>
+    </div>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>

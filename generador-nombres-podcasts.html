@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Generador de Nombres para Podcasts y Canales de YouTube — MiniTools</title>
+  <meta name="description" content="Encuentra el nombre perfecto para tu podcast o canal de YouTube. Filtra por tema, formato y estilo. Gratis y sin registro.">
+  <link rel="canonical" href="https://minitools.com/generador-nombres-podcasts.html">
+  <meta property="og:title" content="Generador de Nombres para Podcasts y Canales de YouTube — MiniTools">
+  <meta property="og:description" content="Encuentra el nombre perfecto para tu podcast o canal de YouTube. Filtra por tema, formato y estilo. Gratis y sin registro.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://minitools.com/generador-nombres-podcasts.html">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Generador de Nombres para Podcasts y Canales de YouTube — MiniTools",
+    "description": "Encuentra el nombre perfecto para tu podcast o canal de YouTube. Filtra por tema, formato y estilo. Gratis y sin registro.",
+    "url": "https://minitools.com/generador-nombres-podcasts.html",
+    "applicationCategory": "UtilityApplication",
+    "operatingSystem": "Web",
+    "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+    "inLanguage": "es"
+  }
+  </script>
+</head>
+<body>
+  <div class="toast" id="toast">✓ Copiado al portapapeles</div>
+  <nav>
+    <a class="logo" href="index.html">MiniTools ⚡</a>
+    <div class="nav-pills">
+      <a class="nav-pill" href="index.html#nombres">Nombres</a>
+      <a class="nav-pill" href="index.html#calculadoras">Calculadoras</a>
+      <a class="nav-pill" href="index.html#creators">Creators</a>
+    </div>
+  </nav>
+  <div class="tool-page standalone" id="tool-podcast" style="display:block">
+      <button class="back-btn" onclick="window.location.href='index.html'">← Volver al inicio</button>
+    <div class="tool-header">
+      <h1>Generador de nombres para podcasts y canales de YouTube</h1>
+      <p class="tool-intro">El nombre de tu podcast o canal es tu primera impresión en plataformas como Spotify, Apple Podcasts o YouTube. Un buen nombre comunica el tema, engancha al oyente ideal y es fácil de buscar. Este generador crea nombres según tu nicho —negocios, tecnología, true crime, finanzas, lifestyle— y el formato de tu contenido, para que encuentres opciones que suenen profesionales y auténticas desde el primer episodio.</p>
+    </div>
+    
+    <div class="tool-panel">
+      <label>Tema principal del podcast / canal</label>
+      <select id="pod-tipo">
+        <option value="negocios">Negocios / Emprendimiento</option>
+        <option value="tecnologia">Tecnología / IA</option>
+        <option value="lifestyle">Lifestyle / Bienestar</option>
+        <option value="entretenimiento">Entretenimiento / Humor</option>
+        <option value="educacion">Educación / Cultura</option>
+        <option value="deportes">Deportes / Fitness</option>
+        <option value="true-crime">True Crime / Misterio</option>
+        <option value="finanzas">Finanzas Personales</option>
+      </select>
+      <label>Formato</label>
+      <select id="pod-formato">
+        <option value="solo">Solo / Monólogo</option>
+        <option value="duo">Dúo / Co-hosts</option>
+        <option value="entrevistas">Entrevistas</option>
+        <option value="narrativo">Narrativo / Documental</option>
+      </select>
+      <button class="btn" onclick="generateNames('podcast')">⚡ Generar nombres</button>
+    </div>
+    <div class="results" id="results-podcast">
+      <h4>Nombres sugeridos — haz clic para copiar</h4>
+      <div class="name-grid" id="names-podcast"></div>
+    </div>
+  </div>
+  <footer id="siteFooter">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="footer-logo">MiniTools ⚡</span>
+        <p>Herramientas gratuitas para emprendedores, creadores y negocios. Sin registro, sin complicaciones.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <span class="footer-col-title">Generadores de Nombres</span>
+          <a href="generador-nombres-empresas-tech.html">Empresas Tecnológicas</a>
+          <a href="generador-nombres-restaurantes.html">Restaurantes</a>
+          <a href="generador-nombres-barberias.html">Barberías</a>
+          <a href="generador-nombres-marcas-moda.html">Marcas de Moda</a>
+          <a href="generador-nombres-cafeterias.html">Cafeterías</a>
+          <a href="generador-nombres-podcasts.html">Podcasts y Canales</a>
+          <a href="generador-nombres-estudios-tatuajes.html">Estudios de Tatuajes</a>
+          <a href="generador-nombres-mascotas.html">Nombres de Mascotas</a>
+          <a href="generador-nombres-tiendas-ropa.html">Tiendas de Ropa</a>
+        </div>
+        <div class="footer-col">
+          <span class="footer-col-title">Calculadoras</span>
+          <a href="calculadora-ingresos-tiktok.html">Ingresos TikTok</a>
+          <a href="calculadora-ingresos-youtube.html">Ingresos YouTube</a>
+          <a href="calculadora-ingresos-instagram.html">Ingresos Instagram</a>
+          <a href="calculadora-ingresos-freelancer.html">Ingresos Freelancer</a>
+          <a href="calculadora-ingresos-tienda-online.html">Tienda Online</a>
+          <a href="calculadora-precio-handmade.html">Precio Handmade</a>
+          <a href="calculadora-roi-anuncios.html">ROI de Anuncios</a>
+        </div>
+        <div class="footer-col">
+          <span class="footer-col-title">Creators & Legal</span>
+          <a href="generador-bio-redes-sociales.html">Generador de Bio</a>
+          <a href="generador-hashtags.html">Generador de Hashtags</a>
+          <a href="generador-ideas-contenido.html">Ideas de Contenido</a>
+          <a href="privacidad.html">Política de Privacidad</a>
+          <a href="contacto.html">Contacto</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 MiniTools — Herramientas gratuitas para tu negocio.</span>
+      <div class="footer-bottom-links">
+        <a href="privacidad.html">Privacidad</a>
+        <a href="contacto.html">Contacto</a>
+      </div>
+    </div>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>

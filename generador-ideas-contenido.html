@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Generador de Ideas de Contenido para Redes Sociales — MiniTools</title>
+  <meta name="description" content="Genera ideas de contenido para Instagram, TikTok, YouTube o LinkedIn según tu nicho y formato. Supera el bloqueo creativo con ideas listas para publicar.">
+  <link rel="canonical" href="https://minitools.com/generador-ideas-contenido.html">
+  <meta property="og:title" content="Generador de Ideas de Contenido para Redes Sociales — MiniTools">
+  <meta property="og:description" content="Genera ideas de contenido para Instagram, TikTok, YouTube o LinkedIn según tu nicho y formato. Supera el bloqueo creativo con ideas listas para publicar.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://minitools.com/generador-ideas-contenido.html">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Generador de Ideas de Contenido para Redes Sociales — MiniTools",
+    "description": "Genera ideas de contenido para Instagram, TikTok, YouTube o LinkedIn según tu nicho y formato. Supera el bloqueo creativo con ideas listas para publicar.",
+    "url": "https://minitools.com/generador-ideas-contenido.html",
+    "applicationCategory": "UtilityApplication",
+    "operatingSystem": "Web",
+    "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+    "inLanguage": "es"
+  }
+  </script>
+</head>
+<body>
+  <div class="toast" id="toast">✓ Copiado al portapapeles</div>
+  <nav>
+    <a class="logo" href="index.html">MiniTools ⚡</a>
+    <div class="nav-pills">
+      <a class="nav-pill" href="index.html#nombres">Nombres</a>
+      <a class="nav-pill" href="index.html#calculadoras">Calculadoras</a>
+      <a class="nav-pill" href="index.html#creators">Creators</a>
+    </div>
+  </nav>
+  <div class="tool-page standalone" id="tool-ideas" style="display:block">
+      <button class="back-btn" onclick="window.location.href='index.html'">← Volver al inicio</button>
+    <div class="tool-header">
+      <h1>Generador de ideas de contenido para redes sociales</h1>
+      <p class="tool-intro">El bloqueo creativo es uno de los mayores obstáculos para creadores de contenido y emprendedores en redes sociales. Saber qué publicar, con qué formato y cuándo puede ser tan difícil como crear el contenido mismo. Este generador te proporciona ideas concretas y accionables según tu nicho, la plataforma y el formato que prefieres —desde reels y carruseles hasta hilos de Twitter o videos de YouTube— para que nunca te quedes sin qué publicar.</p>
+    </div>
+    
+    <div class="tool-panel">
+      <label>Tu nicho o industria</label>
+      <select id="ideas-nicho">
+        <option value="emprendimiento">Emprendimiento / Negocios</option>
+        <option value="moda">Moda / Estilo / Belleza</option>
+        <option value="fitness">Fitness / Salud / Nutrición</option>
+        <option value="gastronomia">Gastronomía / Cocina / Food</option>
+        <option value="tecnologia">Tecnología / IA / Apps</option>
+        <option value="finanzas">Finanzas Personales / Inversiones</option>
+        <option value="viajes">Viajes / Travel / Turismo</option>
+        <option value="educacion">Educación / Cursos / Coaching</option>
+        <option value="arte">Arte / Diseño / Fotografía</option>
+        <option value="musica">Música / Entretenimiento</option>
+      </select>
+      <label>Plataforma principal</label>
+      <select id="ideas-plataforma">
+        <option value="instagram">Instagram</option>
+        <option value="tiktok">TikTok</option>
+        <option value="youtube">YouTube</option>
+        <option value="linkedin">LinkedIn</option>
+        <option value="twitter">X / Twitter</option>
+      </select>
+      <label>Formato de contenido</label>
+      <select id="ideas-formato">
+        <option value="video_corto">Video corto (Reels / TikTok)</option>
+        <option value="carrusel">Carrusel / Slideshow</option>
+        <option value="foto">Foto con caption</option>
+        <option value="video_largo">Video largo (YouTube / Podcast)</option>
+        <option value="texto">Post de texto / Hilo</option>
+        <option value="stories">Stories / Efímero</option>
+      </select>
+      <button class="btn" onclick="generateIdeas()">💡 Generar ideas</button>
+    </div>
+    <div class="results" id="results-ideas">
+      <h4>Ideas de contenido — haz clic para copiar</h4>
+      <div id="ideas-results"></div>
+    </div>
+  </div>
+  <footer id="siteFooter">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="footer-logo">MiniTools ⚡</span>
+        <p>Herramientas gratuitas para emprendedores, creadores y negocios. Sin registro, sin complicaciones.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <span class="footer-col-title">Generadores de Nombres</span>
+          <a href="generador-nombres-empresas-tech.html">Empresas Tecnológicas</a>
+          <a href="generador-nombres-restaurantes.html">Restaurantes</a>
+          <a href="generador-nombres-barberias.html">Barberías</a>
+          <a href="generador-nombres-marcas-moda.html">Marcas de Moda</a>
+          <a href="generador-nombres-cafeterias.html">Cafeterías</a>
+          <a href="generador-nombres-podcasts.html">Podcasts y Canales</a>
+          <a href="generador-nombres-estudios-tatuajes.html">Estudios de Tatuajes</a>
+          <a href="generador-nombres-mascotas.html">Nombres de Mascotas</a>
+          <a href="generador-nombres-tiendas-ropa.html">Tiendas de Ropa</a>
+        </div>
+        <div class="footer-col">
+          <span class="footer-col-title">Calculadoras</span>
+          <a href="calculadora-ingresos-tiktok.html">Ingresos TikTok</a>
+          <a href="calculadora-ingresos-youtube.html">Ingresos YouTube</a>
+          <a href="calculadora-ingresos-instagram.html">Ingresos Instagram</a>
+          <a href="calculadora-ingresos-freelancer.html">Ingresos Freelancer</a>
+          <a href="calculadora-ingresos-tienda-online.html">Tienda Online</a>
+          <a href="calculadora-precio-handmade.html">Precio Handmade</a>
+          <a href="calculadora-roi-anuncios.html">ROI de Anuncios</a>
+        </div>
+        <div class="footer-col">
+          <span class="footer-col-title">Creators & Legal</span>
+          <a href="generador-bio-redes-sociales.html">Generador de Bio</a>
+          <a href="generador-hashtags.html">Generador de Hashtags</a>
+          <a href="generador-ideas-contenido.html">Ideas de Contenido</a>
+          <a href="privacidad.html">Política de Privacidad</a>
+          <a href="contacto.html">Contacto</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 MiniTools — Herramientas gratuitas para tu negocio.</span>
+      <div class="footer-bottom-links">
+        <a href="privacidad.html">Privacidad</a>
+        <a href="contacto.html">Contacto</a>
+      </div>
+    </div>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>

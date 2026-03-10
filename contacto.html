@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto — MiniTools</title>
+  <meta name="description" content="Contacta al equipo de MiniTools. Dudas, sugerencias, colaboraciones y soporte para nuestras herramientas gratuitas.">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .legal-page {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 120px 40px 80px;
+    }
+    .legal-page h1 {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 2.2rem;
+      margin-bottom: 8px;
+    }
+    .legal-page .subtitle {
+      color: var(--muted);
+      font-size: 1rem;
+      margin-bottom: 48px;
+      line-height: 1.6;
+    }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 40px;
+    }
+    .contact-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px;
+    }
+    .contact-card .icon { font-size: 1.8rem; margin-bottom: 12px; }
+    .contact-card h3 {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      margin-bottom: 6px;
+    }
+    .contact-card p {
+      color: var(--muted);
+      font-size: 0.88rem;
+      line-height: 1.6;
+      margin: 0;
+    }
+    .contact-card a {
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 0.88rem;
+    }
+    .contact-form {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 36px;
+    }
+    .contact-form h2 {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 1.2rem;
+      margin-bottom: 24px;
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+    .form-group label {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--muted);
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 12px 16px;
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.95rem;
+      outline: none;
+      transition: border-color 0.2s;
+      resize: vertical;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--accent);
+    }
+    .form-group textarea { min-height: 130px; }
+    .form-note {
+      color: var(--muted);
+      font-size: 0.8rem;
+      margin-top: 16px;
+      line-height: 1.6;
+    }
+    .success-msg {
+      display: none;
+      background: rgba(92,219,252,0.1);
+      border: 1px solid var(--accent3);
+      border-radius: 12px;
+      padding: 16px 20px;
+      color: var(--accent3);
+      font-size: 0.9rem;
+      margin-top: 16px;
+    }
+    @media (max-width: 640px) {
+      .legal-page { padding: 100px 20px 60px; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .contact-form { padding: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="logo" href="index.html">MiniTools ⚡</a>
+    <div class="nav-pills">
+      <a class="nav-pill" href="index.html#nombres">Nombres</a>
+      <a class="nav-pill" href="index.html#calculadoras">Calculadoras</a>
+      <a class="nav-pill" href="index.html#creators">Creators</a>
+    </div>
+  </nav>
+
+  <div class="legal-page">
+    <h1>Contacto</h1>
+    <p class="subtitle">¿Tienes alguna pregunta, sugerencia o quieres colaborar?<br>Estamos aquí para ayudarte.</p>
+
+    <div class="contact-grid">
+      <div class="contact-card">
+        <div class="icon">💬</div>
+        <h3>Soporte general</h3>
+        <p>Para dudas sobre las herramientas o reportar errores.</p>
+        <a href="/cdn-cgi/l/email-protection#c5adaaa9a485a8acabacb1aaaaa9b6eba6aaa8"><span class="__cf_email__" data-cfemail="e28a8d8e83a28f8b8c8b968d8d8e91cc818d8f">[email&#160;protected]</span></a>
+      </div>
+      <div class="contact-card">
+        <div class="icon">🤝</div>
+        <h3>Colaboraciones</h3>
+        <p>Patrocinios, publicidad directa o alianzas.</p>
+        <a href="/cdn-cgi/l/email-protection#b3d0dcdfd2d1dcc1d2d0dadcddd6c0f3dedadddac7dcdcdfc09dd0dcde"><span class="__cf_email__" data-cfemail="86e5e9eae7e4e9f4e7e5efe9e8e3f5c6ebefe8eff2e9e9eaf5a8e5e9eb">[email&#160;protected]</span></a>
+      </div>
+      <div class="contact-card">
+        <div class="icon">💡</div>
+        <h3>Sugerencias</h3>
+        <p>¿Se te ocurre una herramienta que debería existir? Cuéntanos.</p>
+        <a href="/cdn-cgi/l/email-protection#177e73727664577a7e797e6378787b643974787a"><span class="__cf_email__" data-cfemail="8de4e9e8ecfecde0e4e3e4f9e2e2e1fea3eee2e0">[email&#160;protected]</span></a>
+      </div>
+      <div class="contact-card">
+        <div class="icon">🔒</div>
+        <h3>Privacidad</h3>
+        <p>Consultas sobre datos personales o nuestra política de privacidad.</p>
+        <a href="/cdn-cgi/l/email-protection#6b1b19021d0a08020f0a0f2b060205021f0404071845080406"><span class="__cf_email__" data-cfemail="e191938897808288858085a18c888f88958e8e8d92cf828e8c">[email&#160;protected]</span></a>
+      </div>
+    </div>
+
+    <div class="contact-form">
+      <h2>Envíanos un mensaje</h2>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Nombre</label>
+          <input type="text" id="cf-nombre" placeholder="Tu nombre">
+        </div>
+        <div class="form-group">
+          <label>Correo electrónico</label>
+          <input type="email" id="cf-email" placeholder="tu@correo.com">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Asunto</label>
+        <select id="cf-asunto">
+          <option value="">Selecciona un tema...</option>
+          <option value="soporte">Soporte / Error en una herramienta</option>
+          <option value="sugerencia">Sugerencia de nueva herramienta</option>
+          <option value="colaboracion">Colaboración o patrocinio</option>
+          <option value="privacidad">Consulta sobre privacidad</option>
+          <option value="otro">Otro</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Mensaje</label>
+        <textarea id="cf-mensaje" placeholder="Cuéntanos en qué podemos ayudarte..."></textarea>
+      </div>
+      <button class="btn" onclick="sendContact()">✉️ Enviar mensaje</button>
+      <div class="success-msg" id="cf-success">
+        ✅ Mensaje enviado correctamente. Te responderemos en menos de 48 horas.
+      </div>
+      <p class="form-note">Al enviar este formulario aceptas nuestra <a href="privacidad.html" style="color:var(--accent)">Política de Privacidad</a>. No compartimos tu información con terceros.</p>
+    </div>
+  </div>
+
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/e

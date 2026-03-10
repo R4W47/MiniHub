@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora de Ingresos Freelancer — Tarifa por Hora — MiniTools</title>
+  <meta name="description" content="Calcula tu tarifa ideal por hora como freelancer y proyecta tus ingresos mensuales y anuales. Considera horas facturables, gastos y metas.">
+  <link rel="canonical" href="https://minitools.com/calculadora-ingresos-freelancer.html">
+  <meta property="og:title" content="Calculadora de Ingresos Freelancer — Tarifa por Hora — MiniTools">
+  <meta property="og:description" content="Calcula tu tarifa ideal por hora como freelancer y proyecta tus ingresos mensuales y anuales. Considera horas facturables, gastos y metas.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://minitools.com/calculadora-ingresos-freelancer.html">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Calculadora de Ingresos Freelancer — Tarifa por Hora — MiniTools",
+    "description": "Calcula tu tarifa ideal por hora como freelancer y proyecta tus ingresos mensuales y anuales. Considera horas facturables, gastos y metas.",
+    "url": "https://minitools.com/calculadora-ingresos-freelancer.html",
+    "applicationCategory": "UtilityApplication",
+    "operatingSystem": "Web",
+    "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+    "inLanguage": "es"
+  }
+  </script>
+</head>
+<body>
+  <div class="toast" id="toast">✓ Copiado al portapapeles</div>
+  <nav>
+    <a class="logo" href="index.html">MiniTools ⚡</a>
+    <div class="nav-pills">
+      <a class="nav-pill" href="index.html#nombres">Nombres</a>
+      <a class="nav-pill" href="index.html#calculadoras">Calculadoras</a>
+      <a class="nav-pill" href="index.html#creators">Creators</a>
+    </div>
+  </nav>
+  <div class="tool-page standalone" id="tool-freelancer" style="display:block">
+      <button class="back-btn" onclick="window.location.href='index.html'">← Volver al inicio</button>
+    <div class="tool-header">
+      <h1>Calculadora de ingresos freelancer</h1>
+      <p class="tool-intro">Uno de los errores más comunes al iniciar como freelancer es fijar la tarifa por hora demasiado baja. Esta calculadora te ayuda a trabajar al revés: primero defines cuánto quieres ganar al mes, cuántas horas puedes trabajar y cuánto tiempo dedicas a tareas no facturables (reuniones, propuestas, administración), y el resultado es la tarifa mínima por hora que debes cobrar para alcanzar tu meta.</p>
+    </div>
+    
+    <div class="tool-panel">
+      <label>Meta de ingreso mensual deseado (USD)</label>
+      <input type="number" id="fl-meta" placeholder="Ej: 3000" min="100" max="50000" value="3000">
+      <div class="range-wrap">
+        <div class="range-label"><span>Horas disponibles por semana</span><strong id="fl-horas-label">30 hrs</strong></div>
+        <input type="range" min="5" max="60" value="30" id="fl-horas"
+          oninput="document.getElementById('fl-horas-label').textContent=this.value+' hrs'">
+      </div>
+      <div class="range-wrap">
+        <div class="range-label"><span>% horas facturables</span><strong id="fl-bill-label">70%</strong></div>
+        <input type="range" min="30" max="90" value="70" id="fl-bill"
+          oninput="document.getElementById('fl-bill-label').textContent=this.value+'%'">
+      </div>
+      <label>Especialidad</label>
+      <select id="fl-tipo">
+        <option value="1.5">Desarrollo Web / Mobile</option>
+        <option value="1.4">Diseño UX/UI</option>
+        <option value="1.2">Diseño Gráfico</option>
+        <option value="1.6">Data / IA / ML</option>
+        <option value="1.1">Redacción / Copywriting</option>
+        <option value="1.3">Marketing Digital</option>
+        <option value="1.0">Otros</option>
+      </select>
+      <button class="btn" onclick="calcIncome('freelancer')">💰 Calcular mi tarifa ideal</button>
+    </div>
+    <div class="results" id="results-freelancer">
+      <h4>Tu tarifa freelancer ideal</h4>
+      <div class="income-big">
+        <div class="label">Tarifa mínima por hora</div>
+        <div class="amount" id="income-freelancer-total">$0/hr</div>
+      </div>
+      <div class="income-breakdown">
+        <div class="breakdown-item"><div class="bl">Horas facturables / mes</div><div class="bv" id="fl-horas-mes">0</div></div>
+        <div class="breakdown-item"><div class="bl">Ingreso mensual proyectado</div><div class="bv" id="fl-mensual">$0</div></div>
+        <div class="breakdown-item"><div class="bl">Ingreso anual proyectado</div><div class="bv" id="fl-anual">$0</div></div>
+      </div>
+      <p class="disclaimer">💡 Esta es tu tarifa mínima. Considera subir un 20-30% para cubrir impuestos, periodos sin clientes y vacaciones.</p>
+    </div>
+  </div>
+  <footer id="siteFooter">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="footer-logo">MiniTools ⚡</span>
+        <p>Herramientas gratuitas para emprendedores, creadores y negocios. Sin registro, sin complicaciones.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <span class="footer-col-title">Generadores de Nombres</span>
+          <a href="generador-nombres-empresas-tech.html">Empresas Tecnológicas</a>
+          <a href="generador-nombres-restaurantes.html">Restaurantes</a>
+          <a href="generador-nombres-barberias.html">Barberías</a>
+          <a href="generador-nombres-marcas-moda.html">Marcas de Moda</a>
+          <a href="generador-nombres-cafeterias.html">Cafeterías</a>
+          <a href="generador-nombres-podcasts.html">Podcasts y Canales</a>
+          <a href="generador-nombres-estudios-tatuajes.html">Estudios de Tatuajes</a>
+          <a href="generador-nombres-mascotas.html">Nombres de Mascotas</a>
+          <a href="generador-nombres-tiendas-ropa.html">Tiendas de Ropa</a>
+        </div>
+        <div class="footer-col">
+          <span class="footer-col-title">Calculadoras</span>
+          <a href="calculadora-ingresos-tiktok.html">Ingresos TikTok</a>
+          <a href="calculadora-ingresos-youtube.html">Ingresos YouTube</a>
+          <a href="calculadora-ingresos-instagram.html">Ingresos Instagram</a>
+          <a href="calculadora-ingresos-freelancer.html">Ingresos Freelancer</a>
+          <a href="calculadora-ingresos-tienda-online.html">Tienda Online</a>
+          <a href="calculadora-precio-handmade.html">Precio Handmade</a>
+          <a href="calculadora-roi-anuncios.html">ROI de Anuncios</a>
+        </div>
+        <div class="footer-col">
+          <span class="footer-col-title">Creators & Legal</span>
+          <a href="generador-bio-redes-sociales.html">Generador de Bio</a>
+          <a href="generador-hashtags.html">Generador de Hashtags</a>
+          <a href="generador-ideas-contenido.html">Ideas de Contenido</a>
+          <a href="privacidad.html">Política de Privacidad</a>
+          <a href="contacto.html">Contacto</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 MiniTools — Herramientas gratuitas para tu negocio.</span>
+      <div class="footer-bottom-links">
+        <a href="privacidad.html">Privacidad</a>
+        <a href="contacto.html">Contacto</a>
+      </div>
+    </div>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>

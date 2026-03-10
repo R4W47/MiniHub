@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora de Ingresos Instagram 2025 — MiniTools</title>
+  <meta name="description" content="Calcula tus ganancias como influencer o creador en Instagram. Estimación de patrocinios, Reels Bonus y marketing de afiliados según seguidores y engagement.">
+  <link rel="canonical" href="https://minitools.com/calculadora-ingresos-instagram.html">
+  <meta property="og:title" content="Calculadora de Ingresos Instagram 2025 — MiniTools">
+  <meta property="og:description" content="Calcula tus ganancias como influencer o creador en Instagram. Estimación de patrocinios, Reels Bonus y marketing de afiliados según seguidores y engagement.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://minitools.com/calculadora-ingresos-instagram.html">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Calculadora de Ingresos Instagram 2025 — MiniTools",
+    "description": "Calcula tus ganancias como influencer o creador en Instagram. Estimación de patrocinios, Reels Bonus y marketing de afiliados según seguidores y engagement.",
+    "url": "https://minitools.com/calculadora-ingresos-instagram.html",
+    "applicationCategory": "UtilityApplication",
+    "operatingSystem": "Web",
+    "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+    "inLanguage": "es"
+  }
+  </script>
+</head>
+<body>
+  <div class="toast" id="toast">✓ Copiado al portapapeles</div>
+  <nav>
+    <a class="logo" href="index.html">MiniTools ⚡</a>
+    <div class="nav-pills">
+      <a class="nav-pill" href="index.html#nombres">Nombres</a>
+      <a class="nav-pill" href="index.html#calculadoras">Calculadoras</a>
+      <a class="nav-pill" href="index.html#creators">Creators</a>
+    </div>
+  </nav>
+  <div class="tool-page standalone" id="tool-instagram" style="display:block">
+      <button class="back-btn" onclick="window.location.href='index.html'">← Volver al inicio</button>
+    <div class="tool-header">
+      <h1>Calculadora de ingresos Instagram</h1>
+      <p class="tool-intro">Instagram monetiza principalmente a través de colaboraciones con marcas y patrocinios, donde el engagement rate es más importante que el número de seguidores. Los nano-influencers (1K-10K) con nichos específicos suelen tener tasas de engagement más altas y resultados mejores que cuentas grandes con audiencias poco comprometidas. Esta calculadora estima tus ingresos potenciales considerando tus métricas reales y el nicho de tu contenido.</p>
+    </div>
+    
+    <div class="tool-panel">
+      <div class="range-wrap">
+        <div class="range-label"><span>Seguidores</span><strong id="ig-subs-label">10,000</strong></div>
+        <input type="range" min="1000" max="5000000" step="1000" value="10000" id="ig-subs"
+          oninput="document.getElementById('ig-subs-label').textContent=Number(this.value).toLocaleString()">
+      </div>
+      <div class="range-wrap">
+        <div class="range-label"><span>Tasa de engagement (%)</span><strong id="ig-eng-label">3.5%</strong></div>
+        <input type="range" min="0.5" max="15" step="0.1" value="3.5" id="ig-eng"
+          oninput="document.getElementById('ig-eng-label').textContent=this.value+'%'">
+      </div>
+      <label>Nicho / industria</label>
+      <select id="ig-nicho">
+        <option value="2.5">Moda / Belleza</option>
+        <option value="3">Fitness / Salud</option>
+        <option value="2">Lifestyle / Travel</option>
+        <option value="3.5">Finanzas / Negocios</option>
+        <option value="2.2">Gastronomía / Food</option>
+        <option value="1.8">Entretenimiento</option>
+      </select>
+      <div class="range-wrap">
+        <div class="range-label"><span>Posts / Stories por semana</span><strong id="ig-posts-label">5</strong></div>
+        <input type="range" min="1" max="21" value="5" id="ig-posts"
+          oninput="document.getElementById('ig-posts-label').textContent=this.value">
+      </div>
+      <button class="btn" onclick="calcIncome('instagram')">💰 Calcular ingresos estimados</button>
+    </div>
+    <div class="results" id="results-instagram">
+      <h4>Estimación mensual</h4>
+      <div class="income-big">
+        <div class="label">Ingreso mensual estimado</div>
+        <div class="amount" id="income-instagram-total">$0</div>
+      </div>
+      <div class="income-breakdown">
+        <div class="breakdown-item"><div class="bl">Posts patrocinados</div><div class="bv" id="ig-posts-inc">$0</div></div>
+        <div class="breakdown-item"><div class="bl">Reels Bonus</div><div class="bv" id="ig-reels">$0</div></div>
+        <div class="breakdown-item"><div class="bl">Afiliados</div><div class="bv" id="ig-aff">$0</div></div>
+      </div>
+      <p class="disclaimer">⚠️ Los ingresos por patrocinios en Instagram varían según nicho, audiencia y negociación directa con marcas.</p>
+    </div>
+  </div>
+  <footer id="siteFooter">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="footer-logo">MiniTools ⚡</span>
+        <p>Herramientas gratuitas para emprendedores, creadores y negocios. Sin registro, sin complicaciones.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <span class="footer-col-title">Generadores de Nombres</span>
+          <a href="generador-nombres-empresas-tech.html">Empresas Tecnológicas</a>
+          <a href="generador-nombres-restaurantes.html">Restaurantes</a>
+          <a href="generador-nombres-barberias.html">Barberías</a>
+          <a href="generador-nombres-marcas-moda.html">Marcas de Moda</a>
+          <a href="generador-nombres-cafeterias.html">Cafeterías</a>
+          <a href="generador-nombres-podcasts.html">Podcasts y Canales</a>
+          <a href="generador-nombres-estudios-tatuajes.html">Estudios de Tatuajes</a>
+          <a href="generador-nombres-mascotas.html">Nombres de Mascotas</a>
+          <a href="generador-nombres-tiendas-ropa.html">Tiendas de Ropa</a>
+        </div>
+        <div class="footer-col">
+          <span class="footer-col-title">Calculadoras</span>
+          <a href="calculadora-ingresos-tiktok.html">Ingresos TikTok</a>
+          <a href="calculadora-ingresos-youtube.html">Ingresos YouTube</a>
+          <a href="calculadora-ingresos-instagram.html">Ingresos Instagram</a>
+          <a href="calculadora-ingresos-freelancer.html">Ingresos Freelancer</a>
+          <a href="calculadora-ingresos-tienda-online.html">Tienda Online</a>
+          <a href="calculadora-precio-handmade.html">Precio Handmade</a>
+          <a href="calculadora-roi-anuncios.html">ROI de Anuncios</a>
+        </div>
+        <div class="footer-col">
+          <span class="footer-col-title">Creators & Legal</span>
+          <a href="generador-bio-redes-sociales.html">Generador de Bio</a>
+          <a href="generador-hashtags.html">Generador de Hashtags</a>
+          <a href="generador-ideas-contenido.html">Ideas de Contenido</a>
+          <a href="privacidad.html">Política de Privacidad</a>
+          <a href="contacto.html">Contacto</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 MiniTools — Herramientas gratuitas para tu negocio.</span>
+      <div class="footer-bottom-links">
+        <a href="privacidad.html">Privacidad</a>
+        <a href="contacto.html">Contacto</a>
+      </div>
+    </div>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>

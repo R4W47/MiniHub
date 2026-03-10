@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora de ROI para Facebook Ads y Google Ads — MiniTools</title>
+  <meta name="description" content="Calcula el retorno de inversión (ROI) de tus campañas publicitarias en Facebook Ads, Google Ads o cualquier plataforma. Rápido y gratis.">
+  <link rel="canonical" href="https://minitools.com/calculadora-roi-anuncios.html">
+  <meta property="og:title" content="Calculadora de ROI para Facebook Ads y Google Ads — MiniTools">
+  <meta property="og:description" content="Calcula el retorno de inversión (ROI) de tus campañas publicitarias en Facebook Ads, Google Ads o cualquier plataforma. Rápido y gratis.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://minitools.com/calculadora-roi-anuncios.html">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Calculadora de ROI para Facebook Ads y Google Ads — MiniTools",
+    "description": "Calcula el retorno de inversión (ROI) de tus campañas publicitarias en Facebook Ads, Google Ads o cualquier plataforma. Rápido y gratis.",
+    "url": "https://minitools.com/calculadora-roi-anuncios.html",
+    "applicationCategory": "UtilityApplication",
+    "operatingSystem": "Web",
+    "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+    "inLanguage": "es"
+  }
+  </script>
+</head>
+<body>
+  <div class="toast" id="toast">✓ Copiado al portapapeles</div>
+  <nav>
+    <a class="logo" href="index.html">MiniTools ⚡</a>
+    <div class="nav-pills">
+      <a class="nav-pill" href="index.html#nombres">Nombres</a>
+      <a class="nav-pill" href="index.html#calculadoras">Calculadoras</a>
+      <a class="nav-pill" href="index.html#creators">Creators</a>
+    </div>
+  </nav>
+  <div class="tool-page standalone" id="tool-roi" style="display:block">
+      <button class="back-btn" onclick="window.location.href='index.html'">← Volver al inicio</button>
+    <div class="tool-header">
+      <h1>Calculadora de ROI de anuncios publicitarios</h1>
+      <p class="tool-intro">Antes de invertir en publicidad digital es fundamental saber cuánto necesitas vender para que la campaña sea rentable. El ROI (Return on Investment) te dice si ganaste o perdiste dinero con tus anuncios. Esta calculadora funciona para Facebook Ads, Google Ads, TikTok Ads o cualquier plataforma: ingresa tu presupuesto, el CTR esperado, la tasa de conversión y el valor de tu producto, y obtendrás si la campaña es rentable antes de gastar un solo peso.</p>
+    </div>
+    
+    <div class="tool-panel">
+      <label>Presupuesto de la campaña (USD)</label>
+      <input type="number" id="roi-presupuesto" placeholder="Ej: 500" min="1" value="500">
+      <label>Plataforma de anuncios</label>
+      <select id="roi-plataforma">
+        <option value="facebook">Facebook / Instagram Ads</option>
+        <option value="google">Google Ads</option>
+        <option value="tiktok">TikTok Ads</option>
+        <option value="youtube">YouTube Ads</option>
+      </select>
+      <div class="range-wrap">
+        <div class="range-label"><span>CTR esperado (%)</span><strong id="roi-ctr-label">2.0%</strong></div>
+        <input type="range" min="0.1" max="10" step="0.1" value="2" id="roi-ctr"
+          oninput="document.getElementById('roi-ctr-label').textContent=this.value+'%'">
+      </div>
+      <div class="range-wrap">
+        <div class="range-label"><span>Tasa de conversión (%)</span><strong id="roi-conv-label">3.0%</strong></div>
+        <input type="range" min="0.1" max="20" step="0.1" value="3" id="roi-conv"
+          oninput="document.getElementById('roi-conv-label').textContent=this.value+'%'">
+      </div>
+      <label>Valor promedio de venta / lead (USD)</label>
+      <input type="number" id="roi-valor" placeholder="Ej: 80" min="1" value="80">
+      <button class="btn" onclick="calcROI()">📊 Calcular ROI</button>
+    </div>
+    <div class="results" id="results-roi">
+      <h4>Resultado de tu campaña</h4>
+      <div class="income-big">
+        <div class="label">ROI de tu campaña</div>
+        <div class="amount" id="roi-result">0%</div>
+      </div>
+      <div class="income-breakdown">
+        <div class="breakdown-item"><div class="bl">Impresiones est.</div><div class="bv" id="roi-imp">0</div></div>
+        <div class="breakdown-item"><div class="bl">Clientes / ventas</div><div class="bv" id="roi-clientes">0</div></div>
+        <div class="breakdown-item"><div class="bl">Ingresos generados</div><div class="bv" id="roi-ingresos">$0</div></div>
+      </div>
+      <div class="roi-summary">
+        <div class="roi-row"><span>Ganancia neta</span><strong id="roi-neta" class="positive">$0</strong></div>
+        <div class="roi-row"><span>Costo por adquisición (CPA)</span><strong id="roi-cpa" class="highlight">$0</strong></div>
+      </div>
+      <p class="disclaimer">📌 Un ROI positivo indica que tu campaña es rentable. Un ROI > 100% significa que duplicaste tu inversión.</p>
+    </div>
+  </div>
+  <footer id="siteFooter">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="footer-logo">MiniTools ⚡</span>
+        <p>Herramientas gratuitas para emprendedores, creadores y negocios. Sin registro, sin complicaciones.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <span class="footer-col-title">Generadores de Nombres</span>
+          <a href="generador-nombres-empresas-tech.html">Empresas Tecnológicas</a>
+          <a href="generador-nombres-restaurantes.html">Restaurantes</a>
+          <a href="generador-nombres-barberias.html">Barberías</a>
+          <a href="generador-nombres-marcas-moda.html">Marcas de Moda</a>
+          <a href="generador-nombres-cafeterias.html">Cafeterías</a>
+          <a href="generador-nombres-podcasts.html">Podcasts y Canales</a>
+          <a href="generador-nombres-estudios-tatuajes.html">Estudios de Tatuajes</a>
+          <a href="generador-nombres-mascotas.html">Nombres de Mascotas</a>
+          <a href="generador-nombres-tiendas-ropa.html">Tiendas de Ropa</a>
+        </div>
+        <div class="footer-col">
+          <span class="footer-col-title">Calculadoras</span>
+          <a href="calculadora-ingresos-tiktok.html">Ingresos TikTok</a>
+          <a href="calculadora-ingresos-youtube.html">Ingresos YouTube</a>
+          <a href="calculadora-ingresos-instagram.html">Ingresos Instagram</a>
+          <a href="calculadora-ingresos-freelancer.html">Ingresos Freelancer</a>
+          <a href="calculadora-ingresos-tienda-online.html">Tienda Online</a>
+          <a href="calculadora-precio-handmade.html">Precio Handmade</a>
+          <a href="calculadora-roi-anuncios.html">ROI de Anuncios</a>
+        </div>
+        <div class="footer-col">
+          <span class="footer-col-title">Creators & Legal</span>
+          <a href="generador-bio-redes-sociales.html">Generador de Bio</a>
+          <a href="generador-hashtags.html">Generador de Hashtags</a>
+          <a href="generador-ideas-contenido.html">Ideas de Contenido</a>
+          <a href="privacidad.html">Política de Privacidad</a>
+          <a href="contacto.html">Contacto</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 MiniTools — Herramientas gratuitas para tu negocio.</span>
+      <div class="footer-bottom-links">
+        <a href="privacidad.html">Privacidad</a>
+        <a href="contacto.html">Contacto</a>
+      </div>
+    </div>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>

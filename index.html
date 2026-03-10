@@ -1,0 +1,1167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MiniTools — Herramientas para tu negocio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- TOAST NOTIFICATION -->
+  <div class="toast" id="toast">✓ Copiado al portapapeles</div>
+
+  <!-- ========== NAV ========== -->
+  <nav>
+    <a class="logo" href="index.html">MiniTools ⚡</a>
+    <div class="nav-pills">
+      <button class="nav-pill" onclick="filterCards('nombres', this, true)">Nombres</button>
+      <button class="nav-pill" onclick="filterCards('ingresos', this, true)">Calculadoras</button>
+      <button class="nav-pill" onclick="filterCards('creator', this, true)">Creators</button>
+      <button class="nav-pill" onclick="filterCards('all', this, true)">Todo</button>
+    </div>
+  </nav>
+
+  <!-- ========== HOME VIEW ========== -->
+  <div class="home-view" id="homeView">
+
+    <div class="hero">
+      <div class="hero-glow"></div>
+      <h1>Herramientas para <span>tu negocio</span></h1>
+      <p>Generadores de nombres, calculadoras de ingresos y más. Gratis, rápido y sin registro.</p>
+    </div>
+
+    <div id="nombres"></div><div id="calculadoras"></div><div id="creators"></div><div class="tabs">
+      <button class="tab active" onclick="filterCards('all', this)">Todos</button>
+      <button class="tab" onclick="filterCards('nombres', this)">✨ Nombres</button>
+      <button class="tab" onclick="filterCards('ingresos', this)">💰 Calculadoras</button>
+      <button class="tab" onclick="filterCards('creator', this)">🎨 Creators</button>
+    </div>
+
+    <div class="grid" id="cardsGrid">
+
+      <!-- ── GENERADORES DE NOMBRES ── -->
+      <div class="card" data-cat="nombres" onclick="openTool('tech')" data-href="generador-nombres-empresas-tech.html">
+        <span class="card-badge">Nombres</span>
+        <div class="card-icon">💻</div>
+        <h3>Empresas Tecnológicas</h3>
+        <p>Genera nombres modernos y creativos para startups y empresas tech.</p>
+      </div>
+
+      <div class="card" data-cat="nombres" onclick="openTool('restaurant')" data-href="generador-nombres-restaurantes.html">
+        <span class="card-badge">Nombres</span>
+        <div class="card-icon">🍽️</div>
+        <h3>Restaurantes</h3>
+        <p>Nombres apetitosos y memorables para tu negocio gastronómico.</p>
+      </div>
+
+      <div class="card" data-cat="nombres" onclick="openTool('barberia')" data-href="generador-nombres-barberias.html">
+        <span class="card-badge">Nombres</span>
+        <div class="card-icon">✂️</div>
+        <h3>Barberías</h3>
+        <p>Nombres con estilo y carácter para tu barbería o peluquería.</p>
+      </div>
+
+      <div class="card" data-cat="nombres" onclick="openTool('moda')" data-href="generador-nombres-marcas-moda.html">
+        <span class="card-badge">Nombres</span>
+        <div class="card-icon">👗</div>
+        <h3>Marcas de Moda</h3>
+        <p>Nombres elegantes y únicos para tu marca de ropa o accesorios.</p>
+      </div>
+
+      <div class="card" data-cat="nombres" onclick="openTool('cafe')" data-href="generador-nombres-cafeterias.html">
+        <span class="card-badge">Nombres</span>
+        <div class="card-icon">☕</div>
+        <h3>Cafeterías</h3>
+        <p>Nombres cálidos y acogedores para tu café o coffee shop.</p>
+      </div>
+
+      <div class="card" data-cat="nombres" onclick="openTool('podcast')" data-href="generador-nombres-podcasts.html">
+        <span class="card-badge">Nombres</span>
+        <div class="card-icon">🎙️</div>
+        <h3>Podcasts / Canales</h3>
+        <p>Nombres únicos para tu podcast o canal de YouTube que enganchen desde el primer escucha.</p>
+      </div>
+
+      <div class="card" data-cat="nombres" onclick="openTool('tattoo')" data-href="generador-nombres-estudios-tatuajes.html">
+        <span class="card-badge">Nombres</span>
+        <div class="card-icon">🖋️</div>
+        <h3>Estudios de Tatuajes</h3>
+        <p>Nombres con carácter y personalidad para tu estudio de tatuajes.</p>
+      </div>
+
+      <div class="card" data-cat="nombres" onclick="openTool('mascota')" data-href="generador-nombres-mascotas.html">
+        <span class="card-badge">Nombres</span>
+        <div class="card-icon">🐾</div>
+        <h3>Nombres de Mascotas</h3>
+        <p>Nombres tiernos, modernos, clásicos, mitológicos y más para perros, gatos, conejos, pájaros y reptiles.</p>
+      </div>
+
+      <div class="card" data-cat="nombres" onclick="openTool('tiendaropa')">
+        <span class="card-badge">Nombres</span>
+        <div class="card-icon">🛍️</div>
+        <h3>Tiendas de Ropa</h3>
+        <p>Nombres atractivos y memorables para tu tienda, boutique o local de moda.</p>
+      </div>
+
+      <!-- ── CALCULADORAS DE INGRESOS ── -->
+      <div class="card" data-cat="ingresos" onclick="openTool('tiktok')" data-href="calculadora-ingresos-tiktok.html">
+        <span class="card-badge">Calculadora</span>
+        <div class="card-icon">🎵</div>
+        <h3>Ingresos TikTok</h3>
+        <p>Estima cuánto puedes ganar con tu cuenta de TikTok según tus métricas.</p>
+      </div>
+
+      <div class="card" data-cat="ingresos" onclick="openTool('youtube')" data-href="calculadora-ingresos-youtube.html">
+        <span class="card-badge">Calculadora</span>
+        <div class="card-icon">▶️</div>
+        <h3>Ingresos YouTube</h3>
+        <p>Calcula tus ganancias potenciales con AdSense y monetización.</p>
+      </div>
+
+      <div class="card" data-cat="ingresos" onclick="openTool('facebook')" data-href="calculadora-ingresos-facebook.html">
+        <span class="card-badge">Calculadora</span>
+        <div class="card-icon">👥</div>
+        <h3>Ingresos Facebook</h3>
+        <p>Estima ingresos por reels, in-stream ads y monetización de páginas.</p>
+      </div>
+
+      <div class="card" data-cat="ingresos" onclick="openTool('instagram')" data-href="calculadora-ingresos-instagram.html">
+        <span class="card-badge">Calculadora</span>
+        <div class="card-icon">📸</div>
+        <h3>Ingresos Instagram</h3>
+        <p>Calcula tus ganancias como creator o influencer en Instagram.</p>
+      </div>
+
+      <div class="card" data-cat="ingresos" onclick="openTool('freelancer')" data-href="calculadora-ingresos-freelancer.html">
+        <span class="card-badge">Calculadora</span>
+        <div class="card-icon">💼</div>
+        <h3>Ingresos Freelancer</h3>
+        <p>Calcula tu tarifa ideal por hora y proyecta tus ingresos mensuales y anuales.</p>
+      </div>
+
+      <div class="card" data-cat="ingresos" onclick="openTool('ecommerce')" data-href="calculadora-ingresos-tienda-online.html">
+        <span class="card-badge">Calculadora</span>
+        <div class="card-icon">🛒</div>
+        <h3>Tienda Online</h3>
+        <p>Estima ingresos de tu e-commerce según tráfico, conversión y ticket promedio.</p>
+      </div>
+
+      <div class="card" data-cat="ingresos" onclick="openTool('spotify')" data-href="calculadora-ingresos-spotify.html">
+        <span class="card-badge">Calculadora</span>
+        <div class="card-icon">🎧</div>
+        <h3>Ingresos Spotify</h3>
+        <p>Calcula tus regalías como artista independiente en Spotify y otras plataformas.</p>
+      </div>
+
+      <div class="card" data-cat="ingresos" onclick="openTool('handmade')" data-href="calculadora-precio-handmade.html">
+        <span class="card-badge">Calculadora</span>
+        <div class="card-icon">🧶</div>
+        <h3>Precio Handmade</h3>
+        <p>Calcula el precio justo para tus productos artesanales incluyendo tiempo y materiales.</p>
+      </div>
+
+      <div class="card" data-cat="ingresos" onclick="openTool('roi')" data-href="calculadora-roi-anuncios.html">
+        <span class="card-badge">Calculadora</span>
+        <div class="card-icon">📊</div>
+        <h3>ROI de Anuncios</h3>
+        <p>Calcula el retorno de inversión de tus campañas en Facebook Ads o Google Ads.</p>
+      </div>
+
+      <!-- ── HERRAMIENTAS CREATOR ── -->
+      <div class="card" data-cat="creator" onclick="openTool('bio')" data-href="generador-bio-redes-sociales.html">
+        <span class="card-badge">Creator</span>
+        <div class="card-icon">✍️</div>
+        <h3>Generador de Bio</h3>
+        <p>Crea una bio profesional y atractiva para Instagram, LinkedIn o TikTok en segundos.</p>
+      </div>
+
+      <div class="card" data-cat="creator" onclick="openTool('hashtags')" data-href="generador-hashtags.html">
+        <span class="card-badge">Creator</span>
+        <div class="card-icon">#️⃣</div>
+        <h3>Generador de Hashtags</h3>
+        <p>Obtén hashtags estratégicos y relevantes para tu nicho y tipo de contenido.</p>
+      </div>
+
+      <div class="card" data-cat="creator" onclick="openTool('ideas')">
+        <span class="card-badge">Creator</span>
+        <div class="card-icon">💡</div>
+        <h3>Ideas de Contenido</h3>
+        <p>Genera ideas de posts, reels y videos para nunca quedarte sin qué publicar.</p>
+      </div>
+
+    </div><!-- /grid -->
+  </div><!-- /homeView -->
+
+
+  <!-- ========================================== -->
+  <!-- ============= TOOL PAGES ================= -->
+  <!-- ========================================== -->
+
+  <!-- ── NOMBRES: TECH ── -->
+  <div class="tool-page" id="tool-tech">
+    <button class="back-btn" onclick="showHome()">← Volver al inicio</button>
+    <div class="tool-header">
+      <span class="emoji">💻</span>
+      <h2>Generador de nombres para empresas tecnológicas</h2>
+      <p>Crea nombres modernos, únicos y memorables para tu startup o empresa de tecnología.</p>
+    </div>
+    <div class="tool-panel">
+      <label>Enfoque de tu empresa</label>
+      <select id="tech-tipo">
+        <option value="ia">Inteligencia Artificial / IA</option>
+        <option value="saas">Software / SaaS</option>
+        <option value="ecommerce">E-commerce / Marketplace</option>
+        <option value="fintech">Fintech / Pagos</option>
+        <option value="seguridad">Ciberseguridad</option>
+        <option value="datos">Big Data / Analytics</option>
+        <option value="general">General / Multipropósito</option>
+      </select>
+      <label>Estilo del nombre</label>
+      <select id="tech-estilo">
+        <option value="moderno">Moderno y minimalista (Stripe, Notion)</option>
+        <option value="poderoso">Poderoso y audaz (Oracle, Forge)</option>
+        <option value="creativo">Creativo y divertido (Zapier, Figma)</option>
+        <option value="tecnico">Técnico y preciso (DataSync, CodeBase)</option>
+      </select>
+      <button class="btn" onclick="generateNames('tech')">⚡ Generar nombres</button>
+    </div>
+    <div class="results" id="results-tech">
+      <h4>Nombres sugeridos — haz clic para copiar</h4>
+      <div class="name-grid" id="names-tech"></div>
+    </div>
+  </div>
+
+  <!-- ── NOMBRES: RESTAURANTES ── -->
+  <div class="tool-page" id="tool-restaurant">
+    <button class="back-btn" onclick="showHome()">← Volver al inicio</button>
+    <div class="tool-header">
+      <span class="emoji">🍽️</span>
+      <h2>Generador de nombres para restaurantes</h2>
+      <p>Nombres que despiertan el apetito y quedan en la memoria de tus clientes.</p>
+    </div>
+    <div class="tool-panel">
+      <label>Tipo de cocina</label>
+      <select id="rest-tipo">
+        <option value="italiana">Italiana / Pasta / Pizza</option>
+        <option value="mexicana">Mexicana / Tacos</option>
+        <option value="asiatica">Asiática / Fusión</option>
+        <option value="parrilla">Parrilla / Carnes / BBQ</option>
+        <option value="saludable">Saludable / Vegano</option>
+        <option value="mariscos">Mariscos / Pescados</option>
+        <option value="general">General / Casual</option>
+      </select>
+      <label>Ambiente del restaurante</label>
+      <select id="rest-ambiente">
+        <option value="familiar">Familiar y acogedor</option>
+        <option value="elegante">Elegante y sofisticado</option>
+        <option value="casual">Casual y moderno</option>
+        <option value="rustico">Rústico y artesanal</option>
+      </select>
+      <button class="btn" onclick="generateNames('restaurant')">⚡ Generar nombres</button>
+    </div>
+    <div class="results" id="results-restaurant">
+      <h4>Nombres sugeridos — haz clic para copiar</h4>
+      <div class="name-grid" id="names-restaurant"></div>
+    </div>
+  </div>
+
+  <!-- ── NOMBRES: BARBERÍAS ── -->
+  <div class="tool-page" id="tool-barberia">
+    <button class="back-btn" onclick="showHome()">← Volver al inicio</button>
+    <div class="tool-header">
+      <span class="emoji">✂️</span>
+      <h2>Generador de nombres para barberías</h2>
+      <p>Nombres con actitud y estilo para tu espacio de grooming y barbería.</p>
+    </div>
+    <div class="tool-panel">
+      <label>Estilo de la barbería</label>
+      <select id="barb-tipo">
+        <option value="clasica">Clásica / Old school</option>
+        <option value="moderna">Moderna / Urbana</option>
+        <option value="premium">Premium / Luxury</option>
+        <option value="hipster">Hipster / Artesanal</option>
+        <option value="latina">Estilo Latino / Urbano</option>
+      </select>
+      <label>¿Incluir referencia a ciudad o zona?</label>
+      <input type="text" id="barb-ciudad" placeholder="Ej: Monterrey, La Roma, Brooklyn... (opcional)">
+      <button class="btn" onclick="generateNames('barberia')">⚡ Generar nombres</button>
+    </div>
+    <div class="results" id="results-barberia">
+      <h4>Nombres sugeridos — haz clic para copiar</h4>
+      <div class="name-grid" id="names-barberia"></div>
+    </div>
+  </div>
+
+  <!-- ── NOMBRES: MODA ── -->
+  <div class="tool-page" id="tool-moda">
+    <button class="back-btn" onclick="showHome()">← Volver al inicio</button>
+    <div class="tool-header">
+      <span class="emoji">👗</span>
+      <h2>Generador de nombres para marcas de moda</h2>
+      <p>Nombres que proyectan estilo, identidad y valor de marca para tu línea de ropa.</p>
+    </div>
+    <div class="tool-panel">
+      <label>Segmento de mercado</label>
+      <select id="moda-tipo">
+        <option value="streetwear">Streetwear / Urban</option>
+        <option value="lujo">Lujo / Premium</option>
+        <option value="casual">Casual / Everyday</option>
+        <option value="deportiva">Deportiva / Athleisure</option>
+        <option value="sostenible">Sostenible / Eco</option>
+        <option value="infantil">Infantil / Kids</option>
+      </select>
+      <label>Género al que va dirigido</label>
+      <select id="moda-genero">
+        <option value="unisex">Unisex / Neutro</option>
+        <option value="femenino">Femenino</option>
+        <option value="masculino">Masculino</option>
+      </select>
+      <button class="btn" onclick="generateNames('moda')">⚡ Generar nombres</button>
+    </div>
+    <div class="results" id="results-moda">
+      <h4>Nombres sugeridos — haz clic para copiar</h4>
+      <div class="name-grid" id="names-moda"></div>
+    </div>
+  </div>
+
+  <!-- ── NOMBRES: CAFETERÍAS ── -->
+  <div class="tool-page" id="tool-cafe">
+    <button class="back-btn" onclick="showHome()">← Volver al inicio</button>
+    <div class="tool-header">
+      <span class="emoji">☕</span>
+      <h2>Generador de nombres para cafeterías</h2>
+      <p>Nombres cálidos, creativos y memorables para tu coffee shop o café.</p>
+    </div>
+    <div class="tool-panel">
+      <label>Concepto del café</label>
+      <select id="cafe-tipo">
+        <option value="specialty">Specialty Coffee / Artesanal</option>
+        <option value="bookstore">Café Librería</option>
+        <option value="work">Café de trabajo / Co-working</option>
+        <option value="vintage">Vintage / Retro</option>
+        <option value="moderno">Moderno / Minimalista</option>
+        <option value="familiar">Familiar / Barrio</option>
+      </select>
+      <label>Palabra clave o inspiración</label>
+      <input type="text" id="cafe-keyword" placeholder="Ej: luna, bruma, raíces... (opcional)">
+      <button class="btn" onclick="generateNames('cafe')">⚡ Generar nombres</button>
+    </div>
+    <div class="results" id="results-cafe">
+      <h4>Nombres sugeridos — haz clic para copiar</h4>
+      <div class="name-grid" id="names-cafe"></div>
+    </div>
+  </div>
+
+  <!-- ── NOMBRES: PODCASTS ── -->
+  <div class="tool-page" id="tool-podcast">
+    <button class="back-btn" onclick="showHome()">← Volver al inicio</button>
+    <div class="tool-header">
+      <span class="emoji">🎙️</span>
+      <h2>Generador de nombres para Podcasts y Canales</h2>
+      <p>Nombres que enganchan, se recuerdan y posicionan tu contenido desde el primer episodio.</p>
+    </div>
+    <div class="tool-panel">
+      <label>Tema principal del podcast / canal</label>
+      <select id="pod-tipo">
+        <option value="negocios">Negocios / Emprendimiento</option>
+        <option value="tecnologia">Tecnología / IA</option>
+        <option value="lifestyle">Lifestyle / Bienestar</option>
+        <option value="entretenimiento">Entretenimiento / Humor</option>
+        <option value="educacion">Educación / Cultura</option>
+        <option value="deportes">Deportes / Fitness</option>
+        <option value="true-crime">True Crime / Misterio</option>
+        <option value="finanzas">Finanzas Personales</option>
+      </select>
+      <label>Formato</label>
+      <select id="pod-formato">
+        <option value="solo">Solo / Monólogo</option>
+        <option value="duo">Dúo / Co-hosts</option>
+        <option value="entrevistas">Entrevistas</option>
+        <option value="narrativo">Narrativo / Documental</option>
+      </select>
+      <button class="btn" onclick="generateNames('podcast')">⚡ Generar nombres</button>
+    </div>
+    <div class="results" id="results-podcast">
+      <h4>Nombres sugeridos — haz clic para copiar</h4>
+      <div class="name-grid" id="names-podcast"></div>
+    </div>
+  </div>
+
+  <!-- ── NOMBRES: TATUAJES ── -->
+  <div class="tool-page" id="tool-tattoo">
+    <button class="back-btn" onclick="showHome()">← Volver al inicio</button>
+    <div class="tool-header">
+      <span class="emoji">🖋️</span>
+      <h2>Generador de nombres para estudios de tatuajes</h2>
+      <p>Nombres con alma, tinta y carácter para tu estudio o colectivo de tatuadores.</p>
+    </div>
+    <div class="tool-panel">
+      <label>Estilo predominante del estudio</label>
+      <select id="tat-tipo">
+        <option value="tradicional">Tradicional / Old School</option>
+        <option value="realismo">Realismo / Fine Line</option>
+        <option value="japonés">Japonés / Oriental</option>
+        <option value="blackwork">Blackwork / Geométrico</option>
+        <option value="neotradicional">Neo-Tradicional / Ilustración</option>
+        <option value="minimalista">Minimalista / Micro</option>
+      </select>
+      <label>Ambiente del estudio</label>
+      <select id="tat-ambiente">
+        <option value="underground">Underground / Indie</option>
+        <option value="premium">Premium / Boutique</option>
+        <option value="urbano">Urbano / Callejero</option>
+        <option value="mistico">Místico / Dark</option>
+      </select>
+      <button class="btn" onclick="generateNames('tattoo')">⚡ Generar nombres</button>
+    </div>
+    <div class="results" id="results-tattoo">
+      <h4>Nombres sugeridos — haz clic para copiar</h4>
+      <div class="name-grid" id="names-tattoo"></div>
+    </div>
+  </div>
+
+  <!-- ── CALCULADORA: TIKTOK ── -->
+  <div class="tool-page" id="tool-tiktok">
+    <button class="back-btn" onclick="showHome()">← Volver al inicio</button>
+    <div class="tool-header">
+      <span class="emoji">🎵</span>
+      <h2>Calculadora de ingresos TikTok</h2>
+      <p>Estima cuánto puedes ganar con el Creator Fund, regalos en vivo y patrocinios.</p>
+    </div>
+    <div class="tool-panel">
+      <div class="range-wrap">
+        <div class="range-label">
+          <span>Seguidores</span>
+          <strong id="tt-subs-label">50,000</strong>
+        </div>
+        <input type="range" min="1000" max="5000000" step="1000" value="50000" id="tt-subs"
+          oninput="document.getElementById('tt-subs-label').textContent=Number(this.value).toLocaleString()">
+      </div>
+      <div class="range-wrap">
+        <div class="range-label">
+          <span>Vistas promedio por video</span>
+          <strong id="tt-views-label">10,000</strong>
+        </div>
+        <input type="range" min="500" max="2000000" step="500" value="10000" id="tt-views"
+          oninput="document.getElementById('tt-views-label').textContent=Number(this.value).toLocaleString()">
+      </div>
+      <div class="range-wrap">
+        <div class="range-label">
+          <span>Videos publicados por mes</span>
+          <strong id="tt-posts-label">15</strong>
+        </div>
+        <input type="range" min="1" max="90" value="15" id="tt-posts"
+          oninput="document.getElementById('tt-posts-label').textContent=this.value">
+      </div>
+      <label>Nicho de contenido</label>
+      <select id="tt-nicho">
+        <option value="1.5">Entretenimiento / Comedia</option>
+        <option value="2">Lifestyle / Moda</option>
+        <option value="3">Finanzas / Negocios</option>
+        <option value="2.5">Tecnología / Gaming</option>
+        <option value="2">Salud / Fitness</option>
+        <option value="1.8">General</option>
+      </select>
+      <button class="btn" onclick="calcIncome('tiktok')">💰 Calcular ingresos estimados</button>
+    </div>
+    <div class="results" id="results-tiktok">
+      <h4>Estimación mensual</h4>
+      <div class="income-big">
+        <div class="label">Ingreso mensual estimado</div>
+        <div class="amount" id="income-tiktok-total">$0</div>
+      </div>
+      <div class="income-breakdown">
+        <div class="breakdown-item"><div class="bl">Creator Fund</div><div class="bv" id="tt-fund">$0</div></div>
+        <div class="breakdown-item"><div class="bl">Regalos en vivo</div><div class="bv" id="tt-live">$0</div></div>
+        <div class="breakdown-item"><div class="bl">Patrocinios</div><div class="bv" id="tt-brand">$0</div></div>
+      </div>
+      <p class="disclaimer">⚠️ Estimación referencial. Los ingresos reales dependen de ubicación, engagement, temporada y acuerdos individuales.</p>
+    </div>
+  </div>
+
+  <!-- ── CALCULADORA: YOUTUBE ── -->
+  <div class="tool-page" id="tool-youtube">
+    <button class="back-btn" onclick="showHome()">← Volver al inicio</button>
+    <div class="tool-header">
+      <span class="emoji">▶️</span>
+      <h2>Calculadora de ingresos YouTube</h2>
+      <p>Calcula tus ganancias con AdSense, membresías y Super Thanks.</p>
+    </div>
+    <div class="tool-panel">
+      <div class="range-wrap">
+        <div class="range-label">
+          <span>Suscriptores</span>
+          <strong id="yt-subs-label">10,000</strong>
+        </div>
+        <input type="range" min="1000" max="10000000" step="1000" value="10000" id="yt-subs"
+          oninput="document.getElementById('yt-subs-label').textContent=Number(this.value).toLocaleString()">
+      </div>
+      <div class="range-wrap">
+        <div class="range-label">
+          <span>Vistas mensuales totales</span>
+          <strong id="yt-views-label">20,000</strong>
+        </div>
+        <input type="range" min="1000" max="5000000" step="1000" value="20000" id="yt-views"
+          oninput="document.getElementById('yt-views-label').textContent=Number(this.value).toLocaleString()">
+      </div>
+      <label>Idioma principal del canal</label>
+      <select id="yt-idioma">
+        <option value="2.5">Inglés (EUA/UK)</option>
+        <option value="1.2">Español (Latam)</option>
+        <option value="1.8">Español (España)</option>
+        <option value="1.5">Portugués</option>
+      </select>
+      <label>Categoría del canal</label>
+      <select id="yt-cat">
+        <option value="1.8">Finanzas / Inversiones</option>
+        <option value="1.5">Tecnología</option>
+        <option value="1.2">Entretenimiento</option>
+        <option value="1.3">Gaming</option>
+        <option value="1.6">Educación</option>
+        <option value="1.1">Vlogs / Lifestyle</option>
+      </select>
+      <button class="btn" onclick="calcIncome('youtube')">💰 Calcular ingresos estimados</button>
+    </div>
+    <div class="results" id="results-youtube">
+      <h4>Estimación mensual</h4>
+      <div class="income-big">
+        <div class="label">Ingreso mensual estimado</div>
+        <div class="amount" id="income-youtube-total">$0</div>
+      </div>
+      <div class="income-breakdown">
+        <div class="breakdown-item"><div class="bl">AdSense</div><div class="bv" id="yt-adsense">$0</div></div>
+        <div class="breakdown-item"><div class="bl">Membresías</div><div class="bv" id="yt-memb">$0</div></div>
+        <div class="breakdown-item"><div class="bl">Super Thanks</div><div class="bv" id="yt-super">$0</div></div>
+      </div>
+      <p class="disclaimer">⚠️ Estimación referencial basada en CPM promedio por región y categoría. Los ingresos reales varían significativamente.</p>
+    </div>
+  </div>
+
+  <!-- ── CALCULADORA: FACEBOOK ── -->
+  <div class="tool-page" id="tool-facebook">
+    <button class="back-btn" onclick="showHome()">← Volver al inicio</button>
+    <div class="tool-header">
+      <span class="emoji">👥</span>
+      <h2>Calculadora de ingresos Facebook</h2>
+      <p>Estima tus ganancias con Reels Bonus, In-Stream Ads y Stars.</p>
+    </div>
+    <div class="tool-panel">
+      <div class="range-wrap">
+        <div class="range-label">
+          <span>Seguidores de página</span>
+          <strong id="fb-subs-label">5,000</strong>
+        </div>
+        <input type="range" min="500" max="5000000" step="500" value="5000" id="fb-subs"
+          oninput="document.getElementById('fb-subs-label').textContent=Number(this.value).toLocaleString()">
+      </div>
+      <div class="range-wrap">
+        <div class="range-label">
+          <span>Vistas de video mensuales</span>
+          <strong id="fb-views-label">10,000</strong>
+        </div>
+        <input type="range" min="1000" max="5000000" step="1000" value="10000" id="fb-views"
+          oninput="document.getElementById('fb-views-label').textContent=Number(this.value).toLocaleString()">
+      </div>
+      <label>Tipo de contenido principal</label>
+      <select id="fb-tipo">
+        <option value="1.5">Reels / Videos cortos</option>
+        <option value="1.2">Videos largos (5+ min)</option>
+        <option value="0.8">Posts / Fotos</option>
+        <option value="2">Lives / Transmisiones</option>
+      </select>
+      <button class="btn" onclick="calcIncome('facebook')">💰 Calcular ingresos estimados</button>
+    </div>
+    <div class="results" id="results-facebook">
+      <h4>Estimación mensual</h4>
+      <div class="income-big">
+        <div class="label">Ingreso mensual estimado</div>
+        <div class="amount" id="income-facebook-total">$0</div>
+      </div>
+      <div class="income-breakdown">
+        <div class="breakdown-item"><div class="bl">In-Stream Ads</div><div class="bv" id="fb-ads">$0</div></div>
+        <div class="breakdown-item"><div class="bl">Reels Bonus</div><div class="bv" id="fb-reels">$0</div></div>
+        <div class="breakdown-item"><div class="bl">Stars</div><div class="bv" id="fb-stars">$0</div></div>
+      </div>
+      <p class="disclaimer">⚠️ Los programas de monetización de Facebook varían por región y pueden cambiar. Verifica elegibilidad en Meta Business Suite.</p>
+    </div>
+  </div>
+
+  <!-- ── CALCULADORA: INSTAGRAM ── -->
+  <div class="tool-page" id="tool-instagram">
+    <button class="back-btn" onclick="showHome()">← Volver al inicio</button>
+    <div class="tool-header">
+      <span class="emoji">📸</span>
+      <h2>Calculadora de ingresos Instagram</h2>
+      <p>Calcula tus ganancias como creator: patrocinios, Reels, y colaboraciones de marca.</p>
+    </div>
+    <div class="tool-panel">
+      <div class="range-wrap">
+        <div class="range-label">
+          <span>Seguidores</span>
+          <strong id="ig-subs-label">10,000</strong>
+        </div>
+        <input type="range" min="1000" max="5000000" step="1000" value="10000" id="ig-subs"
+          oninput="document.getElementById('ig-subs-label').textContent=Number(this.value).toLocaleString()">
+      </div>
+      <div class="range-wrap">
+        <div class="range-label">
+          <span>Tasa de engagement (%)</span>
+          <strong id="ig-eng-label">3.5%</strong>
+        </div>
+        <input type="range" min="0.5" max="15" step="0.1" value="3.5" id="ig-eng"
+          oninput="document.getElementById('ig-eng-label').textContent=this.value+'%'">
+      </div>
+      <label>Nicho / industria</label>
+      <select id="ig-nicho">
+        <option value="2.5">Moda / Belleza</option>
+        <option value="3">Fitness / Salud</option>
+        <option value="2">Lifestyle / Travel</option>
+        <option value="3.5">Finanzas / Negocios</option>
+        <option value="2.2">Gastronomía / Food</option>
+        <option value="1.8">Entretenimiento</option>
+      </select>
+      <div class="range-wrap">
+        <div class="range-label">
+          <span>Posts / Stories por semana</span>
+          <strong id="ig-posts-label">5</strong>
+        </div>
+        <input type="range" min="1" max="21" value="5" id="ig-posts"
+          oninput="document.getElementById('ig-posts-label').textContent=this.value">
+      </div>
+      <button class="btn" onclick="calcIncome('instagram')">💰 Calcular ingresos estimados</button>
+    </div>
+    <div class="results" id="results-instagram">
+      <h4>Estimación mensual</h4>
+      <div class="income-big">
+        <div class="label">Ingreso mensual estimado</div>
+        <div class="amount" id="income-instagram-total">$0</div>
+      </div>
+      <div class="income-breakdown">
+        <div class="breakdown-item"><div class="bl">Posts patrocinados</div><div class="bv" id="ig-posts-inc">$0</div></div>
+        <div class="breakdown-item"><div class="bl">Reels Bonus</div><div class="bv" id="ig-reels">$0</div></div>
+        <div class="breakdown-item"><div class="bl">Afiliados</div><div class="bv" id="ig-aff">$0</div></div>
+      </div>
+      <p class="disclaimer">⚠️ Los ingresos por patrocinios en Instagram varían según nicho, audiencia y negociación directa con marcas.</p>
+    </div>
+  </div>
+
+  <!-- ── CALCULADORA: FREELANCER ── -->
+  <div class="tool-page" id="tool-freelancer">
+    <button class="back-btn" onclick="showHome()">← Volver al inicio</button>
+    <div class="tool-header">
+      <span class="emoji">💼</span>
+      <h2>Calculadora de ingresos Freelancer</h2>
+      <p>Proyecta tus ingresos y encuentra la tarifa por hora que necesitas para alcanzar tus metas.</p>
+    </div>
+    <div class="tool-panel">
+      <label>Meta de ingreso mensual deseado (USD)</label>
+      <input type="number" id="fl-meta" placeholder="Ej: 3000" min="100" max="50000" value="3000">
+      <div class="range-wrap">
+        <div class="range-label">
+          <span>Horas disponibles por semana</span>
+          <strong id="fl-horas-label">30 hrs</strong>
+        </div>
+        <input type="range" min="5" max="60" value="30" id="fl-horas"
+          oninput="document.getElementById('fl-horas-label').textContent=this.value+' hrs'">
+      </div>
+      <div class="range-wrap">
+        <div class="range-label">
+          <span>% horas facturables (no-admin)</span>
+          <strong id="fl-bill-label">70%</strong>
+        </div>
+        <input type="range" min="30" max="90" value="70" id="fl-bill"
+          oninput="document.getElementById('fl-bill-label').textContent=this.value+'%'">
+      </div>
+      <label>Especialidad</label>
+      <select id="fl-tipo">
+        <option value="1.5">Desarrollo Web / Mobile</option>
+        <option value="1.4">Diseño UX/UI</option>
+        <option value="1.2">Diseño Gráfico</option>
+        <option value="1.6">Data / IA / ML</option>
+        <option value="1.1">Redacción / Copywriting</option>
+        <option value="1.3">Marketing Digital</option>
+        <option value="1.0">Administración / VA</option>
+      </select>
+      <button class="btn" onclick="calcFreelancer()">💰 Calcular mi tarifa</button>
+    </div>
+    <div class="results" id="results-freelancer">
+      <h4>Tu proyección freelancer</h4>
+      <div class="income-big">
+        <div class="label">Tarifa mínima por hora</div>
+        <div class="amount" id="fl-rate">$0/hr</div>
+      </div>
+      <div class="income-breakdown">
+        <div class="breakdown-item"><div class="bl">Ingreso mensual</div><div class="bv" id="fl-monthly">$0</div></div>
+        <div class="breakdown-item"><div class="bl">Horas facturables/mes</div><div class="bv" id="fl-hours-m">0 hrs</div></div>
+        <div class="breakdown-item"><div class="bl">Ingreso anual</div><div class="bv" id="fl-annual">$0</div></div>
+      </div>
+      <p class="disclaimer">💡 Recuerda incluir impuestos, vacaciones y gastos operativos en tu tarifa real. Se recomienda cobrar un 30% adicional sobre la tarifa mínima.</p>
+    </div>
+  </div>
+
+  <!-- ── CALCULADORA: ECOMMERCE ── -->
+  <div class="tool-page" id="tool-ecommerce">
+    <button class="back-btn" onclick="showHome()">← Volver al inicio</button>
+    <div class="tool-header">
+      <span class="emoji">🛒</span>
+      <h2>Calculadora de ingresos Tienda Online</h2>
+      <p>Proyecta los ingresos de tu e-commerce con base en tráfico, conversión y ticket promedio.</p>
+    </div>
+    <div class="tool-panel">
+      <div class="range-wrap">
+        <div class="range-label">
+          <span>Visitas mensuales a tu tienda</span>
+          <strong id="ec-visits-label">5,000</strong>
+        </div>
+        <input type="range" min="100" max="500000" step="100" value="5000" id="ec-visits"
+          oninput="document.getElementById('ec-visits-label').textContent=Number(this.value).toLocaleString()">
+      </div>
+      <div class="range-wrap">
+        <div class="range-label">
+          <span>Tasa de conversión (%)</span>
+          <strong id="ec-conv-label">2.5%</strong>
+        </div>
+        <input type="range" min="0.1" max="15" step="0.1" value="2.5" id="ec-conv"
+          oninput="document.getElementById('ec-conv-label').textContent=this.value+'%'">
+      </div>
+      <label>Ticket promedio por orden (USD)</label>
+      <input type="number" id="ec-ticket" placeholder="Ej: 45" value="45" min="1">
+      <label>Plataforma</label>
+      <select id="ec-plat">
+        <option value="0.971">Shopify (2.9% fee)</option>
+        <option value="0.97">WooCommerce (~3% costos)</option>
+        <option value="0.95">Mercado Libre (5% comisión)</option>
+        <option value="0.85">Amazon (15% comisión)</option>
+        <option value="0.98">Tienda propia (2% costos)</option>
+      </select>
+      <button class="btn" onclick="calcEcommerce()">💰 Calcular ingresos</button>
+    </div>
+    <div class="results" id="results-ecommerce">
+      <h4>Proyección mensual de tu tienda</h4>
+      <div class="income-big">
+        <div class="label">Ingresos netos mensuales</div>
+        <div class="amount" id="ec-total">$0</div>
+      </div>
+      <div class="income-breakdown">
+        <div class="breakdown-item"><div class="bl">Órdenes/mes</div><div class="bv" id="ec-orders">0</div></div>
+        <div class="breakdown-item"><div class="bl">Ingresos brutos</div><div class="bv" id="ec-gross">$0</div></div>
+        <div class="breakdown-item"><div class="bl">Ingresos anuales</div><div class="bv" id="ec-annual">$0</div></div>
+      </div>
+      <p class="disclaimer">⚠️ Esta proyección no incluye costos de producto, publicidad, envíos o devoluciones. Úsala como punto de partida para tu planificación.</p>
+    </div>
+  </div>
+
+  <!-- ── CALCULADORA: SPOTIFY ── -->
+  <div class="tool-page" id="tool-spotify">
+    <button class="back-btn" onclick="showHome()">← Volver al inicio</button>
+    <div class="tool-header">
+      <span class="emoji">🎧</span>
+      <h2>Calculadora de regalías Spotify</h2>
+      <p>Estima cuánto puedes ganar con tus reproducciones en Spotify y otras plataformas de streaming.</p>
+    </div>
+    <div class="tool-panel">
+      <div class="range-wrap">
+        <div class="range-label">
+          <span>Reproducciones mensuales en Spotify</span>
+          <strong id="sp-plays-label">10,000</strong>
+        </div>
+        <input type="range" min="100" max="10000000" step="100" value="10000" id="sp-plays"
+          oninput="document.getElementById('sp-plays-label').textContent=Number(this.value).toLocaleString()">
+      </div>
+      <div class="range-wrap">
+        <div class="range-label">
+          <span>% oyentes de países con alto pago (US/EU)</span>
+          <strong id="sp-tier-label">30%</strong>
+        </div>
+        <input type="range" min="0" max="100" value="30" id="sp-tier"
+          oninput="document.getElementById('sp-tier-label').textContent=this.value+'%'">
+      </div>
+      <label>Distribución usada</label>
+      <select id="sp-dist">
+        <option value="0.85">DistroKid (retiene 85%)</option>
+        <option value="0.80">TuneCore (retiene 80%)</option>
+        <option value="0.70">CD Baby (retiene 70%)</option>
+        <option value="0.91">Amuse (retiene 91%)</option>
+      </select>
+      <button class="btn" onclick="calcSpotify()">💰 Calcular regalías</button>
+    </div>
+    <div class="results" id="results-spotify">
+      <h4>Estimación de regalías mensuales</h4>
+      <div class="income-big">
+        <div class="label">Regalías totales estimadas</div>
+        <div class="amount" id="sp-total">$0</div>
+      </div>
+      <div class="income-breakdown">
+        <div class="breakdown-item"><div class="bl">Spotify</div><div class="bv" id="sp-spotify">$0</div></div>
+        <div class="breakdown-item"><div class="bl">Apple Music</div><div class="bv" id="sp-apple">$0</div></div>
+        <div class="breakdown-item"><div class="bl">Otras plataformas</div><div class="bv" id="sp-other">$0</div></div>
+      </div>
+      <p class="disclaimer">ℹ️ Spotify paga entre $0.003 y $0.005 USD por stream dependiendo del país del oyente. Apple Music paga aprox. el doble por stream.</p>
+    </div>
+  </div>
+
+  <!-- ── CALCULADORA: HANDMADE ── -->
+  <div class="tool-page" id="tool-handmade">
+    <button class="back-btn" onclick="showHome()">← Volver al inicio</button>
+    <div class="tool-header">
+      <span class="emoji">🧶</span>
+      <h2>Calculadora de precio para productos handmade</h2>
+      <p>Encuentra el precio justo para tus productos artesanales que cubra costos y sea rentable.</p>
+    </div>
+    <div class="tool-panel">
+      <label>Costo de materiales por pieza (USD)</label>
+      <input type="number" id="hm-materiales" placeholder="Ej: 8.50" value="8.50" min="0" step="0.01">
+      <div class="range-wrap">
+        <div class="range-label">
+          <span>Tiempo de elaboración (minutos)</span>
+          <strong id="hm-tiempo-label">45 min</strong>
+        </div>
+        <input type="range" min="5" max="480" value="45" id="hm-tiempo"
+          oninput="document.getElementById('hm-tiempo-label').textContent=this.value+' min'">
+      </div>
+      <label>Tu valor por hora de trabajo (USD)</label>
+      <input type="number" id="hm-hora" placeholder="Ej: 15" value="15" min="1">
+      <div class="range-wrap">
+        <div class="range-label">
+          <span>Margen de ganancia deseado (%)</span>
+          <strong id="hm-margen-label">40%</strong>
+        </div>
+        <input type="range" min="10" max="200" value="40" id="hm-margen"
+          oninput="document.getElementById('hm-margen-label').textContent=this.value+'%'">
+      </div>
+      <label>Canal de venta</label>
+      <select id="hm-canal">
+        <option value="0">Venta directa / Instagram (sin comisión)</option>
+        <option value="6.5">Etsy (6.5% comisión)</option>
+        <option value="5">Mercado Libre (5%)</option>
+        <option value="10">Tienda física (10% gastos)</option>
+      </select>
+      <button class="btn" onclick="calcHandmade()">💰 Calcular precio sugerido</button>
+    </div>
+    <div class="results" id="results-handmade">
+      <h4>Precio sugerido para tu producto</h4>
+      <div class="income-big">
+        <div class="label">Precio de venta sugerido</div>
+        <div class="amount" id="hm-precio">$0</div>
+      </div>
+      <div class="income-breakdown">
+        <div class="breakdown-item"><div class="bl">Costo total</div><div class="bv" id="hm-costo">$0</div></div>
+        <div class="breakdown-item"><div class="bl">Tu ganancia</div><div class="bv" id="hm-ganancia">$0</div></div>
+        <div class="breakdown-item"><div class="bl">Margen real</div><div class="bv" id="hm-margen-real">0%</div></div>
+      </div>
+      <p class="disclaimer">💡 Si el precio parece alto para tu mercado, considera reducir costos de materiales o ajustar el tiempo. Nunca trabajes por menos de lo que valen tu tiempo y habilidad.</p>
+    </div>
+  </div>
+
+  <!-- ── CALCULADORA: ROI ── -->
+  <div class="tool-page" id="tool-roi">
+    <button class="back-btn" onclick="showHome()">← Volver al inicio</button>
+    <div class="tool-header">
+      <span class="emoji">📊</span>
+      <h2>Calculadora de ROI de anuncios</h2>
+      <p>Mide el retorno de inversión real de tus campañas publicitarias en Meta Ads o Google Ads.</p>
+    </div>
+    <div class="tool-panel">
+      <label>Presupuesto invertido en anuncios (USD)</label>
+      <input type="number" id="roi-inversion" placeholder="Ej: 500" value="500" min="1">
+      <div class="range-wrap">
+        <div class="range-label">
+          <span>CTR — Tasa de clic (%)</span>
+          <strong id="roi-ctr-label">2%</strong>
+        </div>
+        <input type="range" min="0.1" max="20" step="0.1" value="2" id="roi-ctr"
+          oninput="document.getElementById('roi-ctr-label').textContent=this.value+'%'">
+      </div>
+      <div class="range-wrap">
+        <div class="range-label">
+          <span>Tasa de conversión de la landing (%)</span>
+          <strong id="roi-conv-label">3%</strong>
+        </div>
+        <input type="range" min="0.1" max="30" step="0.1" value="3" id="roi-conv"
+          oninput="document.getElementById('roi-conv-label').textContent=this.value+'%'">
+      </div>
+      <label>Valor promedio por cliente / venta (USD)</label>
+      <input type="number" id="roi-valor" placeholder="Ej: 80" value="80" min="1">
+      <label>Plataforma de anuncios</label>
+      <select id="roi-plat">
+        <option value="1000">Facebook / Instagram Ads (~$1 CPM)</option>
+        <option value="800">Google Ads Search (~$0.8 CPM)</option>
+        <option value="1200">TikTok Ads (~$1.2 CPM)</option>
+        <option value="600">Google Display (~$0.6 CPM)</option>
+      </select>
+      <button class="btn" onclick="calcROI()">📊 Calcular ROI</button>
+    </div>
+    <div class="results" id="results-roi">
+      <h4>Resultado de tu campaña</h4>
+      <div class="income-big">
+        <div class="label">ROI de tu campaña</div>
+        <div class="amount" id="roi-result">0%</div>
+      </div>
+      <div class="income-breakdown">
+        <div class="breakdown-item"><div class="bl">Impresiones est.</div><div class="bv" id="roi-imp">0</div></div>
+        <div class="breakdown-item"><div class="bl">Clientes / ventas</div><div class="bv" id="roi-clientes">0</div></div>
+        <div class="breakdown-item"><div class="bl">Ingresos generados</div><div class="bv" id="roi-ingresos">$0</div></div>
+      </div>
+      <div class="roi-summary">
+        <div class="roi-row">
+          <span>Ganancia neta</span>
+          <strong id="roi-neta" class="positive">$0</strong>
+        </div>
+        <div class="roi-row">
+          <span>Costo por adquisición (CPA)</span>
+          <strong id="roi-cpa" class="highlight">$0</strong>
+        </div>
+      </div>
+      <p class="disclaimer">📌 Un ROI positivo indica que tu campaña es rentable. Un ROI > 100% significa que duplicaste tu inversión. Optimiza el CTR y la tasa de conversión para maximizar resultados.</p>
+    </div>
+  </div>
+
+  <!-- ── CREATOR: BIO ── -->
+  <div class="tool-page" id="tool-bio">
+    <button class="back-btn" onclick="showHome()">← Volver al inicio</button>
+    <div class="tool-header">
+      <span class="emoji">✍️</span>
+      <h2>Generador de Bio para Redes Sociales</h2>
+      <p>Crea una bio profesional, atractiva y auténtica para Instagram, LinkedIn o TikTok.</p>
+    </div>
+    <div class="tool-panel">
+      <label>Tu nombre o marca</label>
+      <input type="text" id="bio-nombre" placeholder="Ej: Carlos Mendoza o @carlosdesign">
+      <label>¿A qué te dedicas?</label>
+      <input type="text" id="bio-profesion" placeholder="Ej: Diseñador UX, Coach de negocios, Chef...">
+      <label>¿Cuál es tu propuesta de valor o logro clave?</label>
+      <input type="text" id="bio-valor" placeholder="Ej: Ayudo a startups a crecer, 5 años de experiencia...">
+      <label>Red social objetivo</label>
+      <select id="bio-red">
+        <option value="instagram">Instagram</option>
+        <option value="linkedin">LinkedIn</option>
+        <option value="tiktok">TikTok</option>
+        <option value="twitter">X / Twitter</option>
+      </select>
+      <label>Tono</label>
+      <select id="bio-tono">
+        <option value="profesional">Profesional y formal</option>
+        <option value="casual">Casual y cercano</option>
+        <option value="creativo">Creativo y original</option>
+        <option value="motivacional">Motivacional e inspirador</option>
+      </select>
+      <button class="btn" onclick="generateBio()">✍️ Generar bios</button>
+    </div>
+    <div class="results" id="results-bio">
+      <h4>Bios generadas — haz clic para copiar</h4>
+      <div id="bio-results"></div>
+    </div>
+  </div>
+
+  <!-- ── CREATOR: HASHTAGS ── -->
+  <div class="tool-page" id="tool-hashtags">
+    <button class="back-btn" onclick="showHome()">← Volver al inicio</button>
+    <div class="tool-header">
+      <span class="emoji">#️⃣</span>
+      <h2>Generador de Hashtags</h2>
+      <p>Obtén sets de hashtags estratégicos: mix de alta, media y baja competencia para maximizar alcance.</p>
+    </div>
+    <div class="tool-panel">
+      <label>Nicho o industria</label>
+      <select id="ht-nicho">
+        <option value="emprendimiento">Emprendimiento / Negocios</option>
+        <option value="moda">Moda / Estilo</option>
+        <option value="fitness">Fitness / Salud</option>
+        <option value="gastronomia">Gastronomía / Food</option>
+        <option value="viajes">Viajes / Travel</option>
+        <option value="tecnologia">Tecnología / Startups</option>
+        <option value="arte">Arte / Diseño</option>
+        <option value="musica">Música / Entretenimiento</option>
+        <option value="finanzas">Finanzas / Inversiones</option>
+        <option value="belleza">Belleza / Cuidado personal</option>
+      </select>
+      <label>Idioma principal de tu audiencia</label>
+      <select id="ht-idioma">
+        <option value="es">Español</option>
+        <option value="en">Inglés</option>
+        <option value="mixto">Mixto (es + en)</option>
+      </select>
+      <label>Red social</label>
+      <select id="ht-red">
+        <option value="instagram">Instagram (30 hashtags max)</option>
+        <option value="tiktok">TikTok (5-8 hashtags)</option>
+        <option value="linkedin">LinkedIn (3-5 hashtags)</option>
+      </select>
+      <button class="btn" onclick="generateHashtags()">⚡ Generar hashtags</button>
+    </div>
+    <div class="results" id="results-hashtags">
+      <h4>Set de hashtags — haz clic para copiar todo</h4>
+      <div id="ht-results"></div>
+    </div>
+  </div>
+
+  <!-- ── NOMBRES: MASCOTAS ── -->
+  <div class="tool-page" id="tool-mascota">
+    <button class="back-btn" onclick="showHome()">← Volver al inicio</button>
+    <div class="tool-header">
+      <span class="emoji">🐾</span>
+      <h2>Generador de nombres para mascotas</h2>
+      <p>Encuentra el nombre perfecto para tu compañero. 100 opciones por combinación, 6 nuevos cada vez que generes.</p>
+    </div>
+    <div class="tool-panel">
+      <label>Tipo de mascota</label>
+      <select id="pet-animal">
+        <option value="perro">🐶 Perro</option>
+        <option value="gato">🐱 Gato</option>
+        <option value="conejo">🐰 Conejo</option>
+        <option value="pajaro">🐦 Pájaro</option>
+        <option value="reptil">🦎 Reptil</option>
+      </select>
+      <label>Estilo del nombre</label>
+      <select id="pet-estilo">
+        <option value="tiernos">🍬 Tiernos / Kawaii</option>
+        <option value="modernos">✨ Modernos / Aesthetic</option>
+        <option value="clasicos">🏛️ Clásicos / Tradicionales</option>
+        <option value="mitologicos">⚡ Mitológicos / Épicos</option>
+        <option value="gastronomicos">🍕 Gastronómicos / Divertidos</option>
+        <option value="naturaleza">🌿 Naturaleza / Elementos</option>
+      </select>
+      <button class="btn" onclick="generateNames('mascota')">🐾 Generar nombres</button>
+    </div>
+    <div class="results" id="results-mascota">
+      <h4>Nombres sugeridos — haz clic para copiar</h4>
+      <div class="name-grid" id="names-mascota"></div>
+    </div>
+  </div>
+
+  <!-- ── NOMBRES: TIENDA DE ROPA ── -->
+  <div class="tool-page" id="tool-tiendaropa">
+    <button class="back-btn" onclick="showHome()">← Volver al inicio</button>
+    <div class="tool-header">
+      <span class="emoji">🛍️</span>
+      <h2>Generador de nombres para tiendas de ropa</h2>
+      <p>Nombres atractivos y memorables para tu tienda, boutique o local de moda.</p>
+    </div>
+    <div class="tool-panel">
+      <label>Tipo de tienda</label>
+      <select id="tr-tipo">
+        <option value="boutique">Boutique femenina</option>
+        <option value="casual">Casual / Everyday</option>
+        <option value="urbana">Urbana / Streetwear</option>
+        <option value="vintage">Vintage / Segunda mano</option>
+        <option value="infantil">Ropa infantil</option>
+        <option value="deportiva">Deportiva / Activewear</option>
+      </select>
+      <label>Ambiente de la tienda</label>
+      <select id="tr-ambiente">
+        <option value="moderno">Moderno y minimalista</option>
+        <option value="calido">Cálido y cercano</option>
+        <option value="premium">Premium y exclusivo</option>
+        <option value="divertido">Divertido y colorido</option>
+      </select>
+      <button class="btn" onclick="generateNames('tiendaropa')">⚡ Generar nombres</button>
+    </div>
+    <div class="results" id="results-tiendaropa">
+      <h4>Nombres sugeridos — haz clic para copiar</h4>
+      <div class="name-grid" id="names-tiendaropa"></div>
+    </div>
+  </div>
+
+  <!-- ── CREATOR: IDEAS DE CONTENIDO ── -->
+  <div class="tool-page" id="tool-ideas">
+    <button class="back-btn" onclick="showHome()">← Volver al inicio</button>
+    <div class="tool-header">
+      <span class="emoji">💡</span>
+      <h2>Generador de ideas de contenido</h2>
+      <p>Supera el bloqueo creativo con ideas listas para publicar según tu nicho, plataforma y formato.</p>
+    </div>
+    <div class="tool-panel">
+      <label>Tu nicho o industria</label>
+      <select id="ideas-nicho">
+        <option value="emprendimiento">Emprendimiento / Negocios</option>
+        <option value="moda">Moda / Estilo / Belleza</option>
+        <option value="fitness">Fitness / Salud / Nutrición</option>
+        <option value="gastronomia">Gastronomía / Cocina / Food</option>
+        <option value="tecnologia">Tecnología / IA / Apps</option>
+        <option value="finanzas">Finanzas Personales / Inversiones</option>
+        <option value="viajes">Viajes / Travel / Turismo</option>
+        <option value="educacion">Educación / Cursos / Coaching</option>
+        <option value="arte">Arte / Diseño / Fotografía</option>
+        <option value="musica">Música / Entretenimiento</option>
+      </select>
+      <label>Plataforma principal</label>
+      <select id="ideas-plataforma">
+        <option value="instagram">Instagram</option>
+        <option value="tiktok">TikTok</option>
+        <option value="youtube">YouTube</option>
+        <option value="linkedin">LinkedIn</option>
+        <option value="twitter">X / Twitter</option>
+      </select>
+      <label>Formato de contenido</label>
+      <select id="ideas-formato">
+        <option value="video_corto">Video corto (Reels / TikTok)</option>
+        <option value="carrusel">Carrusel / Slideshow</option>
+        <option value="foto">Foto con caption</option>
+        <option value="video_largo">Video largo (YouTube / Podcast)</option>
+        <option value="texto">Post de texto / Hilo</option>
+        <option value="stories">Stories / Efímero</option>
+      </select>
+      <button class="btn" onclick="generateIdeas()">💡 Generar ideas</button>
+    </div>
+    <div class="results" id="results-ideas">
+      <h4>Ideas de contenido — haz clic para copiar</h4>
+      <div id="ideas-results"></div>
+    </div>
+  </div>
+
+  <!-- ========== FOOTER ========== -->
+  <footer id="siteFooter">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="footer-logo">MiniTools ⚡</span>
+        <p>Herramientas gratuitas para emprendedores, creadores y negocios. Sin registro, sin complicaciones.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <span class="footer-col-title">Generadores de Nombres</span>
+          <a href="generador-nombres-empresas-tech.html">Empresas Tecnológicas</a>
+          <a href="generador-nombres-restaurantes.html">Restaurantes</a>
+          <a href="generador-nombres-barberias.html">Barberías</a>
+          <a href="generador-nombres-marcas-moda.html">Marcas de Moda</a>
+          <a href="generador-nombres-cafeterias.html">Cafeterías</a>
+          <a href="generador-nombres-podcasts.html">Podcasts y Canales</a>
+          <a href="generador-nombres-estudios-tatuajes.html">Estudios de Tatuajes</a>
+          <a href="generador-nombres-mascotas.html">Nombres de Mascotas</a>
+          <a href="generador-nombres-tiendas-ropa.html">Tiendas de Ropa</a>
+        </div>
+        <div class="footer-col">
+          <span class="footer-col-title">Calculadoras</span>
+          <a href="calculadora-ingresos-tiktok.html">Ingresos TikTok</a>
+          <a href="calculadora-ingresos-youtube.html">Ingresos YouTube</a>
+          <a href="calculadora-ingresos-facebook.html">Ingresos Facebook</a>
+          <a href="calculadora-ingresos-instagram.html">Ingresos Instagram</a>
+          <a href="calculadora-ingresos-freelancer.html">Ingresos Freelancer</a>
+          <a href="calculadora-ingresos-tienda-online.html">Tienda Online</a>
+          <a href="calculadora-ingresos-spotify.html">Regalías Spotify</a>
+          <a href="calculadora-precio-handmade.html">Precio Handmade</a>
+          <a href="calculadora-roi-anuncios.html">ROI de Anuncios</a>
+        </div>
+        <div class="footer-col">
+          <span class="footer-col-title">Creators & Legal</span>
+          <a href="generador-bio-redes-sociales.html">Generador de Bio</a>
+          <a href="generador-hashtags.html">Generador de Hashtags</a>
+          <a href="generador-ideas-contenido.html">Ideas de Contenido</a>
+          <a href="privacidad.html">Política de Privacidad</a>
+          <a href="contacto.html">Contacto</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 MiniTools — Herramientas gratuitas para tu negocio.</span>
+      <div class="footer-bottom-links">
+        <a href="privacidad.html">Privacidad</a>
+        <a href="contacto.html">Contacto</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
