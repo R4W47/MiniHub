@@ -7,32 +7,27 @@
 // NAVIGATION
 // ===================================================
 
-let lastFilter = { cat: 'all', tabText: 'Todos' };
+let lastFilter = 'all';
 
 function showHome() {
   document.getElementById('homeView').style.display = 'block';
   document.querySelectorAll('.tool-page').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('.nav-pill').forEach(p => p.classList.remove('active'));
 
-  // Restore the filter that was active before entering the tool
   document.querySelectorAll('.card').forEach(c => {
-    c.style.display = (lastFilter.cat === 'all' || c.dataset.cat === lastFilter.cat) ? 'block' : 'none';
+    c.style.display = (lastFilter === 'all' || c.dataset.cat === lastFilter) ? 'block' : 'none';
   });
   document.querySelectorAll('.tab').forEach(t => {
-    const tCat = t.getAttribute('onclick')?.match(/'([^']+)'/)?.[1];
-    t.classList.toggle('active', tCat === lastFilter.cat);
+    t.classList.toggle('active', t.dataset.cat === lastFilter);
   });
 
   window.scrollTo(0, 0);
 }
 
 function openTool(id) {
-  // Save current active filter before leaving home
   const activeTab = document.querySelector('.tab.active');
-  if (activeTab) {
-    const cat = activeTab.getAttribute('onclick')?.match(/'([^']+)'/)?.[1] || 'all';
-    lastFilter = { cat };
-  }
+  if (activeTab) lastFilter = activeTab.dataset.cat || 'all';
+
   document.getElementById('homeView').style.display = 'none';
   document.querySelectorAll('.tool-page').forEach(p => p.classList.remove('active'));
   const el = document.getElementById('tool-' + id);
@@ -41,7 +36,7 @@ function openTool(id) {
 }
 
 function filterCards(cat, btn, fromNav) {
-  lastFilter = { cat };
+  lastFilter = cat;
   if (fromNav) {
     document.getElementById('homeView').style.display = 'block';
     document.querySelectorAll('.tool-page').forEach(p => p.classList.remove('active'));
@@ -55,8 +50,7 @@ function filterCards(cat, btn, fromNav) {
       btn.classList.add('active');
       document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
       document.querySelectorAll('.tab').forEach(t => {
-        const tCat = t.getAttribute('onclick').match(/'([^']+)'/)?.[1];
-        if (tCat === cat) t.classList.add('active');
+        if (t.dataset.cat === cat) t.classList.add('active');
       });
     } else {
       document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));

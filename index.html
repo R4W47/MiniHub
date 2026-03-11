@@ -33,10 +33,10 @@
     </div>
 
     <div id="nombres"></div><div id="calculadoras"></div><div id="creators"></div><div class="tabs">
-      <button class="tab active" onclick="filterCards('all', this)">Todos</button>
-      <button class="tab" onclick="filterCards('nombres', this)">✨ Nombres</button>
-      <button class="tab" onclick="filterCards('ingresos', this)">💰 Calculadoras</button>
-      <button class="tab" onclick="filterCards('creator', this)">🎨 Creators</button>
+      <button class="tab active" data-cat="all" onclick="filterCards('all', this)">Todos</button>
+      <button class="tab" data-cat="nombres" onclick="filterCards('nombres', this)">✨ Nombres</button>
+      <button class="tab" data-cat="ingresos" onclick="filterCards('ingresos', this)">💰 Calculadoras</button>
+      <button class="tab" data-cat="creator" onclick="filterCards('creator', this)">🎨 Creators</button>
     </div>
 
     <div class="grid" id="cardsGrid">
