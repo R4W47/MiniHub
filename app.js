@@ -7,18 +7,32 @@
 // NAVIGATION
 // ===================================================
 
+let lastFilter = { cat: 'all', tabText: 'Todos' };
+
 function showHome() {
   document.getElementById('homeView').style.display = 'block';
   document.querySelectorAll('.tool-page').forEach(p => p.classList.remove('active'));
-  document.querySelectorAll('.card').forEach(c => c.style.display = 'block');
-  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-  const firstTab = document.querySelector('.tab');
-  if (firstTab) firstTab.classList.add('active');
   document.querySelectorAll('.nav-pill').forEach(p => p.classList.remove('active'));
+
+  // Restore the filter that was active before entering the tool
+  document.querySelectorAll('.card').forEach(c => {
+    c.style.display = (lastFilter.cat === 'all' || c.dataset.cat === lastFilter.cat) ? 'block' : 'none';
+  });
+  document.querySelectorAll('.tab').forEach(t => {
+    const tCat = t.getAttribute('onclick')?.match(/'([^']+)'/)?.[1];
+    t.classList.toggle('active', tCat === lastFilter.cat);
+  });
+
   window.scrollTo(0, 0);
 }
 
 function openTool(id) {
+  // Save current active filter before leaving home
+  const activeTab = document.querySelector('.tab.active');
+  if (activeTab) {
+    const cat = activeTab.getAttribute('onclick')?.match(/'([^']+)'/)?.[1] || 'all';
+    lastFilter = { cat };
+  }
   document.getElementById('homeView').style.display = 'none';
   document.querySelectorAll('.tool-page').forEach(p => p.classList.remove('active'));
   const el = document.getElementById('tool-' + id);
@@ -27,6 +41,7 @@ function openTool(id) {
 }
 
 function filterCards(cat, btn, fromNav) {
+  lastFilter = { cat };
   if (fromNav) {
     document.getElementById('homeView').style.display = 'block';
     document.querySelectorAll('.tool-page').forEach(p => p.classList.remove('active'));
@@ -1580,21 +1595,28 @@ const tiendaRopaData = {
 const ideasData = {
   emprendimiento: {
     instagram: {
-      video_corto: ['3 errores que cometí al lanzar mi primer negocio','Cómo conseguí mis primeros 10 clientes sin pagar publicidad','Día en la vida de un emprendedor honesto (sin filtros)','Lo que nadie te dice sobre emprender con poco dinero','Reaccionando a mis primeros intentos de vender','5 apps que uso para manejar mi negocio desde el celular','Cuánto gano realmente con mi negocio (cifras reales)','Por qué casi cierro mi negocio y lo que aprendí','Lo que aprendí en mi primer año como emprendedor','Cómo poner precio a tus servicios sin miedo'],
-      carrusel: ['10 lecciones de negocios que aprendí de mis fracasos','Cómo estructurar un plan de negocios en una página','Los 7 tipos de clientes y cómo tratar a cada uno','Checklist para lanzar tu negocio este mes','Diferencias entre emprendedor exitoso y promedio','Cómo calcular el precio de tus productos (con fórmula)','5 modelos de negocio que puedes empezar sin inversión','Cómo conseguir clientes con Instagram organico en 2025','Las 8 métricas que todo negocio debería medir','Errores financieros que arruinan pequeños negocios'],
+      video_corto: ['3 errores que cometí al lanzar mi primer negocio','Cómo conseguí mis primeros 10 clientes sin pagar publicidad','Día en la vida de un emprendedor honesto (sin filtros)','Lo que nadie te dice sobre emprender con poco dinero','Cuánto gano realmente con mi negocio (cifras reales)','Por qué casi cierro mi negocio y lo que aprendí','Lo que aprendí en mi primer año como emprendedor','Cómo poner precio a tus servicios sin miedo','5 apps que uso para manejar mi negocio desde el celular','Reaccionando a mis primeros intentos de vender'],
+      carrusel: ['10 lecciones de negocios que aprendí de mis fracasos','Cómo estructurar un plan de negocios en una página','Los 7 tipos de clientes y cómo tratar a cada uno','Checklist para lanzar tu negocio este mes','Cómo calcular el precio de tus productos (con fórmula)','5 modelos de negocio que puedes empezar sin inversión','Cómo conseguir clientes con Instagram orgánico en 2025','Las 8 métricas que todo negocio debería medir','Errores financieros que arruinan pequeños negocios','Diferencias entre emprendedor exitoso y promedio'],
       foto: ['La oficina desde donde construyo mi negocio','Mi primer pedido vs. el pedido de hoy','La herramienta que cambió mi forma de trabajar','Cita que me cambió la mentalidad emprendedora','Lo que cargaba en mi bolsa cuando empecé vs. ahora'],
       video_largo: ['Cómo monté mi negocio desde cero con $500 dólares','La historia completa de cómo crecí de 0 a 100 clientes','Análisis de negocios exitosos en redes sociales','Masterclass gratis: cómo vender en Instagram sin anuncios','Un año emprendiendo: resultados, fracasos y aprendizajes'],
       texto: ['Hilo: Los 10 principios de negocio que me tomó años aprender','Thread: Un día resolviendo una crisis en mi empresa','Mi historia: del trabajo de oficina a emprender con miedo','Reflexión: Por qué la mayoría de negocios fracasan en el primer año','Consejo del día: la regla de las 2 horas para emprendedores'],
       stories: ['¿Cuánto llevas emprendiendo? Encuesta','El mayor reto de tu negocio este mes','Detrás de cámaras: así es un día real en mi negocio','Pregúntame lo que quieras sobre emprendimiento','Mito o realidad: emprender es solo para los que tienen dinero']
     },
     tiktok: {
-      video_corto: ['El error de negocio que me costó $3,000 (storytime)','POV: tu cliente te dice que eres muy caro','Cómo respondo a clientes difíciles (role play)','Red flag de un mal socio de negocios','Cuánto gané en mi primer mes de negocio (honesto)','Lo que pasa realmente detrás de un "negocio exitoso"','3 formas de conseguir clientes sin pagar un peso','El día que casi quiebro y lo que hice','Tipos de clientes que todo emprendedor conoce','Esto pasa cuando pones demasiado bajo tu precio']
+      video_corto: ['El error de negocio que me costó $3,000 (storytime)','POV: tu cliente te dice que eres muy caro','Cómo respondo a clientes difíciles (role play)','Red flag de un mal socio de negocios','Cuánto gané en mi primer mes de negocio (honesto)','Lo que pasa realmente detrás de un "negocio exitoso"','3 formas de conseguir clientes sin pagar un peso','El día que casi quiebro y lo que hice','Tipos de clientes que todo emprendedor conoce','Esto pasa cuando pones demasiado bajo tu precio'],
+      carrusel: ['Errores del emprendedor novato','Cómo validar tu idea en 48 horas','Lo que nadie te dice sobre tener un negocio','Plan de negocio en una diapositiva','Negocios que puedes empezar desde tu celular'],
+      foto: ['Mi setup de trabajo hoy','El momento que cambió mi negocio','Primera venta vs. última venta','Herramientas que uso cada día','Motivación del emprendedor: esta semana'],
+      video_largo: ['Cómo empecé mi negocio desde cero sin dinero','Un día en la vida de un emprendedor real','Lo que nadie te dice sobre trabajar para ti mismo','Análisis: negocios que funcionan en redes sociales','Mis primeros 6 meses como emprendedor: cifras reales'],
+      texto: ['POV: tu cliente te pide descuento y no sabe cuánto trabajas','Señales de que tu negocio está creciendo (aunque no lo sientas)','La conversación más difícil con un cliente','Por qué cobrar barato te está costando clientes','El momento exacto en que supe que iba a funcionar'],
+      stories: ['¿Tienes negocio propio? Sí o no','Tu mayor miedo al emprender (encuesta)','Detrás de cámaras: mi oficina hoy','Tip emprendedor del día','Pregúntame cualquier cosa sobre mi negocio']
     },
     youtube: {
-      video_largo: ['De empleado a emprendedor: mi historia completa','Cómo crear un negocio digital desde cero en 2025','Los 10 libros de negocios que realmente me ayudaron','Construí un negocio de $10K al mes — así lo hice','Análisis: por qué fracasan el 90% de los negocios nuevos']
+      video_largo: ['De empleado a emprendedor: mi historia completa','Cómo crear un negocio digital desde cero en 2025','Los 10 libros de negocios que realmente me ayudaron','Construí un negocio de $10K al mes — así lo hice','Análisis: por qué fracasan el 90% de los negocios nuevos'],
+      video_corto: ['El error que casi quiebra tu negocio','Tip de ventas en 60 segundos','¿Cómo conseguir tu primer cliente?','La herramienta de negocio más subestimada','Por qué el precio más bajo no siempre gana']
     },
     linkedin: {
-      texto: ['Reflexión: Lo que 5 años emprendiendo me enseñaron','Post: Los 3 contratos que casi arruinan mi empresa','Historia: Cómo perdí mi mayor cliente y lo que cambié','Consejo: La habilidad de negocios que más me ha generado dinero','Análisis: Diferencia entre emprendedor y empresario']
+      texto: ['Reflexión: Lo que 5 años emprendiendo me enseñaron','Los 3 contratos que casi arruinan mi empresa','Cómo perdí mi mayor cliente y lo que cambié','La habilidad de negocios que más dinero me ha generado','Diferencia entre emprendedor y empresario'],
+      carrusel: ['Cómo construir una red de contactos que realmente funcione','Los errores que cometen los emprendedores nuevos','Habilidades blandas que nadie enseña en la universidad','Cómo presentar tu negocio en 30 segundos','El pitch perfecto para conseguir inversión']
     },
     twitter: {
       texto: ['Hilo: 10 verdades del emprendimiento que nadie cuenta','Thread: Cómo validé mi idea de negocio en 48 horas','Lista: Recursos gratuitos para emprendedores que ojalá hubiera conocido antes','Reflexión: El momento exacto en que supe que iba a funcionar','Consejo rápido: La regla de oro para fijar precios']
@@ -1604,82 +1626,261 @@ const ideasData = {
     instagram: {
       video_corto: ['Cómo combinar prendas básicas de 5 formas diferentes','Lo que nadie te dice sobre comprar en Shein','Mi armario cápsula completo (menos de 30 prendas)','Outfits para toda la semana sin repetir ropa','Cómo saber tu silueta y qué ponerte','3 errores de moda que te hacen ver desaliñado','Haul de ropa de segunda mano (lo que encontré)','De informal a formal con los mismos pantalones','Los básicos de closet que toda mujer necesita','Cómo lavar ropa oscura sin que se decolore'],
       carrusel: ['Armario cápsula por temporada: guía completa','Cómo combinar el color naranja sin verte raro','10 formas de usar una camisa blanca','Los colores que van con todo (y cómo combinarlos)','Guía de tallas: cómo comprar ropa online sin errores','Qué ropa usar según tu silueta (guía visual)','Tendencias de moda 2025 que sí o sí debes tener','Cómo hacer un armario sostenible paso a paso','Los 10 accesorios que elevan cualquier outfit','Mini guía de estilo para cada tipo de evento'],
-      foto: ['Outfit del día: el básico que más llevo puesto','Antes/después: cómo el styling cambia todo','El look que más me han comentado este mes','Thrift flip: así quedó la prenda que transformé','Inspiración de outfit para esta semana']
+      foto: ['Outfit del día: el básico que más llevo puesto','Antes/después: cómo el styling cambia todo','El look que más me han comentado este mes','Thrift flip: así quedó la prenda que transformé','Inspiración de outfit para esta semana'],
+      video_largo: ['Mi historia en la moda: de compradora compulsiva a estilista','Cómo construí mi marca de ropa desde cero','Los 10 errores de moda que todos cometemos','Guía completa de tendencias del año','Armario cápsula completo: haul y lookbook'],
+      texto: ['Hilo: Por qué la moda rápida está destruyendo el planeta','Thread: Cómo encontré mi estilo propio después de años de confusión','Reflexión: Lo que la moda me enseñó sobre autoestima','Lista: 10 prendas que nunca pasan de moda','Debate: ¿Vale la pena invertir en ropa cara?'],
+      stories: ['¿Qué estás usando hoy? Muéstrame tu outfit','¿Fast fashion o slow fashion? Vota','Desliza para ver mi transformación de outfit','Pregúntame lo que quieras sobre moda','Este o este: ¿cuál look prefieres?']
     },
     tiktok: {
-      video_corto: ['Transformación de outfit: de básico a chic en 30 seg','Lo que compré vs. lo que llegó (Shein honesto)','Cómo doblar ropa para que quepa más en la maleta','Outfits que te hacen ver más alto/delgado','Rating outfits de celebridades (sin filtros)','Cómo saber si una prenda vale su precio','Recicla este outfit de 2015 con estas piezas nuevas','Prueba de outfits de TikTok (¿funcionan en la vida real?)','La regla de los 30 usos para comprar ropa','POV: tu amiga te pide consejo de moda']
+      video_corto: ['Transformación de outfit: de básico a chic en 30 seg','Lo que compré vs. lo que llegó (Shein honesto)','Cómo doblar ropa para que quepa más en la maleta','Outfits que te hacen ver más alto/delgado','Rating outfits de celebridades (sin filtros)','Cómo saber si una prenda vale su precio','Recicla este outfit de 2015 con estas piezas nuevas','Prueba de outfits de TikTok (¿funcionan en la vida real?)','La regla de los 30 usos para comprar ropa','POV: tu amiga te pide consejo de moda'],
+      carrusel: ['10 looks con solo 5 prendas','Outfits aesthetic por menos de $50','Cómo vestir bien con poco dinero','Los básicos que toda chica necesita','Moda sostenible: marcas que valen la pena'],
+      foto: ['El outfit más comentado de mi semana','Look del día: minimalista total','Mi compra favorita del mes','Inspiración outfit: este o este','Thrift flip revelado'],
+      video_largo: ['Haul completo de ropa de temporada','Mi proceso para crear looks únicos','Revisando mi closet: qué me quedo y qué boto','Cómo hacer compras inteligentes de ropa','Historia de mi estilo: cómo evolucioné'],
+      texto: ['POV: llevas 30 min eligiendo qué ponerte','Señales de que tu armario necesita un detox','El outfit que siempre funciona cuando no sabes qué ponerte','Moda tip del día: la regla del tercer elemento','Por qué los básicos nunca fallan'],
+      stories: ['Vota: ¿cuál outfit me pongo hoy?','Lo que llevaría a este evento (encuesta)','Rating de mi compra nueva','¿Qué prendas extrañas más?','Este o este: ayúdame a elegir']
+    },
+    youtube: {
+      video_largo: ['Armario cápsula completo: haul + lookbook de 30 días','Cómo construí mi estilo personal desde cero','Los errores de moda que todos cometemos (y cómo evitarlos)','Revisión honesta de Shein, Zara y H&M: ¿vale la pena?','Cómo vestirse bien con presupuesto bajo: guía completa'],
+      video_corto: ['Outfit check: básico pero elegante','3 formas de usar un blazer','La prenda más versátil de mi closet','Tip de moda express','Combinación que nunca falla']
+    },
+    linkedin: {
+      texto: ['Reflexión: lo que la industria de la moda me enseñó sobre marca personal','Cómo el estilo impacta tu percepción profesional','La sostenibilidad en la moda: tendencia o responsabilidad','Lo que aprendí construyendo una marca de ropa independiente','Vestimenta y liderazgo: ¿importa cómo te vistes en el trabajo?'],
+      carrusel: ['Cómo vestirse para diferentes entornos profesionales','Personal branding a través de tu estilo','Cómo iniciar una marca de moda en 2025','Tendencias en la industria de la moda sostenible','Lo que los reclutadores notan de tu imagen profesional']
+    },
+    twitter: {
+      texto: ['Hilo: por qué la moda rápida es un problema que todos ignoramos','Thread: cómo construí mi armario cápsula con menos de $300','Lista: marcas de moda sostenible que realmente cumplen','Debate: ¿es posible vestirse bien con poco dinero?','Tip del día: la prenda que más ROI te da en tu armario']
     }
   },
   fitness: {
     instagram: {
       video_corto: ['Rutina de 10 minutos en casa sin equipo','Lo que como en un día (dieta real, no perfecta)','Por qué dejé de hacer cardio y qué pasó','3 ejercicios que transformaron mi espalda','Cómo empecé a ir al gym sin saber nada','Mitos del fitness que te están frenando','Mi progreso de 6 meses (foto honesta)','Lo que nadie te dice sobre perder peso','Cómo entrenar con poco tiempo y muchos resultados','El suplemento que realmente vale la pena'],
-      carrusel: ['Plan de entrenamiento para principiantes (descargable)','Los 10 mejores ejercicios para glúteos en casa','Cómo calcular tus calorías sin obsesionarte','Guía de proteínas: cuánta necesitas realmente','Errores comunes en sentadillas (y cómo corregirlos)','Plan de comidas saludable para la semana','Los mejores ejercicios según tu objetivo','Cómo crear hábitos de ejercicio que duren','Glosario de términos de gym para principiantes','Señales de que estás sobreentrenando']
+      carrusel: ['Plan de entrenamiento para principiantes (descargable)','Los 10 mejores ejercicios para glúteos en casa','Cómo calcular tus calorías sin obsesionarte','Guía de proteínas: cuánta necesitas realmente','Errores comunes en sentadillas (y cómo corregirlos)','Plan de comidas saludable para la semana','Los mejores ejercicios según tu objetivo','Cómo crear hábitos de ejercicio que duren','Glosario de términos de gym para principiantes','Señales de que estás sobreentrenando'],
+      foto: ['Progreso de hoy en el gym','La comida que preparé para toda la semana','Mi setup de entrenamiento en casa','Comparación de progreso: antes y ahora','El momento post-entreno que más disfruto'],
+      video_largo: ['Mi transformación de 90 días: todo lo que hice','Guía completa de nutrición para principiantes','Cómo crear tu propio plan de entrenamiento','Los suplementos que realmente funcionan (con evidencia)','Un día en la vida de alguien que entrena 5 veces a la semana'],
+      texto: ['Hilo: todo lo que aprendí en 2 años entrenando','Thread: por qué el cardio no es la solución para perder peso','Lista: mitos del fitness desmentidos por la ciencia','Reflexión: cómo el ejercicio cambió mi salud mental','Consejo del día: la regla más importante para ver resultados'],
+      stories: ['¿Entrenaste hoy? Sí o no','Encuesta: ¿gym o casa?','Tip de nutrición del día','Vota: ¿cuál rutina quieres que grabe?','Pregúntame sobre fitness']
     },
     tiktok: {
-      video_corto: ['Rutina que hago en el gym en 45 minutos','Lo que como antes y después de entrenar','Rating de dietas populares (keto, ayuno, vegana)','Motivación para ir al gym cuando no quieres','El error que te impide ver resultados en el gym','Cómo hacer ejercicio si odias el gym','Transformación de 30 días (honesta)','Por qué no estás perdiendo peso aunque te cuidas','Los mejores ejercicios para hacer en casa','POV: tu primer día en el gym']
+      video_corto: ['Rutina que hago en el gym en 45 minutos','Lo que como antes y después de entrenar','Rating de dietas populares (keto, ayuno, vegana)','Motivación para ir al gym cuando no quieres','El error que te impide ver resultados en el gym','Cómo hacer ejercicio si odias el gym','Transformación de 30 días (honesta)','Por qué no estás perdiendo peso aunque te cuidas','Los mejores ejercicios para hacer en casa','POV: tu primer día en el gym'],
+      carrusel: ['Los 5 errores que cometes en el gym','Rutina exprés de 15 minutos','Lo que como en un día fit','Ejercicios para cada parte del cuerpo','Guía de suplementos para principiantes'],
+      foto: ['Progreso semanal','Meal prep del domingo','Mi look de gym favorito','Post-entreno feliz','El ejercicio más difícil que domino'],
+      video_largo: ['Entreno contigo: sesión completa de 45 min','Mi dieta durante una semana (todo honesto)','Transformación real sin filtros ni edición','Cómo empezar a entrenar desde cero','Los mejores ejercicios para cada objetivo'],
+      texto: ['POV: llevas 3 semanas sin ver resultados','Señales de que estás progresando (aunque no lo notes)','El error número 1 de los principiantes en el gym','Por qué la constancia importa más que la perfección','Fitness tip: la regla del 80/20 en nutrición'],
+      stories: ['¿Qué entrenaste hoy?','Encuesta: ¿proteína antes o después?','Mi comida post-entreno de hoy','Vota: ¿cuál rutina quieres que grabe?','Tip de motivación del día']
+    },
+    youtube: {
+      video_largo: ['Entrena conmigo: rutina completa de pecho y espalda','Mi dieta durante 30 días: resultados honestos','Guía definitiva para principiantes en el gym','Los 10 ejercicios más efectivos según la ciencia','Transformación de 6 meses: sin filtros, sin excusas'],
+      video_corto: ['Ejercicio del día en 60 segundos','Tip de nutrición express','Error común en el gym','Motivación de lunes','El mejor ejercicio para glúteos']
+    },
+    linkedin: {
+      texto: ['Cómo el ejercicio mejoró mi productividad laboral','Lo que el fitness me enseñó sobre disciplina profesional','Salud mental y ejercicio: la conexión que los líderes ignoran','Por qué las empresas deberían invertir en el bienestar físico de sus equipos','Hábitos de fitness de los ejecutivos más exitosos'],
+      carrusel: ['5 hábitos de bienestar para profesionales ocupados','Cómo mantener una rutina de ejercicio con agenda llena','Beneficios del ejercicio en el rendimiento laboral','Wellness corporativo: por qué importa en 2025','Cómo construir hábitos saludables que duren']
+    },
+    twitter: {
+      texto: ['Hilo: lo que cambió en mi vida cuando empecé a entrenar todos los días','Thread: guía de nutrición básica para personas ocupadas','Lista: apps de fitness que realmente uso y recomiendo','Mito desmentido: no necesitas 2 horas diarias para estar en forma','Consejo del día: el mejor ejercicio es el que sí haces']
     }
   },
   gastronomia: {
     instagram: {
       video_corto: ['Receta de 5 ingredientes que impresiona a cualquiera','Lo que como en un día (comida latina real)','Hack de cocina que me cambió la vida','Receta viral de TikTok: ¿vale la pena?','Cómo cocinar arroz perfecto siempre','3 salsas que hago con todo','La receta de mi abuela que nunca falla','Comida semanal en menos de 2 horas','Cómo hacer pasta sin que se pegue','Lo que come un chef en casa (sin cámaras)'],
-      carrusel: ['10 recetas rápidas para la semana laboral','Cómo hacer meal prep en 2 horas','Los condimentos que siempre debes tener','Guía de sustitutos para recetas (sin ingredientes raros)','Recetas con sobras para no desperdiciar nada','Las 5 técnicas de cocina más útiles','Cómo hacer que cualquier comida sepa mejor','Guía de especias del mundo y cómo usarlas','Recetas económicas que no parecen económicas','Menú semanal vegetariano fácil']
+      carrusel: ['10 recetas rápidas para la semana laboral','Cómo hacer meal prep en 2 horas','Los condimentos que siempre debes tener','Guía de sustitutos para recetas (sin ingredientes raros)','Recetas con sobras para no desperdiciar nada','Las 5 técnicas de cocina más útiles','Cómo hacer que cualquier comida sepa mejor','Guía de especias del mundo y cómo usarlas','Recetas económicas que no parecen económicas','Menú semanal vegetariano fácil'],
+      foto: ['El plato que más orgulloso me tiene esta semana','Mise en place de hoy','Mi ingrediente secreto favorito','El desayuno que preparo cada mañana','Antes y después: el plato que perfeccioné'],
+      video_largo: ['Cocino 20 recetas en un domingo (meal prep semanal completo)','Curso básico de cocina para principiantes absolutos','Los secretos de los chefs que puedes aplicar en casa','Cómo cocinar saludable sin gastar mucho dinero','Una semana cocinando recetas de distintos países'],
+      texto: ['Hilo: los trucos de cocina que ojalá supiera antes','Thread: cómo hacer que cualquier receta simple sepa increíble','Lista: condimentos que transforman cualquier plato','Reflexión: por qué cocinar en casa cambió mi salud y mi bolsillo','Tip del día: el error más común al cocinar pollo'],
+      stories: ['¿Qué estás cocinando hoy?','Encuesta: ¿dulce o salado?','Adivina el ingrediente secreto','¿Qué receta quieres que haga esta semana?','Lo que sobró del meal prep']
     },
     tiktok: {
-      video_corto: ['Receta de TikTok que todos están haciendo','Lo que como cuando no quiero cocinar (honesto)','Hack de cocina que no puedo creer no conocía antes','Rating: probo recetas de 1 estrella vs. 5 estrellas','Cómo hacer tortillas perfectas (el secreto)','El platillo que hago cuando no hay nada en casa','Receta de mi abuela en 60 segundos','Por qué tu arroz siempre queda mal','Cómo cortar cebolla sin llorar (funciona)','Lo que pido en restaurantes vs. lo que llega']
+      video_corto: ['Receta de TikTok que todos están haciendo','Lo que como cuando no quiero cocinar (honesto)','Hack de cocina que no puedo creer no conocía antes','Rating: probo recetas de 1 estrella vs. 5 estrellas','Cómo hacer tortillas perfectas (el secreto)','El platillo que hago cuando no hay nada en casa','Receta de mi abuela en 60 segundos','Por qué tu arroz siempre queda mal','Cómo cortar cebolla sin llorar (funciona)','Lo que pido en restaurantes vs. lo que llega'],
+      carrusel: ['5 recetas con pollo que no son aburridas','Meal prep en 1 hora para toda la semana','Salsas que cambian cualquier plato','Recetas de menos de $10','Desayunos rápidos y ricos para la semana'],
+      foto: ['La receta más pedida de mi perfil','Mi ingrediente favorito del momento','Plato perfecto para impresionar en 20 min','Antes y después: cómo emplatamos','El truco visual que hace tu plato más apetitoso'],
+      video_largo: ['Cocino todo lo que hay en mi refrigerador','Un día en la cocina de un chef casero','Recetas de todo el mundo que puedes hacer en casa','Guía de cocina para solteros y principiantes','Probando recetas virales de cada país de Latam'],
+      texto: ['POV: abres el refrigerador y no sabes qué cocinar','El truco que los chefs no quieren que sepas','Por qué tu sazón no es igual al de tu abuela (y cómo arreglarlo)','Ingrediente subestimado que transforma cualquier receta','La regla de oro de la cocina que nadie te enseña'],
+      stories: ['¿Qué cocinas cuando no tienes ganas?','Encuesta: ¿salado o picante?','Adivina este plato','Mi snack favorito del momento','Receta exprés del día']
+    },
+    youtube: {
+      video_largo: ['Cocino la comida de toda la semana en un solo día','Los secretos de la cocina latina que debes conocer','Aprende a cocinar 10 platillos básicos desde cero','Lo que aprendí trabajando en un restaurante profesional','Recetas de todo el mundo con ingredientes de supermercado'],
+      video_corto: ['Receta de 5 minutos que salva el día','El truco para que el arroz quede perfecto','Sazón secreto revelado','Hack de cocina del día','La receta más fácil de tu vida']
+    },
+    linkedin: {
+      texto: ['Lo que la gastronomía me enseñó sobre liderazgo y trabajo en equipo','Emprender en el sector food & beverage: lo que nadie te dice','Cómo la cultura gastronómica está cambiando el consumo en Latinoamérica','Del restaurante a la startup: lecciones de la industria culinaria','Tendencias gastronómicas que están redefiniendo los negocios en 2025'],
+      carrusel: ['Cómo construir un negocio de comida exitoso','El modelo de negocio de los dark kitchens explicado','Marketing digital para restaurantes y negocios de comida','Emprender en gastronomía: lo que debes saber antes de empezar','Tendencias en la industria restaurantera para 2025']
+    },
+    twitter: {
+      texto: ['Hilo: por qué los restaurantes fracasan en el primer año (y cómo evitarlo)','Thread: los mejores platillos callejeros de Latinoamérica rankeados','Lista: condimentos esenciales que todo cocinero debería tener','Debate: ¿la cocina de abuela o los restaurantes de moda?','Tip del día: el truco más simple para mejorar cualquier guiso']
     }
   },
   tecnologia: {
     instagram: {
       video_corto: ['5 extensiones de Chrome que uso todos los días','La IA que está reemplazando mi trabajo (de verdad)','Cómo uso ChatGPT para ser más productivo','El setup de trabajo que me cambió la vida','Apps que borré de mi celular (y por qué)','Cómo aprender programación gratis en 2025','Lo que la IA no puede hacer (todavía)','3 herramientas de productividad que uso a diario','Cómo proteger tu privacidad online en 5 pasos','El gadget que compré y cambió mi rutina'],
-      carrusel: ['Guía completa de ChatGPT para principiantes','Las 10 mejores apps de productividad de 2025','Cómo empezar a programar desde cero (roadmap)','Herramientas de IA para cada tipo de trabajo','Cómo montar tu home office perfecto','Los mejores cursos online gratuitos de tecnología','Glosario de IA: términos que necesitas saber','Cómo hacer un backup completo de tu vida digital','Setup de trabajo remoto esencial por menos de $500','Tendencias tecnológicas que van a cambiar tu trabajo']
+      carrusel: ['Las 10 mejores apps de productividad de 2025','Guía completa de ChatGPT para principiantes','Cómo empezar a programar desde cero (roadmap)','Herramientas de IA para cada tipo de trabajo','Cómo montar tu home office perfecto','Los mejores cursos online gratuitos de tecnología','Setup de trabajo remoto esencial por menos de $500','Tendencias tecnológicas que van a cambiar tu trabajo','Glosario de IA: términos que necesitas saber','Cómo hacer un backup completo de tu vida digital'],
+      foto: ['Mi setup de trabajo de hoy','El gadget que más uso en el día','App abierta en mi pantalla ahora mismo','Antes y después de ordenar mi escritorio digital','La herramienta que siempre tengo abierta'],
+      video_largo: ['Construí una app sin saber programar (con IA)','Cómo automaticé el 80% de mi trabajo con herramientas gratis','Revisión completa de los mejores gadgets del año','Guía definitiva: cómo aprender programación desde cero','Un día en la vida de un desarrollador remoto'],
+      texto: ['Hilo: las herramientas de IA que uso cada día en mi trabajo','Thread: cómo aprendí a programar en 6 meses sin pagar un peso','Lista: recursos gratis de tecnología que ojalá hubiera conocido antes','Reflexión: lo que la IA cambiará en los próximos 2 años','Debate: ¿la IA nos va a quitar el trabajo?'],
+      stories: ['¿Usas IA en tu trabajo? Sí o no','Tu app más usada del día (comparte)','Tip tech del día','Encuesta: ¿Mac, Windows o Linux?','Pregúntame sobre tecnología y productividad']
     },
     tiktok: {
-      video_corto: ['Esta IA hace mi trabajo en 10 segundos','Hack de productividad que no puedo creer no conocía','La app que todos deberían tener en su celular','Por qué borré redes sociales por 30 días','Lo que pasa cuando le das acceso total a la IA','Pruebo el gadget más viral de Amazon','Cómo un programador usa ChatGPT (honesto)','El truco de Excel que no conocías','Cosas que puedes hacer con IA gratis','Lo que nadie te dice sobre aprender a programar']
+      video_corto: ['Esta IA hace mi trabajo en 10 segundos','Hack de productividad que no puedo creer no conocía','La app que todos deberían tener en su celular','Por qué borré redes sociales por 30 días','Lo que pasa cuando le das acceso total a la IA','Pruebo el gadget más viral de Amazon','Cómo un programador usa ChatGPT (honesto)','El truco de Excel que no conocías','Cosas que puedes hacer con IA gratis','Lo que nadie te dice sobre aprender a programar'],
+      carrusel: ['Apps que debes tener en 2025','Atajos de teclado que te ahorran horas','IA tools para cada tipo de trabajo','Cómo organizar tu vida digital','El setup perfecto para trabajar desde casa'],
+      foto: ['Mi setup actual','La app que más uso','Pantalla de trabajo de hoy','Gadget favorito del momento','Escritorio digital organizado vs. desastre'],
+      video_largo: ['Probé todas las IAs del mercado: esto encontré','Construí un negocio online solo con herramientas gratis','Cómo trabajo desde casa siendo desarrollador','Aprendí a programar en 30 días — esto pasó','Mi setup de trabajo completo: todo lo que uso'],
+      texto: ['POV: tu jefe te pide hacer algo que la IA hace en 2 segundos','Señales de que eres adicto a la tecnología','El app que cambió cómo trabajo para siempre','Por qué sigo usando papel y lápiz aunque soy dev','Tech tip del día: el comando que nadie conoce'],
+      stories: ['¿Usas ChatGPT en tu trabajo?','Tu herramienta favorita de productividad','Encuesta: ¿cuántas apps tienes instaladas?','Gadget que quieres que reseñe','Tip tech exprés del día']
+    },
+    youtube: {
+      video_largo: ['Probé todas las herramientas de IA del mercado (revisión honesta)','Cómo construí una app desde cero sin saber programar','Mi setup de trabajo completo: todo lo que uso y por qué','Guía definitiva para aprender programación desde cero en 2025','Un año usando solo herramientas de IA: lo que aprendí'],
+      video_corto: ['La herramienta de IA más útil del mes','Setup tour: mi escritorio en 60 seg','Tip de programación del día','El gadget que más recomiendo','Truco de productividad en 30 segundos']
+    },
+    linkedin: {
+      texto: ['El impacto real de la IA en el mercado laboral: lo que los datos dicen','Cómo la automatización está redefiniendo los roles profesionales','Lo que los desarrolladores necesitan saber sobre IA en 2025','Por qué las empresas que no adopten IA van a quedarse atrás','Habilidades tech que todo profesional no técnico debería tener'],
+      carrusel: ['Las herramientas de IA más útiles por industria','Cómo preparar tu carrera para el futuro tech','Skills digitales imprescindibles en 2025','Cómo la IA está cambiando cada industria','Transformación digital: por dónde empezar']
+    },
+    twitter: {
+      texto: ['Hilo: las herramientas de IA que más me han ahorrado tiempo este mes','Thread: aprendí a programar con IA — esto fue lo que encontré','Lista: recursos gratuitos de programación que recomiendo sin dudar','Debate: ¿la IA es el fin de los empleos creativos?','Tip del día: el prompt que me ahorra 2 horas de trabajo']
     }
   },
   finanzas: {
     instagram: {
       video_corto: ['Cuánto dinero necesitas para retirarte (calculadora)','El error financiero que cometí a los 20 años','Cómo empezar a invertir con $100 al mes','Lo que nadie te enseña sobre el dinero en la escuela','Por qué el 90% no puede ahorrar (y la solución)','3 hábitos de personas ricas que puedes copiar','Cómo salí de deudas en 18 meses','Lo que hago con mi dinero cada mes (honesto)','Diferencia entre activo y pasivo en la vida real','Cómo negociar un aumento de sueldo sin miedo'],
-      carrusel: ['Guía para empezar a invertir desde cero','Los 10 errores financieros más comunes antes de los 30','Cómo hacer un presupuesto que realmente funcione','Tipos de inversión y cuál es mejor para ti','Cómo salir de deudas con el método bola de nieve','Las reglas de oro del dinero personal','Cuánto deberías tener ahorrado según tu edad','Glosario de inversiones para principiantes','El plan financiero de 5 pasos para empezar hoy','Cómo construir un fondo de emergencia']
+      carrusel: ['Guía para empezar a invertir desde cero','Los 10 errores financieros más comunes antes de los 30','Cómo hacer un presupuesto que realmente funcione','Tipos de inversión y cuál es mejor para ti','Cómo salir de deudas con el método bola de nieve','Las reglas de oro del dinero personal','Cuánto deberías tener ahorrado según tu edad','Glosario de inversiones para principiantes','El plan financiero de 5 pasos para empezar hoy','Cómo construir un fondo de emergencia'],
+      foto: ['El libro de finanzas que cambió mi forma de ver el dinero','Mi tracker de gastos del mes','El setup con el que manejo mis finanzas','Cita sobre dinero que me marcó','Primer dividendo recibido (screenshot sin números)'],
+      video_largo: ['Cómo salí de $15,000 de deuda en 2 años','Guía completa de inversión para principiantes en Latinoamérica','Mi portafolio de inversiones revelado: qué tengo y por qué','Cómo construir patrimonio con sueldo promedio','Los errores financieros que te van a costar caro a los 30'],
+      texto: ['Hilo: lo que ojalá supiera sobre dinero a los 22 años','Thread: cómo invertí mis primeros $1,000 y lo que aprendí','Lista: libros de finanzas personales que cambiaron mi vida','Reflexión: la diferencia entre ganar dinero y construir riqueza','Consejo del día: por qué debes separar el ahorro antes de gastar'],
+      stories: ['¿Tienes fondo de emergencia? Sí o no','¿Inviertes actualmente? Encuesta','Tu mayor miedo financiero (vota)','Tip de ahorro del día','Pregúntame sobre finanzas personales']
     },
     tiktok: {
-      video_corto: ['Cuánto cuesta en realidad vivir en [ciudad]','Lo que pasa si inviertes $100 al mes por 30 años','El truco del 50/30/20 para manejar tu dinero','Por qué tu banco no quiere que sepas esto','Cómo negocie mi sueldo (y lo subí 40%)','Lo que haría diferente con el dinero a los 20','La diferencia entre rico y con dinero','Cuánto dinero necesitas para no depender de un trabajo','El gasto que más dinero me estaba robando','Esto pasa cuando gastas más de lo que ganas (honesto)']
+      video_corto: ['Cuánto cuesta en realidad vivir en [ciudad]','Lo que pasa si inviertes $100 al mes por 30 años','El truco del 50/30/20 para manejar tu dinero','Por qué tu banco no quiere que sepas esto','Cómo negocié mi sueldo (y lo subí 40%)','Lo que haría diferente con el dinero a los 20','La diferencia entre rico y con dinero','Cuánto dinero necesitas para no depender de un trabajo','El gasto que más dinero me estaba robando','Esto pasa cuando gastas más de lo que ganas (honesto)'],
+      carrusel: ['Errores financieros antes de los 30','Cómo hacer tu primer presupuesto','Inversiones para principiantes en Latam','Deudas: cómo salir más rápido','Hábitos de personas que construyen riqueza'],
+      foto: ['Mi tracker financiero del mes','El libro que cambió mi relación con el dinero','Primer dividendo: cómo se siente','Cita favorita sobre finanzas','Gráfica de mis gastos este mes (sin datos personales)'],
+      video_largo: ['Todo lo que sé sobre invertir en Latinoamérica','Cómo manejar el dinero cuando ganas poco','Mi experiencia con deudas: cómo salí','Guía de inversión paso a paso para empezar hoy','Lo que los ricos hacen con su dinero que los demás no saben'],
+      texto: ['POV: eres joven y nadie te enseñó sobre dinero','Señales de que tienes una relación tóxica con el dinero','El gasto hormiga que te está vaciando la cuenta','Por qué el crédito no es el enemigo (si lo usas bien)','Finanzas tip: la regla que los millonarios usan para ahorrar'],
+      stories: ['¿Ahorras cada mes? Encuesta','Tu gasto más innecesario de la semana','Tip financiero del día','¿Inviertes o no? ¿Por qué?','Pregúntame sobre ahorro e inversión']
+    },
+    youtube: {
+      video_largo: ['Cómo invertir en bolsa desde Latinoamérica: guía completa','Todo lo que necesitas saber sobre finanzas personales en 2025','Mi estrategia de inversión revelada: qué hago con mi dinero','Cómo salir de deudas rápido con cualquier salario','Los errores financieros que te van a costar la jubilación'],
+      video_corto: ['El truco financiero más simple que nadie usa','Inversión del mes: qué hice','Error financiero del día','Cuánto necesitas ahorrar para jubilarte','El gasto que más dinero te roba sin que lo notes']
+    },
+    linkedin: {
+      texto: ['La educación financiera que las empresas deberían dar a sus empleados','Libertad financiera vs. seguridad laboral: el dilema de los millennials','Lo que los CFOs hacen diferente con su dinero personal','Cómo la inteligencia financiera se convierte en ventaja profesional','Por qué las finanzas personales son la habilidad más subestimada del siglo XXI'],
+      carrusel: ['Beneficios financieros que debes negociar en tu trabajo','Cómo planear tu retiro desde tu primer empleo','Educación financiera para profesionales jóvenes','Lo que tu empleador no te dice sobre tu compensación','Hábitos financieros de los ejecutivos más exitosos']
+    },
+    twitter: {
+      texto: ['Hilo: lo que aprendí perdiendo dinero en inversiones (lecciones caras)','Thread: cómo construí mi fondo de emergencia desde cero','Lista: recursos gratuitos de educación financiera que realmente sirven','Debate: ¿mejor pagar deuda o invertir primero?','Tip del día: la regla del 1% para mejorar tus finanzas']
     }
   },
   viajes: {
     instagram: {
       video_corto: ['Lo que nadie te dice antes de ir a [destino]','Cómo viajé 2 semanas con solo carry-on','El spot que no aparece en Google Maps en [ciudad]','Comida que debes probar sí o sí en [destino]','Cuánto gasté realmente en mi viaje a [destino]','Cómo conseguir vuelos baratos (mis trucos)','Lo malo de [destino] que nadie muestra','Un día en [ciudad] con poco presupuesto','Los mejores hostels que he visitado','Lo que llevaría de vuelta en mi maleta'],
-      carrusel: ['Guía completa para viajar a [destino] por primera vez','Cómo hacer el itinerario de viaje perfecto','Los mejores destinos económicos de Latinoamérica','Checklist de viaje: lo que nunca olvido empacar','Cómo ahorrar para viajar con sueldo normal','Los mejores apps para viajeros (todas gratis)','Cómo hacer amigos viajando solo','Destinos para viajar solo de forma segura','Cómo extender tu visado/estancia legalmente','Los errores más comunes al planear un viaje']
+      carrusel: ['Guía completa para viajar a [destino] por primera vez','Cómo hacer el itinerario de viaje perfecto','Los mejores destinos económicos de Latinoamérica','Checklist de viaje: lo que nunca olvido empacar','Cómo ahorrar para viajar con sueldo normal','Los mejores apps para viajeros (todas gratis)','Cómo hacer amigos viajando solo','Destinos para viajar solo de forma segura','Cómo extender tu visado/estancia legalmente','Los errores más comunes al planear un viaje'],
+      foto: ['Vista desde mi hotel favorito hasta ahora','El plato que más recuerdo de [destino]','El momento que más me impactó en este viaje','Mi maleta lista para el siguiente destino','Atardecer en [ciudad]: no hay filtro'],
+      video_largo: ['Mi viaje completo a [destino]: itinerario, costos y tips','Cómo viajé 3 meses sin trabajo fijo: la verdad','Los destinos más infravalorados de Latinoamérica','Viaje en solitario a [país]: todo lo que necesitas saber','Cómo financio mis viajes: mis estrategias reales'],
+      texto: ['Hilo: todo lo que aprendí viajando solo por primera vez','Thread: los destinos más baratos de Latam rankeados por experiencia','Lista: apps de viaje que no pueden faltar en tu celular','Reflexión: por qué viajar cambió mi forma de ver el mundo','Consejo del día: el error más caro que puedes cometer al planear un viaje'],
+      stories: ['¿Cuál es tu destino soñado?','Encuesta: ¿playa o montaña?','El país que más quiero visitar (vota)','Tip de viaje del día','Pregúntame sobre [destino]']
     },
     tiktok: {
-      video_corto: ['POV: llegué a [destino] sin hablar el idioma','Lo que costó mi viaje de 7 días a [destino]','El hostel más viral de [ciudad] (honesto)','Cosas que NO hacer en [destino]','Cómo me movo por [ciudad] sin carro','El lugar que casi nadie visita en [país]','Cuánto dinero necesitas por día en [destino]','Rating: comparando los mejores destinos de Latam','Lo que me sorprendió de [país] al llegar','Viajando solo a [destino] por primera vez']
+      video_corto: ['POV: llegué a [destino] sin hablar el idioma','Lo que costó mi viaje de 7 días a [destino]','El hostel más viral de [ciudad] (honesto)','Cosas que NO hacer en [destino]','Cómo me muevo por [ciudad] sin carro','El lugar que casi nadie visita en [país]','Cuánto dinero necesitas por día en [destino]','Rating: comparando los mejores destinos de Latam','Lo que me sorprendió de [país] al llegar','Viajando solo a [destino] por primera vez'],
+      carrusel: ['Packing list para [tipo de viaje]','Los mejores destinos baratos del año','Cómo organizar un viaje en menos de 1 semana','Lo que no te dicen en los tours turísticos','Apps esenciales para viajeros'],
+      foto: ['Mi lugar favorito de este viaje','La comida más rara que probé','Vista que no esperaba encontrar','El hostel más bonito que he visto','Antes del vuelo: lista para explorar'],
+      video_largo: ['Viaje completo a [destino] con presupuesto real','Cómo trabajo mientras viajo (nomada digital)','Los mejores y peores destinos que he visitado','Cómo planear un viaje de mochilero desde cero','Todo lo que necesitas saber antes de viajar solo'],
+      texto: ['POV: llevas 6 meses planeando el viaje y algo sale mal','Señales de que ya necesitas unas vacaciones','El consejo de viaje que más me ha servido','Por qué los viajes más cortos son a veces los mejores','Travel tip: la app que me ahorra dinero en cada viaje'],
+      stories: ['¿Dónde estás viajando próximamente?','Tu destino favorito hasta ahora (vota)','Tip de viaje del día','Adivina en qué país estoy','¿Viajero solitario o con compañía?']
+    },
+    youtube: {
+      video_largo: ['Viajé 30 días con $1,500: todo lo que hice','Los países más baratos para vivir como nómada digital','Mi viaje completo a [país]: itinerario día a día y costos reales','Cómo conseguir vuelos baratos siempre: mis estrategias','Los destinos más increíbles que he visitado rankeados'],
+      video_corto: ['Tip de viaje en 60 segundos','El error que casi arruina mi viaje','Destino del mes: lo que debes saber','Cómo ahorrar en [destino]','La vista más impresionante que he visto']
+    },
+    linkedin: {
+      texto: ['Lo que los viajes me enseñaron sobre liderazgo y adaptabilidad','Nómada digital: la nueva forma de trabajar que está cambiando empresas','Por qué las empresas deberían incentivar que sus empleados viajen','Inteligencia cultural: la habilidad que los viajes desarrollan mejor','Cómo el trabajo remoto está redefiniendo la industria del turismo'],
+      carrusel: ['Cómo ser nómada digital sin sacrificar tu carrera','Beneficios del trabajo remoto para empresas y empleados','Cómo construir un equipo global que funcione','Destinos favoritos para trabajar en remoto en 2025','La nueva economía del turismo de negocios']
+    },
+    twitter: {
+      texto: ['Hilo: cómo me convertí en nómada digital (el proceso real)','Thread: los mejores destinos para trabajar remoto rankeados','Lista: apps que no pueden faltar si viajas constantemente','Debate: ¿vale más viajar joven o cuando tienes más dinero?','Tip del día: la estrategia para encontrar vuelos baratos que siempre funciona']
     }
   },
   educacion: {
     instagram: {
       video_corto: ['Cómo aprendí [habilidad] en 30 días','El método de estudio que me cambió la vida','Libros que me formaron como profesional','Cómo tomar notas como un estudiante elite','Por qué la educación tradicional ya no alcanza','3 cursos online que vale la pena pagar','Cómo aprender cualquier cosa con YouTube gratis','Lo que nadie te dice antes de ir a la universidad','Cómo estudiar cuando no tienes motivación','El hábito de lectura que transformó mi carrera'],
-      carrusel: ['Roadmap para aprender [habilidad] desde cero','Los mejores recursos gratuitos para aprender [tema]','Cómo construir un portfolio sin experiencia','La guía de certificaciones que valen la pena en 2025','Cómo aprender inglés sin tomar clases','Los 10 libros que recomiendo para [profesión]','Cómo crear un plan de aprendizaje efectivo','Diferencia entre estudiar y aprender (con estrategias)','Las plataformas de educación online más valoradas','Cómo conseguir trabajo sin título universitario']
+      carrusel: ['Roadmap para aprender [habilidad] desde cero','Los mejores recursos gratuitos para aprender [tema]','Cómo construir un portfolio sin experiencia','La guía de certificaciones que valen la pena en 2025','Cómo aprender inglés sin tomar clases','Los 10 libros que recomiendo para [profesión]','Cómo crear un plan de aprendizaje efectivo','Diferencia entre estudiar y aprender (con estrategias)','Las plataformas de educación online más valoradas','Cómo conseguir trabajo sin título universitario'],
+      foto: ['El libro que estoy leyendo esta semana','Mi setup de estudio/trabajo','La nota más importante de mi cuaderno','Certificado que me tomó meses conseguir','El momento que más aprendí este año'],
+      video_largo: ['Cómo aprendí inglés de forma autodidacta sin pagar cursos','Guía completa para estudiar online y conseguir empleo','Los mejores recursos gratuitos para aprender programación','Cómo construí mi carrera sin ir a la universidad','Un año de aprendizaje autodidacta: lo que funcionó y lo que no'],
+      texto: ['Hilo: los mejores recursos gratuitos para aprender cualquier cosa','Thread: cómo diseñé mi propio plan de estudios autodidacta','Lista: plataformas de cursos online comparadas honestamente','Reflexión: lo que la universidad no te puede enseñar','Consejo del día: la técnica de estudio más efectiva según la neurociencia'],
+      stories: ['¿Qué estás aprendiendo ahora mismo?','Encuesta: ¿universidad o autodidacta?','Tip de estudio del día','Tu libro favorito del año (vota)','Pregúntame sobre aprendizaje']
     },
     tiktok: {
-      video_corto: ['Aprendí [habilidad] en 30 días — así quedé','El video de YouTube que me cambió la carrera','Cómo estudiar sin procrastinar (técnica que funciona)','Rating de plataformas de cursos online (honesto)','Lo que aprendí pagando vs. aprendiendo gratis','El método de lectura que dobla tu velocidad','Por qué los mejores recursos son gratis','Cómo conseguí mi primer trabajo sin título','La habilidad más valorada del mercado laboral','Herramientas de IA para estudiar más rápido']
+      video_corto: ['Aprendí [habilidad] en 30 días — así quedé','El video de YouTube que me cambió la carrera','Cómo estudiar sin procrastinar (técnica que funciona)','Rating de plataformas de cursos online (honesto)','Lo que aprendí pagando vs. aprendiendo gratis','El método de lectura que dobla tu velocidad','Por qué los mejores recursos son gratis','Cómo conseguí mi primer trabajo sin título','La habilidad más valorada del mercado laboral','Herramientas de IA para estudiar más rápido'],
+      carrusel: ['Apps para aprender idiomas (rankeadas)','Libros que debes leer antes de los 30','Cursos online gratuitos que valen la pena','Técnicas de estudio que sí funcionan','Cómo crear hábitos de lectura que duren'],
+      foto: ['Mi stack de libros del mes','Setup de estudio de hoy','La página que cambió mi perspectiva','Certificado conseguido (logro desbloqueado)','Mi método de notas en acción'],
+      video_largo: ['Cómo estudiar y trabajar al mismo tiempo sin morir','Los mejores cursos gratuitos del año','Aprender inglés desde cero: mi método completo','Guía para cambiar de carrera sin experiencia previa','Un mes aprendiendo [habilidad]: resultados reales'],
+      texto: ['POV: llevas años sin aprender algo nuevo','Señales de que eres un aprendiz de por vida','El hábito de estudio que más ha cambiado mi vida','Por qué leer 10 páginas al día es mejor que no leer nada','Educación tip: la regla del espacio repetido para memorizar mejor'],
+      stories: ['¿Cuánto lees al mes?','Tu plataforma de cursos favorita','Tip de aprendizaje del día','Encuesta: ¿audiolibros o físico?','Lo que quieres aprender este año']
+    },
+    youtube: {
+      video_largo: ['Aprendí a programar en 6 meses: mi método completo','Los mejores recursos educativos gratuitos de internet','Cómo estudiar de forma más inteligente según la ciencia','Guía para aprender inglés de 0 a conversacional','Mi rutina de aprendizaje autodidacta: todo lo que hago'],
+      video_corto: ['Técnica de estudio que duplica tu retención','El recurso gratuito más subestimado','Tip de productividad para estudiantes','Cómo memorizar cualquier cosa','El error más común al estudiar']
+    },
+    linkedin: {
+      texto: ['Por qué el aprendizaje continuo es la ventaja competitiva del siglo XXI','Lo que el sistema educativo no prepara para el mercado laboral actual','Cómo construí mis habilidades más valiosas de forma autodidacta','El futuro del trabajo y las habilidades que necesitarás','Por qué invierto el 10% de mis ingresos en educación personal'],
+      carrusel: ['Las habilidades más demandadas en 2025 por industria','Cómo crear un plan de desarrollo profesional','Certificaciones que realmente importan en el mercado laboral','Cómo el aprendizaje continuo impacta tu salario','Plataformas de aprendizaje para profesionales que funcionan']
+    },
+    twitter: {
+      texto: ['Hilo: los recursos de aprendizaje gratuitos que más he aprovechado','Thread: cómo diseñé mi propio MBA autodidacta','Lista: libros que todo profesional debería leer antes de los 30','Debate: ¿vale la pena un posgrado en 2025?','Tip del día: la técnica Feynman para aprender cualquier cosa en profundidad']
     }
   },
   arte: {
     instagram: {
       video_corto: ['Mi proceso creativo de inicio a fin','Lo que nadie te dice sobre vivir del arte','Cómo construí mi portafolio desde cero','Técnica que cambió mi trabajo para siempre','Mis herramientas de trabajo (setup completo)','Cómo consigo clientes como freelance creativo','Lo malo de ser artista/diseñador (honesto)','Evolución de mi trabajo en 3 años','Cómo poner precio a tu trabajo creativo','El proyecto del que más orgulloso estoy'],
-      carrusel: ['Proceso completo de [tipo de proyecto] paso a paso','Las mejores herramientas para [disciplina] en 2025','Cómo crear un portafolio que consiga clientes','Los errores más comunes en diseño/ilustración','Cómo encontrar tu estilo artístico propio','Recursos gratuitos para artistas y diseñadores','Cómo cobrar lo que vales como creativo','Inspiración y referencias para [estilo artístico]','Cómo publicar tu trabajo en redes sin vergüenza','Los tipos de clientes creativos (y cómo trabajar con cada uno)']
+      carrusel: ['Proceso completo de [tipo de proyecto] paso a paso','Las mejores herramientas para [disciplina] en 2025','Cómo crear un portafolio que consiga clientes','Los errores más comunes en diseño/ilustración','Cómo encontrar tu estilo artístico propio','Recursos gratuitos para artistas y diseñadores','Cómo cobrar lo que vales como creativo','Inspiración y referencias para [estilo artístico]','Cómo publicar tu trabajo en redes sin vergüenza','Los tipos de clientes creativos (y cómo trabajar con cada uno)'],
+      foto: ['El proyecto en el que estoy trabajando ahora','Mi espacio de trabajo y herramientas','Detalle de mi proceso más reciente','Antes y después de un proyecto terminado','La pieza de la que más orgulloso estoy'],
+      video_largo: ['Mi proceso creativo completo de inicio a entrega','Cómo construí una carrera freelance en diseño desde cero','Los mejores recursos para aprender diseño en 2025','Revisión honesta de herramientas: Figma, Adobe, Procreate','Un año como diseñador freelance: cifras y aprendizajes reales'],
+      texto: ['Hilo: lo que nadie te dice sobre ser diseñador freelance','Thread: cómo construí mi portafolio sin experiencia previa','Lista: recursos gratuitos para diseñadores y artistas que uso cada día','Reflexión: por qué el arte más honesto siempre conecta más','Consejo del día: cómo recibir crítica constructiva sin perder motivación'],
+      stories: ['¿En qué proyecto estás trabajando?','Encuesta: ¿digital o tradicional?','Tip creativo del día','Vota: ¿cuál diseño prefieres?','Pregúntame sobre el proceso creativo']
     },
     tiktok: {
-      video_corto: ['Proceso de un proyecto completo en time-lapse','Cuánto cobro por un trabajo de diseño (honesto)','Lo que me pidió un cliente y lo que hice','Rating: arte generado por IA vs. arte humano','Errores que veo en portfolios de diseñadores nuevos','Cómo empecé a vender mi arte online','Mi día creativo (sin filtros)','La herramienta de diseño que uso más','Crítica constructiva a trabajos de diseño novato','Por qué algunos diseñadores cobran tanto']
+      video_corto: ['Proceso de un proyecto completo en time-lapse','Cuánto cobro por un trabajo de diseño (honesto)','Lo que me pidió un cliente y lo que hice','Rating: arte generado por IA vs. arte humano','Errores que veo en portfolios de diseñadores nuevos','Cómo empecé a vender mi arte online','Mi día creativo (sin filtros)','La herramienta de diseño que uso más','Crítica constructiva a trabajos de diseño novato','Por qué algunos diseñadores cobran tanto'],
+      carrusel: ['Herramientas de diseño para cada nivel','Tipografías que funcionan juntas','Paletas de colores para 2025','Errores de diseño que lo hacen ver amateur','Recursos gratuitos para aprender diseño'],
+      foto: ['Work in progress de hoy','Detalle de mi proyecto más reciente','Mi espacio creativo','Herramienta favorita en acción','Comparación: boceto vs. resultado final'],
+      video_largo: ['Mi proceso de diseño completo: de brief a entrega','Revisión de portafolios de diseño (crítica constructiva)','Cómo consigo clientes como diseñador freelance','Los mejores plugins y herramientas para diseñadores en 2025','Construí una marca completa en 24 horas'],
+      texto: ['POV: tu cliente quiere que "lo hagas pop"','Señales de que eres un diseñador que está creciendo','Lo que diferencia el buen diseño del diseño promedio','Por qué no debes trabajar gratis (aunque sea tu primer cliente)','Design tip: la regla que siempre aplico antes de entregar'],
+      stories: ['¿Cuál es tu herramienta favorita de diseño?','Vota: ¿cuál paleta de colores te gusta más?','Proceso del día en 15 seg','Tip creativo exprés','Encuesta: ¿freelance o agencia?']
+    },
+    youtube: {
+      video_largo: ['Mi proceso de diseño completo: de la idea al producto final','Cómo construí un portafolio de diseño que consigue clientes','Los mejores recursos gratuitos para aprender diseño en 2025','Revisión honesta: las mejores herramientas para diseñadores','Un año como diseñador freelance: todo lo que aprendí'],
+      video_corto: ['Tip de diseño del día','Proceso en time-lapse de 60 seg','La herramienta que más uso esta semana','Error de diseño común y cómo evitarlo','Recurso gratuito que debes conocer']
+    },
+    linkedin: {
+      texto: ['Diseño y negocios: por qué el diseño es una inversión, no un gasto','Lo que aprendí haciendo branding para 50+ empresas','Cómo el diseño impacta directamente las métricas de negocio','El ROI del buen diseño: casos reales con números','Por qué las empresas que invierten en diseño crecen más rápido'],
+      carrusel: ['Cómo el diseño mejora la conversión en tu negocio','Principios de diseño que todo marketer debería conocer','Cómo briefear correctamente a un diseñador','El impacto del diseño en la experiencia del cliente','Cómo construir una identidad visual coherente']
+    },
+    twitter: {
+      texto: ['Hilo: lo que aprendí de mis primeros 100 clientes como diseñador','Thread: recursos gratuitos de diseño que uso cada semana','Lista: fuentes gratuitas que uso en todos mis proyectos','Debate: ¿IA vs. diseñador humano? Mi perspectiva honesta','Tip del día: el principio de diseño más subestimado']
     }
   },
   musica: {
     instagram: {
       video_corto: ['Cómo grabo música en casa con poco dinero','Lo que nadie te dice sobre la industria musical','Setup de producción con $500 o menos','Cómo conseguí mis primeras 1000 reproducciones','El proceso de hacer una canción en un día','Mis influencias musicales y cómo me formaron','Cómo distribuir tu música de forma independiente','Lo que aprendí de mi primer concierto','Cómo hacer beats desde cero (tutorial)','La realidad de ser músico independiente'],
-      carrusel: ['Guía para distribuir tu música como independiente','Los mejores DAWs gratuitos para empezar','Cómo promocionar tu música en Spotify','Setup de home studio para principiantes','Los derechos musicales que todo artista debe conocer','Cómo conseguir playlist placements','Estrategia de redes sociales para músicos','Las mejores plataformas para subir música gratis','Cómo hacer networking en la industria musical','Glosario de producción musical para principiantes']
+      carrusel: ['Guía para distribuir tu música como independiente','Los mejores DAWs gratuitos para empezar','Cómo promocionar tu música en Spotify','Setup de home studio para principiantes','Los derechos musicales que todo artista debe conocer','Cómo conseguir playlist placements','Estrategia de redes sociales para músicos','Las mejores plataformas para subir música gratis','Cómo hacer networking en la industria musical','Glosario de producción musical para principiantes'],
+      foto: ['Mi setup de producción de hoy','La canción en la que estoy trabajando (screenshot)','Mi instrumento favorito','El concierto que más recuerdo','Inspiración musical de esta semana'],
+      video_largo: ['Cómo construí mi carrera musical de forma independiente','Guía completa de producción musical en casa','Los secretos de la industria musical que nadie cuenta','Cómo crecer en Spotify siendo artista independiente','Un año de música independiente: lo que aprendí (con cifras)'],
+      texto: ['Hilo: lo que nadie te dice sobre la industria musical antes de entrar','Thread: cómo distribuí mi música y llegué a 100K reproducciones','Lista: plugins gratuitos que uso en todas mis producciones','Reflexión: por qué hacer música sin expectativas me liberó','Consejo del día: el error más común de los artistas nuevos en redes'],
+      stories: ['¿Estás escuchando música ahora? ¿Qué?','Encuesta: ¿líricas o melodía primero?','Tip musical del día','Vota: ¿cuál canción quieres que estrene?','Pregúntame sobre producción musical']
     },
     tiktok: {
-      video_corto: ['Hice una canción completa en 24 horas','Lo que gano con 100K reproducciones en Spotify','Mi proceso para hacer un beat desde cero','Cover de [canción viral] — versión propia','Rating de DAWs para producción musical','Cómo sonaba mi música hace 3 años vs. ahora','Lo que nadie te dice sobre Spotify','Proceso de mezcla y masterización en tiempo real','Reacción a mi primera canción publicada','El plugin de producción que cambió mi sonido']
+      video_corto: ['Hice una canción completa en 24 horas','Lo que gano con 100K reproducciones en Spotify','Mi proceso para hacer un beat desde cero','Cover de [canción viral] — versión propia','Rating de DAWs para producción musical','Cómo sonaba mi música hace 3 años vs. ahora','Lo que nadie te dice sobre Spotify','Proceso de mezcla y masterización en tiempo real','Reacción a mi primera canción publicada','El plugin de producción que cambió mi sonido'],
+      carrusel: ['Equipos de grabación para cada presupuesto','Plugins esenciales para productores','Cómo mejorar tu mezcla con estos trucos','Las plataformas que mejor pagan a artistas','Tips para crecer en Spotify'],
+      foto: ['Mi setup de estudio de hoy','La canción en la que estoy trabajando','Primer cheque de Spotify (sin números)','Mi instrumento favorito en acción','Inspiración del día para componer'],
+      video_largo: ['Produzco una canción completa desde cero en tiempo real','Mi proceso creativo: de la idea a la canción terminada','Cómo distribuyo y promuevo mi música sin sello discográfico','Los mejores recursos para aprender producción musical gratis','Un año como músico independiente: cifras reales y aprendizajes'],
+      texto: ['POV: llevas horas en el estudio y no sale nada','Señales de que tu producción musical está mejorando','El consejo que más me ha servido como músico independiente','Por qué los músicos independientes tienen más libertad que los firmados','Music tip: el proceso que uso para superar el bloqueo creativo'],
+      stories: ['¿Cuál género escuchas más?','Vota: ¿cuál instrumental prefieres?','Proceso del día en el estudio','Tip de producción exprés','¿Quieres escuchar un adelanto?']
+    },
+    youtube: {
+      video_largo: ['Cómo produje mi primer EP completo de forma independiente','Los secretos de la mezcla y masterización que nadie enseña','Cómo construir un home studio sin gastar una fortuna','Mi proceso creativo: cómo hago canciones desde cero','Un año como artista independiente: estadísticas y lecciones reales'],
+      video_corto: ['Proceso de beat en 60 segundos','El plugin que más uso esta semana','Tip de mezcla express','Cómo suena antes y después del mastering','El error de producción más común']
+    },
+    linkedin: {
+      texto: ['Lo que la industria musical me enseñó sobre emprendimiento creativo','Cómo los músicos independientes están redefiniendo el modelo de negocio musical','El ROI del contenido creativo: lecciones de la música aplicadas a los negocios','Por qué las habilidades de un músico son perfectas para el trabajo en equipo','Streaming, NFTs y el futuro de los derechos musicales: lo que viene'],
+      carrusel: ['El negocio de la música independiente en 2025','Cómo monetizar tu música más allá del streaming','Estrategia de redes sociales para artistas musicales','Derechos musicales: lo que todo artista debe proteger','Cómo construir una comunidad de fans en redes sociales']
+    },
+    twitter: {
+      texto: ['Hilo: lo que aprendí de mis primeros 1 millón de streams','Thread: cómo distribuyo y promuevo mi música sin sello','Lista: plugins gratuitos que uso en mi producción cada semana','Debate: ¿streaming le paga justo a los artistas?','Tip del día: la estrategia de lanzamiento que más me ha funcionado']
     }
   }
 };
