@@ -305,78 +305,144 @@ const nameData = {
   },
 
   moda: {
-    streetwear: [
-      'BLVCK Label','Urban Grain Co.','Street Pulse','District Wear','Raw Cut Co.','Concrete Label','Block Theory','The Alley Brand','Street Culture Co.','Avenue Label',
-      'Raw District','Urban Thread','The Concrete Co.','Street Block','District Label','Raw Culture','Urban Alley','The Block Brand','Street Grain','Avenue Thread',
-      'Raw Label','Urban Block','The Street Co.','District Pulse','Raw Thread','Urban Culture','The Alley Label','Street District','Concrete Thread','Block Wear',
-      'The Street Lab','Urban Pulse','Concrete Wear','Block Label','Raw Alley','Street Culture Lab','Avenue Wear','The Alley Thread','Urban Raw','Street Thread',
-      'District Thread','Raw Block','Urban Label','The Concrete Thread','Street Alley','Concrete Block','Block Thread','Raw Pulse','Street Label','Avenue Block',
-      'The Street Brand','Urban Brand','Concrete Brand','Block Brand','Raw Brand','Asphalt Label','Avenue Brand','The Alley Collective','Urban Voltage','Street Edge',
-      'District Brand','Raw Culture','Urban Culture','The Concrete Brand','Street Culture','Concrete Culture','Block Culture','Raw Urban','Outpost Label','Avenue Urban',
-      'The Urban Brand','Urban Street','Concrete Street','Block Street','Raw Street','Gravel Label','Avenue Street','The Alley Street','Urban Grain','Street Grain',
-      'District Grain','Raw Grain','Underpass Label','The Concrete Grain','Crosstown Label','Concrete Grain','Block Grain','Raw Alley','Street Alley','Avenue Grain',
-      'The Street Grain','Urban Alley','Concrete Alley','Block Alley','Raw Lab','Street Lab','Avenue Lab','The Alley Lab','Urban Lab','District Lab'
-    ],
-    lujo: [
-      'Maison Viel','Aurum Label','Velvet & Co.','The House of Noir','Silk District','Opulent','Le Tissu','Aurore Maison','Velours','Eclat Label',
-      'Lumiere Co.','La Maison Rare','Maison Doree','The Gold Label','Soie & Co.','The Noir House','Velours Maison',"L'Atelier",'The Silk Room','Aurum House',
-      'La Belle Maison','The Ivory Label','Maison Blanche','Or & Soie','The Luxe House','Velvet Maison','La Haute','The Gold Room','Maison Eclat',"L'Or Label",
-      'The Luxe Maison','Aurum Studio','Velvet Studio','The Noir Studio','Silk Studio','Opulent Studio','Le Tissu Studio','Aurore Studio','Velours Studio','Eclat Studio',
-      'Lumiere Studio','La Maison Studio','Maison Doree Studio','The Gold Studio','Soie Studio','The Noir Room','Velours Room',"L'Atelier Room",'The Silk Studio','Aurum Room',
-      'La Belle Studio','The Ivory Studio','Maison Blanche Studio','Or & Soie Studio','The Luxe Studio','Velvet Room','La Haute Studio','The Gold Studio2','Maison Eclat Studio',"L'Or Studio",
-      'The Luxe Room','Aurum Lab','Velvet Lab','The Noir Room','Silk Lab','Opulent Lab','Le Tissu Lab','Aurore Lab','Velours Lab','Eclat Lab',
-      'Lumiere Lab','La Maison Lab','Maison Doree Lab','The Gold Lab','Soie Lab','The Noir Atelier','Velours Room',"L'Atelier Lab",'The Silk Lab','Aurum Atelier',
-      'La Belle Lab','The Ivory Lab','Maison Blanche Lab','Or & Soie Lab','The Luxe Lab','Velvet Atelier','La Haute Lab','The Gold Atelier','Maison Eclat Lab',"L'Or Maison",
-      'The Luxe Atelier','Aurum Nova','Velvet Nova','The Noir Nova','Silk Nova','Opulent Nova','Le Tissu Nova','Aurore Nova','Velours Nova','Eclat Nova'
-    ],
-    casual: [
-      'Everyday Co.','Plain & Simple','The Basics Lab','Common Thread','Good Wear','Daily Cuts','Standard Issue','Easy Label','The Casual Co.','Plain District',
-      'The Normal Brand','Basics & More','The Sunday Co.','Flat & Easy','Common Wear','The Good Label','Simple District','Daily Thread','The Easy Brand','Plain Basics',
-      'Common Style','The Flat Label','Simple Wear','Daily Basics','The Common Co.','Plain Thread','Easy District','Daily Style','The Simple Brand','Common Basics',
-      'The Easy Wear','Plain Wear','Common Label','The Good Wear','Simple Label','Daily Label','The Casual Wear','Laidback Wear','Plainfield','Common Ground',
-      'The Good Style','Simple Style','Daily Style','The Easy Style','Plain Label','Common Thread','The Casual Thread','Easy Thread','Plainspoken','Common Wear',
-      'The Good Thread','Simple Thread','Daily Thread','The Easy Thread','Plain Basics','Common Label','The Casual Label','Easy Label','Plainclothes','Common Basics',
-      'The Good Basics','Simple Basics','Daily Basics','The Easy Basics','Plain District','Common District','The Casual District','Easy District','Plainview','Common District',
-      'The Good District','Simple District','Daily District','The Easy District','Plain Brand','Common Brand','The Casual Brand','Easy Brand','Plainfield Co.','Common Brand',
-      'The Good Brand','Simple Brand','Daily Brand','The Easy Brand','Plain Style','Common Style','The Casual Style','Easy Style','Plainwear','Common Style',
-      'The Good Style','Simple Style','Daily Denim','The Easy Style','Plain Wear','Common Wear','The Casual Co.','Easy Wear','Plainfield Studio','Common Co.'
-    ],
-    deportiva: [
-      'Motion Lab','Pulse Active','SwiftWear','The Athletic Co.','MoveFit','Active District','Kinetic Wear','Flow Sports','The Movement Co.','Core Active',
-      'Peak Wear','Drive Athletics','Sprint Lab','Active Nova','The Performance Co.','Motion Base','Pulse Wear','Swift Active','The Athlete Label','Move District',
-      'Active Flow','Kinetic Lab','The Sprint Brand','Core Wear','Peak Active','Drive Wear','Motion Active','Pulse Lab','Swift District','The Core Brand',
-      'The Active Lab','Motion Wear','Pulse Active2','Swift Wear','The Athletic Wear','Move Wear','Active Wear','Kinetic Wear2','Flow Wear','The Movement Wear',
-      'Core Wear2','Peak Wear2','Drive Wear2','Sprint Wear','Active Wear2','Motion Wear2','Pulse Wear2','Swift Wear2','The Athletic Lab','Move Lab',
-      'Active Lab','Kinetic Active','Flow Active','The Movement Lab','Core Lab','Peak Lab','Drive Lab','Sprint Active','Active Active','Motion Nova',
-      'Pulse Nova','Swift Nova','The Athletic Nova','Move Nova','Active Nova2','Kinetic Nova','Flow Nova','The Movement Nova','Core Nova','Peak Nova',
-      'Drive Nova','Sprint Nova','Active Nova3','Motion District','Pulse District','Swift District2','The Athletic District','Move District2','Active District2','Kinetic District',
-      'Flow District','The Movement District','Core District','Peak District','Drive District','Sprint District','Active District3','Motion Sports','Pulse Sports','Swift Sports',
-      'The Athletic Sports','Move Sports','Active Sports','Kinetic Sports','Flow Sports2','The Movement Sports','Core Sports','Peak Sports','Drive Sports','Sprint Sports'
-    ],
-    sostenible: [
-      'Earth Thread','Green Stitch','The Eco Label','Nature Wear','Roots & Fiber','The Green Cut','Terra Wear','EcoThread Co.','The Conscious Cloth','Green Grain',
-      'Verdant Label','Pure Thread','The Earth Co.','Green Roots','Natural Stitch','Eco Grain','The Verdant Brand','Terra Thread','Green Fiber','The Pure Label',
-      'Earth Stitch','Natural Wear','Eco Roots','The Green Cloth','Terra Label','Green Thread','Natural Grain','Eco Cloth','The Earth Brand','Verdant Wear',
-      'The Eco Wear','Earth Wear','Green Wear','Natural Fiber Wear','Eco Grain Label','Terra Fiber','The Eco Fiber','Earth Fiber','Green Fiber','Natural Fiber',
-      'Eco Fiber Co.','Terra Grain','The Eco Grain','Earth Grain','Green Grain','Natural Grain','Eco Grain Co.','Terra Stitch','The Eco Stitch','Earth Stitch',
-      'Green Stitch','Natural Stitch','Eco Stitch Co.','Terra Cloth','The Eco Cloth','Earth Cloth','Green Cloth','Natural Cloth','Eco Cloth Co.','Terra Label',
-      'The Eco Label','Earth Label','Green Label','Natural Label','Eco Label Co.','Terra Brand','The Eco Brand','Earth Brand','Green Brand','Natural Brand',
-      'Eco Brand Co.','Terra Co.','The Eco Co.','Earth Co.','Green Co.','Natural Co.','Eco Co.','Terra District','The Eco District','Earth District',
-      'Green District','Natural District','Eco District','Terra Thread','The Eco Thread','Earth Thread','Green Thread','Natural Thread','Eco Thread Co.','Terra Wear',
-      'The Eco Wardrobe','Earth Wardrobe','Green Wardrobe','Natural Wardrobe','Eco Wardrobe','Terra Lab','The Eco Lab','Earth Lab','Green Lab','Natural Lab'
-    ],
-    infantil: [
-      'Little Threads','Tiny Label Co.','Mini Wear','The Kids Cut','Junior Style','Peques & Co.','Little District','Fun Wear Co.','Tiny Closet','The Mini Brand',
-      'Junior Lab','Peques Style','The Little Co.','Tiny District','Mini Label','Kids Thread','The Junior Brand','Little Style','Tiny Wear','Mini District',
-      'Kids Closet','The Small Brand','Little Label','Tiny Style','Mini Thread','Kids Lab','The Little Label','Junior Wear','Tiny Brand','Mini Style',
-      'Little Wear','Tiny Lab','Mini Lab','The Kids Brand','Junior Brand','Peques Wear','Little Lab','Fun Wear Lab','Tiny Wear','The Mini Wear',
-      'Junior Wear','Peques Lab','The Little Wear','Tiny District','Mini Wear','Kids Wear','The Junior Wear','Little Wardrobe','Tiny Wardrobe','Mini Wardrobe',
-      'The Kids Wear','Junior Wardrobe','Peques Wardrobe','Little Threads','Fun Lab','Tiny Style','The Mini Style','Junior Style','Peques Style','The Little Style',
-      'Tiny Label','Mini Label','Kids Label','The Junior Label','Little Label','Fun Label','Tiny Brand','The Mini Label','Junior Label','Peques Label',
-      'The Little Label','Tiny Thread','Mini Thread','Kids Thread','The Junior Thread','Little Thread','Fun Thread','Tiny Threads','The Mini Thread','Junior Thread',
-      'Peques Thread','The Little Thread','Tiny Closet','Mini Closet','Kids Closet','The Junior Closet','Little Closet','Fun Closet','Tiny Togs','The Mini Closet',
-      'Junior Closet','Peques Closet','The Little Closet','Tiny Togs Co.','Mini Style','Kids Style','The Junior Style','Little Style','Fun Style','The Peques Brand'
-    ]
+    streetwear: {
+      femenino: [
+        'Calle Nueve','La Urbana','Barrio Chic','Callejera','La Banda Wear','Sin Reglas','Zona Libre','La Calle es Mía','Bloque Sur','La Trama Urbana',
+        'Gráfica','Callejera Co.','La Pinta','Bloque Femenino','Sin Filtro','Zona Urbana','La Señal','Calles de Aquí','Bruta Moda','La Esquina',
+        'La Vibe','Calle Arriba','Sin Permiso','La Energía','Barrio Alto','Pinta Libre','La Onda Urbana','Sin Etiqueta','La Base','Zona Chica',
+        'La Marca','Callejera Studio','La Caña','Bloque Creativo','Sin Fronteras','La Onda','Bruta Studio','La Firma','Zona Femenina','La Cadena',
+        'La Gráfica','Calle Sur','Sin Límites','La Calle','Barrio Crew','Pinta Studio','La Señal Urbana','Sin Nombre','La Base Urbana','Zona Sur'
+      ],
+      masculino: [
+        'Bloque Crew','El Barrio','Calle Dura','Sin Cuartel','La Firma Urbana','Zona Cruda','El Bloque','Calle Pesada','Sin Pausa','La Calle Manda',
+        'El Gráfico','Barrio Bajo','Sin Reglas','Zona Bruta','El Corte Urbano','Calle Fría','Sin Permiso','La Marca Urbana','Bloque Sólido','El Circuito',
+        'El Movimiento','Calle Real','Sin Límite','La Base Sólida','Barrio Crew','Pinta Cruda','La Señal Bruta','Sin Título','La Base Dura','Zona Baja',
+        'El Muro','Callejero Studio','La Caña Urbana','Bloque Oscuro','Sin Fronteras','La Onda Cruda','Bruta Wear','La Firma Sólida','Zona Urbana','La Red',
+        'El Gráfico Crew','Calle Oscura','Sin Límites','El Barrio Alto','Callejero Crew','Pinta Sólida','La Señal Fuerte','Sin Nombre','La Base Fuerte','Zona Norte'
+      ],
+      unisex: [
+        'La Trama','Bloque Colectivo','Sin Género','Zona Neutral','La Pinta Libre','Calle Libre','Sin Etiqueta','La Base Común','Barrio Abierto','El Colectivo',
+        'La Gráfica Libre','Calle Abierta','Sin Límites','Zona Abierta','La Marca Libre','Bloque Libre','Sin Fronteras','La Señal Libre','Barrio Libre','El Circuito Libre',
+        'La Onda Libre','Calle Colectiva','Sin Reglas','La Base Libre','Barrio Colectivo','Pinta Colectiva','La Señal Colectiva','Sin Nombre','La Base Colectiva','Zona Colectiva',
+        'El Mural','Calles Colectivas','La Caña Libre','Bloque Neutro','Sin Fronteras','La Onda Colectiva','Libre Studio','La Firma Colectiva','Zona Libre','La Red Libre',
+        'El Gráfico Libre','Calle Colectiva','Sin Límites','El Barrio Libre','Callejero Libre','Pinta Libre','La Señal Colectiva','Sin Etiqueta','La Base Abierta','Zona Neutral'
+      ]
+    },
+    lujo: {
+      femenino: [
+        'Casa Valeria','La Élite','Maison Lucía','Señora de Seda','La Condesa','Fina & Co.','La Selecta','Casa de Ensueño','La Diva','Élite Mujer',
+        'La Nobleza','Fémina Couture','La Distinción','Casa Eterna','La Perla Fina','Seda Pura','La Aristocrata','Fina Maison','La Exclusiva','La Duquesa',
+        'Casa Alejandra','La Refinada','Maison Sofía','Señorita Luxe','La Baronesa','Fina Studio','La Selecta Mujer','Casa de Lujo','La Diva Luxe','Élite Studio',
+        'La Nobleza Mujer','Fémina Studio','La Distinción Mujer','Casa Eterna Studio','La Perla Studio','Seda Studio','La Aristocrata Mujer','Fina Studio Luxe','La Exclusiva Mujer','La Duquesa Luxe',
+        'Casa Valentina','La Refinada Luxe','Maison Valeria','Señorita Studio','La Baronesa Luxe','Fina Luxe','La Selecta Luxe','Casa Luxe','La Diva Studio','Élite Luxe'
+      ],
+      masculino: [
+        'Casa Moreno','El Caballero','Don Exclusivo','El Señor de la Moda','La Firma Élite','Sartorial','El Noble','Don Refinado','La Distinción Masculina','Casa del Hombre',
+        'El Aristocrata','Don Perfecto','La Nobleza Masculina','Casa Clásica','El Selecto','Seda y Lino','El Distinguido','Don Clásico','La Exclusividad','El Duque',
+        'Casa Rodrigo','El Refinado','Don Alejandro','Señor Luxe','El Barón','Fino Studio','El Selecto Hombre','Casa de Lujo Hombre','El Dandy Luxe','Élite Hombre',
+        'La Nobleza Hombre','El Caballero Studio','La Distinción Hombre','Casa Eterna Hombre','El Perlo Studio','Lino Studio','El Aristocrata Hombre','Fino Luxe','La Exclusiva Hombre','El Duque Luxe',
+        'Casa Valentino','El Refinado Luxe','Don Rodrigo','Señor Studio','El Barón Luxe','Fino Luxe','El Selecto Luxe','Casa Luxe Hombre','El Dandy Studio','Élite Masculino'
+      ],
+      unisex: [
+        'Casa Élite','La Cúspide','Maison Noble','Alta Distinción','La Cima','Fino & Co.','La Cumbre','Casa Suprema','El Pináculo','Élite Collection',
+        'La Nobleza','Couture Suprema','La Distinción','Casa Atemporal','La Joya','Seda & Lino','La Aristocracia','Fino Maison','La Exclusividad','La Cumbre Luxe',
+        'Casa Serena','La Refinada','Maison Alta','Alta Exclusiva','La Baronía','Fino Studio','La Selecta Collection','Casa de Distinción','El Pináculo Luxe','Élite Studio',
+        'La Nobleza Collection','Couture Studio','La Distinción Collection','Casa Atemporal Studio','La Joya Studio','Seda Studio','La Aristocracia Collection','Fino Studio Luxe','La Exclusividad Collection','La Cumbre Studio',
+        'Casa Serena Luxe','La Refinada Luxe','Maison Serena','Alta Studio','La Baronía Luxe','Fino Luxe','La Selecta Luxe','Casa Luxe','El Pináculo Studio','Élite Luxe'
+      ]
+    },
+    casual: {
+      femenino: [
+        'La Cómoda','De Diario','Lo de Siempre','Ropa de Ella','Cotidiana','La Sencilla','Sin Complicar','De Casa','La Básica','Fácil & Chic',
+        'La Informal','Ropa Casual Ella','De Todos los Días','La Tranquila','Sin Esfuerzo','De Barrio','La Relajada','Fácil Moda','La Cotidiana','Chic Sin Estrés',
+        'La Normal','Ropa de Diario','De la Semana','La Descomplicada','Sin Pretensiones','De Siempre','La Ligera','Moda Fácil','La Diaria','Chic Simple',
+        'La Cómoda Mujer','De Diario Ella','Lo de Siempre Mujer','Ropa Ella','Cotidiana Mujer','La Sencilla Mujer','Sin Complicar Mujer','De Casa Mujer','La Básica Mujer','Fácil & Chic Mujer',
+        'La Informal Mujer','Ropa Casual Mujer','De Todos los Días Mujer','La Tranquila Mujer','Sin Esfuerzo Mujer','De Barrio Mujer','La Relajada Mujer','Fácil Moda Mujer','La Cotidiana Mujer','Chic Sin Estrés Mujer'
+      ],
+      masculino: [
+        'Lo de Siempre','El Diario','Ropa del Tipo','Sin Vuelta','El Básico','De Andar','Cómodo & Punto','El Casual','Sin Pretensiones','De Cada Día',
+        'El Informal','Ropa del Hombre','De Todos los Días','El Tranquilo','Sin Esfuerzo','Del Barrio','El Relajado','Moda Sin Estrés','El Cotidiano','Chico Simple',
+        'El Normal','Ropa de Diario','De la Semana','El Descomplicado','Sin Complicar','De Siempre','El Ligero','Moda Fácil Hombre','El Diario Hombre','Chic Simple Hombre',
+        'El Cómodo','De Diario Él','Lo de Siempre Hombre','Ropa Él','Cotidiano','El Sencillo','Sin Complicar Hombre','De Casa Hombre','El Básico Hombre','Fácil & Cool',
+        'El Informal Hombre','Ropa Casual Hombre','De Todos los Días Hombre','El Tranquilo Hombre','Sin Esfuerzo Hombre','Del Barrio Hombre','El Relajado Hombre','Fácil Moda Hombre','El Cotidiano Hombre','Cool Sin Estrés'
+      ],
+      unisex: [
+        'Lo de Todos los Días','Sin Etiqueta','De Andar','Ropa Libre','Sin Género','La Comodidad','Neutro & Cómodo','El Básico Libre','Sin Pretensiones','De Cada Día',
+        'Sin Complicar','Ropa de Siempre','De Todos','El Tranquilo Neutral','Sin Esfuerzo Neutro','Del Barrio Neutro','Lo Relajado','Moda Sin Estrés Neutro','Lo Cotidiano','Simple & Punto',
+        'Lo Normal','Ropa Diaria','De la Semana Neutro','Lo Descomplicado','Sin Complicar Neutro','De Siempre Neutro','Lo Ligero','Moda Fácil Neutro','Lo Diario','Chic & Simple',
+        'Lo Cómodo','De Diario Neutro','Lo de Siempre Neutro','Ropa Neutra','Cotidiano Neutro','Lo Sencillo','Sin Complicar Neutro','De Casa Neutro','Lo Básico','Fácil & Neutro',
+        'Lo Informal','Ropa Casual Neutra','De Todos los Días Neutro','Lo Tranquilo','Sin Esfuerzo Neutro','Del Barrio Neutro','Lo Relajado Neutro','Fácil Moda Neutra','Lo Cotidiano Neutro','Sin Estrés'
+      ]
+    },
+    deportiva: {
+      femenino: [
+        'Activa','La Potencia','Mujer en Movimiento','Fuerza Femenina','La Atleta','Entrena Ella','Fuerte & Bella','Activa Sport','La Campeona','Poder Femenino',
+        'La Corredora','Sport Ella','En Movimiento','La Ganadora','Fuerza & Gracia','Activa Mujer','La Deportista','Sport Femenino','La Resistencia','Mujer Activa',
+        'La Velocidad','Ella Corre','Fuerza Total','La Fitness','Activa Flow','La Maratonista','Sport & Gracia','Ella Entrena','La Potencia Femenina','Activa Studio',
+        'La Campeona Sport','Poder Sport','La Corredora Elite','Sport Ella Studio','En Movimiento Mujer','La Ganadora Mujer','Fuerza & Gracia Mujer','Activa Mujer Studio','La Deportista Elite','Sport Femenino Studio',
+        'La Resistencia Mujer','Mujer Activa Studio','La Velocidad Mujer','Ella Corre Studio','Fuerza Total Mujer','La Fitness Studio','Activa Flow Mujer','La Maratonista Studio','Sport & Gracia Mujer','Ella Entrena Studio'
+      ],
+      masculino: [
+        'El Atleta','Fuerza Total','Rendimiento','Sin Límites Sport','El Campeón','Potencia Mx','Activo Pro','El Corredor','Fuerza Bruta','Entrenamiento',
+        'El Deportista','Sport Hombre','En Forma','El Ganador','Fuerza & Velocidad','Activo Hombre','El Maratonista','Sport Masculino','La Resistencia Hombre','Hombre Activo',
+        'La Velocidad Hombre','El Corre','Fuerza Total Hombre','El Fitness Hombre','Activo Flow','El Maratonista Sport','Sport & Velocidad','Él Entrena','La Potencia Masculina','Activo Studio',
+        'El Campeón Sport','Poder Sport Hombre','El Corredor Elite','Sport Él Studio','En Movimiento Hombre','El Ganador Hombre','Fuerza & Velocidad Hombre','Activo Hombre Studio','El Deportista Elite','Sport Masculino Studio',
+        'La Resistencia Hombre Studio','Hombre Activo Studio','La Velocidad Hombre Studio','Él Corre Studio','Fuerza Total Hombre Studio','El Fitness Studio','Activo Flow Hombre','El Maratonista Studio','Sport & Velocidad Hombre','Él Entrena Studio'
+      ],
+      unisex: [
+        'En Movimiento','La Energía','Sin Límites','Fuerza Colectiva','El Rendimiento','Activo Neutro','Potencia','La Resistencia','Sin Fronteras Sport','El Atletismo',
+        'La Velocidad Neutra','Colectivo Sport','En Forma Neutro','El Ganador Neutro','Fuerza & Velocidad Neutra','Activo Neutro Studio','El Maratonista Neutro','Sport Neutro','La Resistencia Neutra','Activo Colectivo',
+        'La Velocidad Colectiva','Colectivo Corre','Fuerza Total Neutra','El Fitness Neutro','Activo Flow Neutro','El Maratonista Colectivo','Sport & Velocidad Neutra','Colectivo Entrena','La Potencia Neutra','Activo Studio Neutro',
+        'El Colectivo Sport','Poder Sport Neutro','El Corredor Neutro','Sport Neutro Studio','En Movimiento Neutro','El Ganador Neutro Studio','Fuerza & Velocidad Neutra Studio','Activo Neutro Studio Colectivo','El Deportista Neutro','Sport Neutro Colectivo',
+        'La Resistencia Neutra Studio','Activo Colectivo Studio','La Velocidad Neutra Studio','Colectivo Corre Studio','Fuerza Total Neutra Studio','El Fitness Neutro Studio','Activo Flow Neutro Studio','El Maratonista Neutro Studio','Sport Colectivo','Colectivo Entrena Studio'
+      ]
+    },
+    sostenible: {
+      femenino: [
+        'La Consciente','Tierra & Ella','Raíces Verdes','Moda Honesta','La Natural','Verde Mujer','Eco Ella','La Sostenible','Con Conciencia','Fibra Natural',
+        'La Orgánica','Verde & Ella','Raíces & Fibra','Moda Limpia','La Pura','Verde Puro','Eco Femenino','La Ecológica','Con Propósito','Fibra Pura',
+        'La Verde','Ella Natural','Fibra Honesta','La Eco','Verde Flow','La Orgánica Natural','Eco & Gracia','Ella Consciente','La Natural Femenina','Eco Studio Mujer',
+        'La Consciente Mujer','Tierra & Ella Studio','Raíces Verdes Mujer','Moda Honesta Mujer','La Natural Mujer','Verde Mujer Studio','Eco Ella Studio','La Sostenible Mujer','Con Conciencia Mujer','Fibra Natural Mujer',
+        'La Orgánica Mujer','Verde & Ella Studio','Raíces & Fibra Mujer','Moda Limpia Mujer','La Pura Mujer','Verde Puro Mujer','Eco Femenino Studio','La Ecológica Mujer','Con Propósito Mujer','Fibra Pura Mujer'
+      ],
+      masculino: [
+        'El Consciente','Tierra & Él','Raíces Verdes Hombre','Moda Honesta Hombre','El Natural','Verde Hombre','Eco Él','El Sostenible','Con Conciencia Hombre','Fibra Natural Hombre',
+        'El Orgánico','Verde & Él','Raíces & Fibra Hombre','Moda Limpia Hombre','El Puro','Verde Puro Hombre','Eco Masculino','El Ecológico','Con Propósito Hombre','Fibra Pura Hombre',
+        'El Verde','Él Natural','Fibra Honesta Hombre','El Eco','Verde Flow Hombre','El Orgánico Natural','Eco & Fuerza','Él Consciente','El Natural Masculino','Eco Studio Hombre',
+        'El Consciente Hombre','Tierra & Él Studio','Raíces Verdes Hombre Studio','Moda Honesta Hombre Studio','El Natural Hombre','Verde Hombre Studio','Eco Él Studio','El Sostenible Hombre','Con Conciencia Hombre Studio','Fibra Natural Hombre Studio',
+        'El Orgánico Hombre','Verde & Él Studio','Raíces & Fibra Hombre Studio','Moda Limpia Hombre Studio','El Puro Hombre','Verde Puro Hombre Studio','Eco Masculino Studio','El Ecológico Hombre','Con Propósito Hombre Studio','Fibra Pura Hombre Studio'
+      ],
+      unisex: [
+        'La Conciencia','Tierra & Moda','Raíces Verdes Neutro','Moda Honesta Neutra','Lo Natural','Verde Neutro','Eco Neutro','Lo Sostenible','Con Conciencia Neutra','Fibra Natural Neutra',
+        'Lo Orgánico','Verde & Neutro','Raíces & Fibra Neutra','Moda Limpia Neutra','Lo Puro','Verde Puro Neutro','Eco Neutro Studio','Lo Ecológico','Con Propósito Neutro','Fibra Pura Neutra',
+        'Lo Verde','Neutro Natural','Fibra Honesta Neutra','Lo Eco','Verde Flow Neutro','Lo Orgánico Natural','Eco & Conciencia','Neutro Consciente','Lo Natural Neutro','Eco Studio Neutro',
+        'Lo Consciente','Tierra & Moda Studio','Raíces Verdes Neutra','Moda Honesta Neutra Studio','Lo Natural Neutro Studio','Verde Neutro Studio','Eco Neutro Studio Colectivo','Lo Sostenible Neutro','Con Conciencia Neutra Studio','Fibra Natural Neutra Studio',
+        'Lo Orgánico Neutro','Verde & Neutro Studio','Raíces & Fibra Neutra Studio','Moda Limpia Neutra Studio','Lo Puro Neutro','Verde Puro Neutro Studio','Eco Neutro Colectivo','Lo Ecológico Neutro','Con Propósito Neutra Studio','Fibra Pura Neutra Studio'
+      ]
+    },
+    infantil: {
+      femenino: [
+        'La Pequeña','Mini Ella','Chiquita Moda','Niñas & Co.','La Princesita','Pequeña Diva','Mini Chic','La Nena','Colorines Ella','Pequeña Reina',
+        'La Muñequita','Mini Flores','Chiquita Chic','Niñas Felices','La Pequeña Diva','Pequeña Flor','Mini Ella Studio','La Nena Chic','Colorines Chic','Pequeña Estrella',
+        'La Pequeña Flor','Mini Ella Flores','Chiquita Flores','Niñas Flores','La Princesita Flores','Pequeña Diva Flores','Mini Chic Flores','La Nena Flores','Colorines Flores','Pequeña Reina Flores',
+        'La Muñequita Flores','Mini Flores Studio','Chiquita Chic Flores','Niñas Felices Flores','La Pequeña Diva Flores','Pequeña Flor Studio','Mini Ella Studio Flores','La Nena Chic Flores','Colorines Chic Flores','Pequeña Estrella Flores',
+        'La Pequeña Flor Studio','Mini Ella Flores Studio','Chiquita Flores Studio','Niñas Flores Studio','La Princesita Studio','Pequeña Diva Studio','Mini Chic Studio','La Nena Studio','Colorines Studio','Pequeña Reina Studio'
+      ],
+      masculino: [
+        'El Pequeño','Mini Él','Chiquito Moda','Niños & Co.','El Principito','Pequeño Crack','Mini Cool','El Nene','Colorines Él','Pequeño Rey',
+        'El Muñequito','Mini Carros','Chiquito Cool','Niños Felices','El Pequeño Crack','Pequeño León','Mini Él Studio','El Nene Cool','Colorines Cool','Pequeño Campeón',
+        'El Pequeño León','Mini Él Carros','Chiquito Carros','Niños Carros','El Principito Carros','Pequeño Crack Carros','Mini Cool Carros','El Nene Carros','Colorines Carros','Pequeño Rey Carros',
+        'El Muñequito Carros','Mini Carros Studio','Chiquito Cool Carros','Niños Felices Carros','El Pequeño Crack Carros','Pequeño León Studio','Mini Él Studio Carros','El Nene Cool Carros','Colorines Cool Carros','Pequeño Campeón Carros',
+        'El Pequeño León Studio','Mini Él Carros Studio','Chiquito Carros Studio','Niños Carros Studio','El Principito Studio','Pequeño Crack Studio','Mini Cool Studio','El Nene Studio','Colorines Studio','Pequeño Rey Studio'
+      ],
+      unisex: [
+        'Los Pequeños','Mini Todos','Chiquitos Moda','Niños & Niñas','Los Principitos','Pequeños & Co.','Mini Colores','Los Nenes','Colorines','Pequeños Reyes',
+        'Los Muñequitos','Mini Juegos','Chiquitos Colores','Niños Felices Neutro','Los Pequeños Felices','Pequeños Colores','Mini Todos Studio','Los Nenes Colores','Colorines Neutro','Pequeños Campeones',
+        'Los Pequeños Colores','Mini Todos Colores','Chiquitos Neutro','Niños Neutro','Los Principitos Colores','Pequeños Colores Studio','Mini Colores Studio','Los Nenes Studio','Colorines Studio Neutro','Pequeños Reyes Studio',
+        'Los Muñequitos Colores','Mini Juegos Studio','Chiquitos Colores Studio','Niños Felices Neutro Studio','Los Pequeños Felices Studio','Pequeños Colores Studio Neutro','Mini Todos Studio Colores','Los Nenes Colores Studio','Colorines Neutro Studio','Pequeños Campeones Studio',
+        'Los Pequeños Colores Studio','Mini Todos Colores Studio','Chiquitos Neutro Studio','Niños Neutro Studio','Los Principitos Studio','Pequeños Studio','Mini Colores Studio Neutro','Los Nenes Studio Colores','Colorines Studio Colores','Pequeños Reyes Studio Colores'
+      ]
+    }
   },
 
   cafe: {
@@ -1055,7 +1121,8 @@ function generateNames(tool) {
 
   } else if (tool === 'moda') {
     const tipo = document.getElementById('moda-tipo').value;
-    pool = nameData.moda[tipo] || nameData.moda.casual;
+    const genero = document.getElementById('moda-genero').value;
+    pool = nameData.moda[tipo]?.[genero] || nameData.moda[tipo]?.unisex || nameData.moda.casual.unisex;
 
   } else if (tool === 'cafe') {
     const tipo = document.getElementById('cafe-tipo').value;
