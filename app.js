@@ -1169,13 +1169,15 @@ function calcIncome(platform) {
   let total = 0, b1 = 0, b2 = 0, b3 = 0;
 
   if (platform === 'tiktok') {
-    const views = +document.getElementById('tt-views').value;
-    const posts = +document.getElementById('tt-posts').value;
-    const subs  = +document.getElementById('tt-subs').value;
-    const mult  = +document.getElementById('tt-nicho').value;
-    b1 = views * posts * 0.002 * mult;
-    b2 = subs > 10000 ? (subs / 100000) * 150 * mult : 0;
-    b3 = subs > 10000 ? (subs / 100000) * 200 * mult : 0;
+    const views      = +document.getElementById('tt-views').value;
+    const posts      = +document.getElementById('tt-posts').value;
+    const subs       = +document.getElementById('tt-subs').value;
+    const nicho      = +document.getElementById('tt-nicho').value;
+    const region     = +document.getElementById('tt-region').value;
+    const engagement = +document.getElementById('tt-engagement').value;
+    b1 = views * posts * 0.002 * nicho * region;
+    b2 = subs > 10000 ? (subs / 100000) * 150 * nicho * region * engagement : 0;
+    b3 = subs > 10000 ? (subs / 100000) * 200 * nicho * region * engagement : 0;
     total = b1 + b2 + b3;
     document.getElementById('tt-fund').textContent  = fmt(b1);
     document.getElementById('tt-live').textContent  = fmt(b2);
@@ -1200,12 +1202,15 @@ function calcIncome(platform) {
   }
 
   if (platform === 'facebook') {
-    const views   = +document.getElementById('fb-views').value;
-    const subs    = +document.getElementById('fb-subs').value;
-    const tipMult = +document.getElementById('fb-tipo').value;
-    b1 = (views / 1000) * 1.5 * tipMult;
-    b2 = tipMult === 1.5 ? (views / 1000) * 0.8 : 0;
-    b3 = subs > 10000 ? subs * 0.0002 : 0;
+    const views      = +document.getElementById('fb-views').value;
+    const subs       = +document.getElementById('fb-subs').value;
+    const tipMult    = +document.getElementById('fb-tipo').value;
+    const region     = +document.getElementById('fb-region').value;
+    const nicho      = +document.getElementById('fb-nicho').value;
+    const engagement = +document.getElementById('fb-engagement').value;
+    b1 = (views / 1000) * 1.5 * tipMult * region * nicho;
+    b2 = tipMult === 1.5 ? (views / 1000) * 0.8 * region * engagement : 0;
+    b3 = subs > 10000 ? subs * 0.0002 * region * engagement : 0;
     total = b1 + b2 + b3;
     document.getElementById('fb-ads').textContent   = fmt(b1);
     document.getElementById('fb-reels').textContent = fmt(b2);
