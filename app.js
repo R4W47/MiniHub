@@ -1662,7 +1662,7 @@ const ideasData = {
   emprendimiento: {
     instagram: {
       video_corto: ['3 errores que cometí al lanzar mi primer negocio','Cómo conseguí mis primeros 10 clientes sin pagar publicidad','Día en la vida de un emprendedor honesto (sin filtros)','Lo que nadie te dice sobre emprender con poco dinero','Cuánto gano realmente con mi negocio (cifras reales)','Por qué casi cierro mi negocio y lo que aprendí','Lo que aprendí en mi primer año como emprendedor','Cómo poner precio a tus servicios sin miedo','5 apps que uso para manejar mi negocio desde el celular','Reaccionando a mis primeros intentos de vender'],
-      carrusel: ['10 lecciones de negocios que aprendí de mis fracasos','Cómo estructurar un plan de negocios en una página','Los 7 tipos de clientes y cómo tratar a cada uno','Checklist para lanzar tu negocio este mes','Cómo calcular el precio de tus productos (con fórmula)','5 modelos de negocio que puedes empezar sin inversión','Cómo conseguir clientes con Instagram orgánico en 2025','Las 8 métricas que todo negocio debería medir','Errores financieros que arruinan pequeños negocios','Diferencias entre emprendedor exitoso y promedio'],
+      carrusel: ['10 lecciones de negocios que aprendí de mis fracasos','Cómo estructurar un plan de negocios en una página','Los 7 tipos de clientes y cómo tratar a cada uno','Checklist para lanzar tu negocio este mes','Cómo calcular el precio de tus productos (con fórmula)','5 modelos de negocio que puedes empezar sin inversión','Cómo conseguir clientes con Instagram orgánico en 2026','Las 8 métricas que todo negocio debería medir','Errores financieros que arruinan pequeños negocios','Diferencias entre emprendedor exitoso y promedio'],
       foto: ['La oficina desde donde construyo mi negocio','Mi primer pedido vs. el pedido de hoy','La herramienta que cambió mi forma de trabajar','Cita que me cambió la mentalidad emprendedora','Lo que cargaba en mi bolsa cuando empecé vs. ahora'],
       video_largo: ['Cómo monté mi negocio desde cero con $500 dólares','La historia completa de cómo crecí de 0 a 100 clientes','Análisis de negocios exitosos en redes sociales','Masterclass gratis: cómo vender en Instagram sin anuncios','Un año emprendiendo: resultados, fracasos y aprendizajes'],
       texto: ['Hilo: Los 10 principios de negocio que me tomó años aprender','Thread: Un día resolviendo una crisis en mi empresa','Mi historia: del trabajo de oficina a emprender con miedo','Reflexión: Por qué la mayoría de negocios fracasan en el primer año','Consejo del día: la regla de las 2 horas para emprendedores'],
@@ -1677,7 +1677,7 @@ const ideasData = {
       stories: ['¿Tienes negocio propio? Sí o no','Tu mayor miedo al emprender (encuesta)','Detrás de cámaras: mi oficina hoy','Tip emprendedor del día','Pregúntame cualquier cosa sobre mi negocio']
     },
     youtube: {
-      video_largo: ['De empleado a emprendedor: mi historia completa','Cómo crear un negocio digital desde cero en 2025','Los 10 libros de negocios que realmente me ayudaron','Construí un negocio de $10K al mes — así lo hice','Análisis: por qué fracasan el 90% de los negocios nuevos'],
+      video_largo: ['De empleado a emprendedor: mi historia completa','Cómo crear un negocio digital desde cero en 2026','Los 10 libros de negocios que realmente me ayudaron','Construí un negocio de $10K al mes — así lo hice','Análisis: por qué fracasan el 90% de los negocios nuevos'],
       video_corto: ['El error que casi quiebra tu negocio','Tip de ventas en 60 segundos','¿Cómo conseguir tu primer cliente?','La herramienta de negocio más subestimada','Por qué el precio más bajo no siempre gana']
     },
     linkedin: {
@@ -1691,7 +1691,7 @@ const ideasData = {
   moda: {
     instagram: {
       video_corto: ['Cómo combinar prendas básicas de 5 formas diferentes','Lo que nadie te dice sobre comprar en Shein','Mi armario cápsula completo (menos de 30 prendas)','Outfits para toda la semana sin repetir ropa','Cómo saber tu silueta y qué ponerte','3 errores de moda que te hacen ver desaliñado','Haul de ropa de segunda mano (lo que encontré)','De informal a formal con los mismos pantalones','Los básicos de closet que toda mujer necesita','Cómo lavar ropa oscura sin que se decolore'],
-      carrusel: ['Armario cápsula por temporada: guía completa','Cómo combinar el color naranja sin verte raro','10 formas de usar una camisa blanca','Los colores que van con todo (y cómo combinarlos)','Guía de tallas: cómo comprar ropa online sin errores','Qué ropa usar según tu silueta (guía visual)','Tendencias de moda 2025 que sí o sí debes tener','Cómo hacer un armario sostenible paso a paso','Los 10 accesorios que elevan cualquier outfit','Mini guía de estilo para cada tipo de evento'],
+      carrusel: ['Armario cápsula por temporada: guía completa','Cómo combinar el color naranja sin verte raro','10 formas de usar una camisa blanca','Los colores que van con todo (y cómo combinarlos)','Guía de tallas: cómo comprar ropa online sin errores','Qué ropa usar según tu silueta (guía visual)','Tendencias de moda 2026 que sí o sí debes tener','Cómo hacer un armario sostenible paso a paso','Los 10 accesorios que elevan cualquier outfit','Mini guía de estilo para cada tipo de evento'],
       foto: ['Outfit del día: el básico que más llevo puesto','Antes/después: cómo el styling cambia todo','El look que más me han comentado este mes','Thrift flip: así quedó la prenda que transformé','Inspiración de outfit para esta semana'],
       video_largo: ['Mi historia en la moda: de compradora compulsiva a estilista','Cómo construí mi marca de ropa desde cero','Los 10 errores de moda que todos cometemos','Guía completa de tendencias del año','Armario cápsula completo: haul y lookbook'],
       texto: ['Hilo: Por qué la moda rápida está destruyendo el planeta','Thread: Cómo encontré mi estilo propio después de años de confusión','Reflexión: Lo que la moda me enseñó sobre autoestima','Lista: 10 prendas que nunca pasan de moda','Debate: ¿Vale la pena invertir en ropa cara?'],
@@ -1711,7 +1711,7 @@ const ideasData = {
     },
     linkedin: {
       texto: ['Reflexión: lo que la industria de la moda me enseñó sobre marca personal','Cómo el estilo impacta tu percepción profesional','La sostenibilidad en la moda: tendencia o responsabilidad','Lo que aprendí construyendo una marca de ropa independiente','Vestimenta y liderazgo: ¿importa cómo te vistes en el trabajo?'],
-      carrusel: ['Cómo vestirse para diferentes entornos profesionales','Personal branding a través de tu estilo','Cómo iniciar una marca de moda en 2025','Tendencias en la industria de la moda sostenible','Lo que los reclutadores notan de tu imagen profesional']
+      carrusel: ['Cómo vestirse para diferentes entornos profesionales','Personal branding a través de tu estilo','Cómo iniciar una marca de moda en 2026','Tendencias en la industria de la moda sostenible','Lo que los reclutadores notan de tu imagen profesional']
     },
     twitter: {
       texto: ['Hilo: por qué la moda rápida es un problema que todos ignoramos','Thread: cómo construí mi armario cápsula con menos de $300','Lista: marcas de moda sostenible que realmente cumplen','Debate: ¿es posible vestirse bien con poco dinero?','Tip del día: la prenda que más ROI te da en tu armario']
@@ -1740,7 +1740,7 @@ const ideasData = {
     },
     linkedin: {
       texto: ['Cómo el ejercicio mejoró mi productividad laboral','Lo que el fitness me enseñó sobre disciplina profesional','Salud mental y ejercicio: la conexión que los líderes ignoran','Por qué las empresas deberían invertir en el bienestar físico de sus equipos','Hábitos de fitness de los ejecutivos más exitosos'],
-      carrusel: ['5 hábitos de bienestar para profesionales ocupados','Cómo mantener una rutina de ejercicio con agenda llena','Beneficios del ejercicio en el rendimiento laboral','Wellness corporativo: por qué importa en 2025','Cómo construir hábitos saludables que duren']
+      carrusel: ['5 hábitos de bienestar para profesionales ocupados','Cómo mantener una rutina de ejercicio con agenda llena','Beneficios del ejercicio en el rendimiento laboral','Wellness corporativo: por qué importa en 2026','Cómo construir hábitos saludables que duren']
     },
     twitter: {
       texto: ['Hilo: lo que cambió en mi vida cuando empecé a entrenar todos los días','Thread: guía de nutrición básica para personas ocupadas','Lista: apps de fitness que realmente uso y recomiendo','Mito desmentido: no necesitas 2 horas diarias para estar en forma','Consejo del día: el mejor ejercicio es el que sí haces']
@@ -1768,8 +1768,8 @@ const ideasData = {
       video_corto: ['Receta de 5 minutos que salva el día','El truco para que el arroz quede perfecto','Sazón secreto revelado','Hack de cocina del día','La receta más fácil de tu vida']
     },
     linkedin: {
-      texto: ['Lo que la gastronomía me enseñó sobre liderazgo y trabajo en equipo','Emprender en el sector food & beverage: lo que nadie te dice','Cómo la cultura gastronómica está cambiando el consumo en Latinoamérica','Del restaurante a la startup: lecciones de la industria culinaria','Tendencias gastronómicas que están redefiniendo los negocios en 2025'],
-      carrusel: ['Cómo construir un negocio de comida exitoso','El modelo de negocio de los dark kitchens explicado','Marketing digital para restaurantes y negocios de comida','Emprender en gastronomía: lo que debes saber antes de empezar','Tendencias en la industria restaurantera para 2025']
+      texto: ['Lo que la gastronomía me enseñó sobre liderazgo y trabajo en equipo','Emprender en el sector food & beverage: lo que nadie te dice','Cómo la cultura gastronómica está cambiando el consumo en Latinoamérica','Del restaurante a la startup: lecciones de la industria culinaria','Tendencias gastronómicas que están redefiniendo los negocios en 2026'],
+      carrusel: ['Cómo construir un negocio de comida exitoso','El modelo de negocio de los dark kitchens explicado','Marketing digital para restaurantes y negocios de comida','Emprender en gastronomía: lo que debes saber antes de empezar','Tendencias en la industria restaurantera para 2026']
     },
     twitter: {
       texto: ['Hilo: por qué los restaurantes fracasan en el primer año (y cómo evitarlo)','Thread: los mejores platillos callejeros de Latinoamérica rankeados','Lista: condimentos esenciales que todo cocinero debería tener','Debate: ¿la cocina de abuela o los restaurantes de moda?','Tip del día: el truco más simple para mejorar cualquier guiso']
@@ -1777,8 +1777,8 @@ const ideasData = {
   },
   tecnologia: {
     instagram: {
-      video_corto: ['5 extensiones de Chrome que uso todos los días','La IA que está reemplazando mi trabajo (de verdad)','Cómo uso ChatGPT para ser más productivo','El setup de trabajo que me cambió la vida','Apps que borré de mi celular (y por qué)','Cómo aprender programación gratis en 2025','Lo que la IA no puede hacer (todavía)','3 herramientas de productividad que uso a diario','Cómo proteger tu privacidad online en 5 pasos','El gadget que compré y cambió mi rutina'],
-      carrusel: ['Las 10 mejores apps de productividad de 2025','Guía completa de ChatGPT para principiantes','Cómo empezar a programar desde cero (roadmap)','Herramientas de IA para cada tipo de trabajo','Cómo montar tu home office perfecto','Los mejores cursos online gratuitos de tecnología','Setup de trabajo remoto esencial por menos de $500','Tendencias tecnológicas que van a cambiar tu trabajo','Glosario de IA: términos que necesitas saber','Cómo hacer un backup completo de tu vida digital'],
+      video_corto: ['5 extensiones de Chrome que uso todos los días','La IA que está reemplazando mi trabajo (de verdad)','Cómo uso ChatGPT para ser más productivo','El setup de trabajo que me cambió la vida','Apps que borré de mi celular (y por qué)','Cómo aprender programación gratis en 2026','Lo que la IA no puede hacer (todavía)','3 herramientas de productividad que uso a diario','Cómo proteger tu privacidad online en 5 pasos','El gadget que compré y cambió mi rutina'],
+      carrusel: ['Las 10 mejores apps de productividad de 2026','Guía completa de ChatGPT para principiantes','Cómo empezar a programar desde cero (roadmap)','Herramientas de IA para cada tipo de trabajo','Cómo montar tu home office perfecto','Los mejores cursos online gratuitos de tecnología','Setup de trabajo remoto esencial por menos de $500','Tendencias tecnológicas que van a cambiar tu trabajo','Glosario de IA: términos que necesitas saber','Cómo hacer un backup completo de tu vida digital'],
       foto: ['Mi setup de trabajo de hoy','El gadget que más uso en el día','App abierta en mi pantalla ahora mismo','Antes y después de ordenar mi escritorio digital','La herramienta que siempre tengo abierta'],
       video_largo: ['Construí una app sin saber programar (con IA)','Cómo automaticé el 80% de mi trabajo con herramientas gratis','Revisión completa de los mejores gadgets del año','Guía definitiva: cómo aprender programación desde cero','Un día en la vida de un desarrollador remoto'],
       texto: ['Hilo: las herramientas de IA que uso cada día en mi trabajo','Thread: cómo aprendí a programar en 6 meses sin pagar un peso','Lista: recursos gratis de tecnología que ojalá hubiera conocido antes','Reflexión: lo que la IA cambiará en los próximos 2 años','Debate: ¿la IA nos va a quitar el trabajo?'],
@@ -1786,19 +1786,19 @@ const ideasData = {
     },
     tiktok: {
       video_corto: ['Esta IA hace mi trabajo en 10 segundos','Hack de productividad que no puedo creer no conocía','La app que todos deberían tener en su celular','Por qué borré redes sociales por 30 días','Lo que pasa cuando le das acceso total a la IA','Pruebo el gadget más viral de Amazon','Cómo un programador usa ChatGPT (honesto)','El truco de Excel que no conocías','Cosas que puedes hacer con IA gratis','Lo que nadie te dice sobre aprender a programar'],
-      carrusel: ['Apps que debes tener en 2025','Atajos de teclado que te ahorran horas','IA tools para cada tipo de trabajo','Cómo organizar tu vida digital','El setup perfecto para trabajar desde casa'],
+      carrusel: ['Apps que debes tener en 2026','Atajos de teclado que te ahorran horas','IA tools para cada tipo de trabajo','Cómo organizar tu vida digital','El setup perfecto para trabajar desde casa'],
       foto: ['Mi setup actual','La app que más uso','Pantalla de trabajo de hoy','Gadget favorito del momento','Escritorio digital organizado vs. desastre'],
       video_largo: ['Probé todas las IAs del mercado: esto encontré','Construí un negocio online solo con herramientas gratis','Cómo trabajo desde casa siendo desarrollador','Aprendí a programar en 30 días — esto pasó','Mi setup de trabajo completo: todo lo que uso'],
       texto: ['POV: tu jefe te pide hacer algo que la IA hace en 2 segundos','Señales de que eres adicto a la tecnología','El app que cambió cómo trabajo para siempre','Por qué sigo usando papel y lápiz aunque soy dev','Tech tip del día: el comando que nadie conoce'],
       stories: ['¿Usas ChatGPT en tu trabajo?','Tu herramienta favorita de productividad','Encuesta: ¿cuántas apps tienes instaladas?','Gadget que quieres que reseñe','Tip tech exprés del día']
     },
     youtube: {
-      video_largo: ['Probé todas las herramientas de IA del mercado (revisión honesta)','Cómo construí una app desde cero sin saber programar','Mi setup de trabajo completo: todo lo que uso y por qué','Guía definitiva para aprender programación desde cero en 2025','Un año usando solo herramientas de IA: lo que aprendí'],
+      video_largo: ['Probé todas las herramientas de IA del mercado (revisión honesta)','Cómo construí una app desde cero sin saber programar','Mi setup de trabajo completo: todo lo que uso y por qué','Guía definitiva para aprender programación desde cero en 2026','Un año usando solo herramientas de IA: lo que aprendí'],
       video_corto: ['La herramienta de IA más útil del mes','Setup tour: mi escritorio en 60 seg','Tip de programación del día','El gadget que más recomiendo','Truco de productividad en 30 segundos']
     },
     linkedin: {
-      texto: ['El impacto real de la IA en el mercado laboral: lo que los datos dicen','Cómo la automatización está redefiniendo los roles profesionales','Lo que los desarrolladores necesitan saber sobre IA en 2025','Por qué las empresas que no adopten IA van a quedarse atrás','Habilidades tech que todo profesional no técnico debería tener'],
-      carrusel: ['Las herramientas de IA más útiles por industria','Cómo preparar tu carrera para el futuro tech','Skills digitales imprescindibles en 2025','Cómo la IA está cambiando cada industria','Transformación digital: por dónde empezar']
+      texto: ['El impacto real de la IA en el mercado laboral: lo que los datos dicen','Cómo la automatización está redefiniendo los roles profesionales','Lo que los desarrolladores necesitan saber sobre IA en 2026','Por qué las empresas que no adopten IA van a quedarse atrás','Habilidades tech que todo profesional no técnico debería tener'],
+      carrusel: ['Las herramientas de IA más útiles por industria','Cómo preparar tu carrera para el futuro tech','Skills digitales imprescindibles en 2026','Cómo la IA está cambiando cada industria','Transformación digital: por dónde empezar']
     },
     twitter: {
       texto: ['Hilo: las herramientas de IA que más me han ahorrado tiempo este mes','Thread: aprendí a programar con IA — esto fue lo que encontré','Lista: recursos gratuitos de programación que recomiendo sin dudar','Debate: ¿la IA es el fin de los empleos creativos?','Tip del día: el prompt que me ahorra 2 horas de trabajo']
@@ -1822,7 +1822,7 @@ const ideasData = {
       stories: ['¿Ahorras cada mes? Encuesta','Tu gasto más innecesario de la semana','Tip financiero del día','¿Inviertes o no? ¿Por qué?','Pregúntame sobre ahorro e inversión']
     },
     youtube: {
-      video_largo: ['Cómo invertir en bolsa desde Latinoamérica: guía completa','Todo lo que necesitas saber sobre finanzas personales en 2025','Mi estrategia de inversión revelada: qué hago con mi dinero','Cómo salir de deudas rápido con cualquier salario','Los errores financieros que te van a costar la jubilación'],
+      video_largo: ['Cómo invertir en bolsa desde Latinoamérica: guía completa','Todo lo que necesitas saber sobre finanzas personales en 2026','Mi estrategia de inversión revelada: qué hago con mi dinero','Cómo salir de deudas rápido con cualquier salario','Los errores financieros que te van a costar la jubilación'],
       video_corto: ['El truco financiero más simple que nadie usa','Inversión del mes: qué hice','Error financiero del día','Cuánto necesitas ahorrar para jubilarte','El gasto que más dinero te roba sin que lo notes']
     },
     linkedin: {
@@ -1856,7 +1856,7 @@ const ideasData = {
     },
     linkedin: {
       texto: ['Lo que los viajes me enseñaron sobre liderazgo y adaptabilidad','Nómada digital: la nueva forma de trabajar que está cambiando empresas','Por qué las empresas deberían incentivar que sus empleados viajen','Inteligencia cultural: la habilidad que los viajes desarrollan mejor','Cómo el trabajo remoto está redefiniendo la industria del turismo'],
-      carrusel: ['Cómo ser nómada digital sin sacrificar tu carrera','Beneficios del trabajo remoto para empresas y empleados','Cómo construir un equipo global que funcione','Destinos favoritos para trabajar en remoto en 2025','La nueva economía del turismo de negocios']
+      carrusel: ['Cómo ser nómada digital sin sacrificar tu carrera','Beneficios del trabajo remoto para empresas y empleados','Cómo construir un equipo global que funcione','Destinos favoritos para trabajar en remoto en 2026','La nueva economía del turismo de negocios']
     },
     twitter: {
       texto: ['Hilo: cómo me convertí en nómada digital (el proceso real)','Thread: los mejores destinos para trabajar remoto rankeados','Lista: apps que no pueden faltar si viajas constantemente','Debate: ¿vale más viajar joven o cuando tienes más dinero?','Tip del día: la estrategia para encontrar vuelos baratos que siempre funciona']
@@ -1865,7 +1865,7 @@ const ideasData = {
   educacion: {
     instagram: {
       video_corto: ['Cómo aprendí [habilidad] en 30 días','El método de estudio que me cambió la vida','Libros que me formaron como profesional','Cómo tomar notas como un estudiante elite','Por qué la educación tradicional ya no alcanza','3 cursos online que vale la pena pagar','Cómo aprender cualquier cosa con YouTube gratis','Lo que nadie te dice antes de ir a la universidad','Cómo estudiar cuando no tienes motivación','El hábito de lectura que transformó mi carrera'],
-      carrusel: ['Roadmap para aprender [habilidad] desde cero','Los mejores recursos gratuitos para aprender [tema]','Cómo construir un portfolio sin experiencia','La guía de certificaciones que valen la pena en 2025','Cómo aprender inglés sin tomar clases','Los 10 libros que recomiendo para [profesión]','Cómo crear un plan de aprendizaje efectivo','Diferencia entre estudiar y aprender (con estrategias)','Las plataformas de educación online más valoradas','Cómo conseguir trabajo sin título universitario'],
+      carrusel: ['Roadmap para aprender [habilidad] desde cero','Los mejores recursos gratuitos para aprender [tema]','Cómo construir un portfolio sin experiencia','La guía de certificaciones que valen la pena en 2026','Cómo aprender inglés sin tomar clases','Los 10 libros que recomiendo para [profesión]','Cómo crear un plan de aprendizaje efectivo','Diferencia entre estudiar y aprender (con estrategias)','Las plataformas de educación online más valoradas','Cómo conseguir trabajo sin título universitario'],
       foto: ['El libro que estoy leyendo esta semana','Mi setup de estudio/trabajo','La nota más importante de mi cuaderno','Certificado que me tomó meses conseguir','El momento que más aprendí este año'],
       video_largo: ['Cómo aprendí inglés de forma autodidacta sin pagar cursos','Guía completa para estudiar online y conseguir empleo','Los mejores recursos gratuitos para aprender programación','Cómo construí mi carrera sin ir a la universidad','Un año de aprendizaje autodidacta: lo que funcionó y lo que no'],
       texto: ['Hilo: los mejores recursos gratuitos para aprender cualquier cosa','Thread: cómo diseñé mi propio plan de estudios autodidacta','Lista: plataformas de cursos online comparadas honestamente','Reflexión: lo que la universidad no te puede enseñar','Consejo del día: la técnica de estudio más efectiva según la neurociencia'],
@@ -1885,31 +1885,31 @@ const ideasData = {
     },
     linkedin: {
       texto: ['Por qué el aprendizaje continuo es la ventaja competitiva del siglo XXI','Lo que el sistema educativo no prepara para el mercado laboral actual','Cómo construí mis habilidades más valiosas de forma autodidacta','El futuro del trabajo y las habilidades que necesitarás','Por qué invierto el 10% de mis ingresos en educación personal'],
-      carrusel: ['Las habilidades más demandadas en 2025 por industria','Cómo crear un plan de desarrollo profesional','Certificaciones que realmente importan en el mercado laboral','Cómo el aprendizaje continuo impacta tu salario','Plataformas de aprendizaje para profesionales que funcionan']
+      carrusel: ['Las habilidades más demandadas en 2026 por industria','Cómo crear un plan de desarrollo profesional','Certificaciones que realmente importan en el mercado laboral','Cómo el aprendizaje continuo impacta tu salario','Plataformas de aprendizaje para profesionales que funcionan']
     },
     twitter: {
-      texto: ['Hilo: los recursos de aprendizaje gratuitos que más he aprovechado','Thread: cómo diseñé mi propio MBA autodidacta','Lista: libros que todo profesional debería leer antes de los 30','Debate: ¿vale la pena un posgrado en 2025?','Tip del día: la técnica Feynman para aprender cualquier cosa en profundidad']
+      texto: ['Hilo: los recursos de aprendizaje gratuitos que más he aprovechado','Thread: cómo diseñé mi propio MBA autodidacta','Lista: libros que todo profesional debería leer antes de los 30','Debate: ¿vale la pena un posgrado en 2026?','Tip del día: la técnica Feynman para aprender cualquier cosa en profundidad']
     }
   },
   arte: {
     instagram: {
       video_corto: ['Mi proceso creativo de inicio a fin','Lo que nadie te dice sobre vivir del arte','Cómo construí mi portafolio desde cero','Técnica que cambió mi trabajo para siempre','Mis herramientas de trabajo (setup completo)','Cómo consigo clientes como freelance creativo','Lo malo de ser artista/diseñador (honesto)','Evolución de mi trabajo en 3 años','Cómo poner precio a tu trabajo creativo','El proyecto del que más orgulloso estoy'],
-      carrusel: ['Proceso completo de [tipo de proyecto] paso a paso','Las mejores herramientas para [disciplina] en 2025','Cómo crear un portafolio que consiga clientes','Los errores más comunes en diseño/ilustración','Cómo encontrar tu estilo artístico propio','Recursos gratuitos para artistas y diseñadores','Cómo cobrar lo que vales como creativo','Inspiración y referencias para [estilo artístico]','Cómo publicar tu trabajo en redes sin vergüenza','Los tipos de clientes creativos (y cómo trabajar con cada uno)'],
+      carrusel: ['Proceso completo de [tipo de proyecto] paso a paso','Las mejores herramientas para [disciplina] en 2026','Cómo crear un portafolio que consiga clientes','Los errores más comunes en diseño/ilustración','Cómo encontrar tu estilo artístico propio','Recursos gratuitos para artistas y diseñadores','Cómo cobrar lo que vales como creativo','Inspiración y referencias para [estilo artístico]','Cómo publicar tu trabajo en redes sin vergüenza','Los tipos de clientes creativos (y cómo trabajar con cada uno)'],
       foto: ['El proyecto en el que estoy trabajando ahora','Mi espacio de trabajo y herramientas','Detalle de mi proceso más reciente','Antes y después de un proyecto terminado','La pieza de la que más orgulloso estoy'],
-      video_largo: ['Mi proceso creativo completo de inicio a entrega','Cómo construí una carrera freelance en diseño desde cero','Los mejores recursos para aprender diseño en 2025','Revisión honesta de herramientas: Figma, Adobe, Procreate','Un año como diseñador freelance: cifras y aprendizajes reales'],
+      video_largo: ['Mi proceso creativo completo de inicio a entrega','Cómo construí una carrera freelance en diseño desde cero','Los mejores recursos para aprender diseño en 2026','Revisión honesta de herramientas: Figma, Adobe, Procreate','Un año como diseñador freelance: cifras y aprendizajes reales'],
       texto: ['Hilo: lo que nadie te dice sobre ser diseñador freelance','Thread: cómo construí mi portafolio sin experiencia previa','Lista: recursos gratuitos para diseñadores y artistas que uso cada día','Reflexión: por qué el arte más honesto siempre conecta más','Consejo del día: cómo recibir crítica constructiva sin perder motivación'],
       stories: ['¿En qué proyecto estás trabajando?','Encuesta: ¿digital o tradicional?','Tip creativo del día','Vota: ¿cuál diseño prefieres?','Pregúntame sobre el proceso creativo']
     },
     tiktok: {
       video_corto: ['Proceso de un proyecto completo en time-lapse','Cuánto cobro por un trabajo de diseño (honesto)','Lo que me pidió un cliente y lo que hice','Rating: arte generado por IA vs. arte humano','Errores que veo en portfolios de diseñadores nuevos','Cómo empecé a vender mi arte online','Mi día creativo (sin filtros)','La herramienta de diseño que uso más','Crítica constructiva a trabajos de diseño novato','Por qué algunos diseñadores cobran tanto'],
-      carrusel: ['Herramientas de diseño para cada nivel','Tipografías que funcionan juntas','Paletas de colores para 2025','Errores de diseño que lo hacen ver amateur','Recursos gratuitos para aprender diseño'],
+      carrusel: ['Herramientas de diseño para cada nivel','Tipografías que funcionan juntas','Paletas de colores para 2026','Errores de diseño que lo hacen ver amateur','Recursos gratuitos para aprender diseño'],
       foto: ['Work in progress de hoy','Detalle de mi proyecto más reciente','Mi espacio creativo','Herramienta favorita en acción','Comparación: boceto vs. resultado final'],
-      video_largo: ['Mi proceso de diseño completo: de brief a entrega','Revisión de portafolios de diseño (crítica constructiva)','Cómo consigo clientes como diseñador freelance','Los mejores plugins y herramientas para diseñadores en 2025','Construí una marca completa en 24 horas'],
+      video_largo: ['Mi proceso de diseño completo: de brief a entrega','Revisión de portafolios de diseño (crítica constructiva)','Cómo consigo clientes como diseñador freelance','Los mejores plugins y herramientas para diseñadores en 2026','Construí una marca completa en 24 horas'],
       texto: ['POV: tu cliente quiere que "lo hagas pop"','Señales de que eres un diseñador que está creciendo','Lo que diferencia el buen diseño del diseño promedio','Por qué no debes trabajar gratis (aunque sea tu primer cliente)','Design tip: la regla que siempre aplico antes de entregar'],
       stories: ['¿Cuál es tu herramienta favorita de diseño?','Vota: ¿cuál paleta de colores te gusta más?','Proceso del día en 15 seg','Tip creativo exprés','Encuesta: ¿freelance o agencia?']
     },
     youtube: {
-      video_largo: ['Mi proceso de diseño completo: de la idea al producto final','Cómo construí un portafolio de diseño que consigue clientes','Los mejores recursos gratuitos para aprender diseño en 2025','Revisión honesta: las mejores herramientas para diseñadores','Un año como diseñador freelance: todo lo que aprendí'],
+      video_largo: ['Mi proceso de diseño completo: de la idea al producto final','Cómo construí un portafolio de diseño que consigue clientes','Los mejores recursos gratuitos para aprender diseño en 2026','Revisión honesta: las mejores herramientas para diseñadores','Un año como diseñador freelance: todo lo que aprendí'],
       video_corto: ['Tip de diseño del día','Proceso en time-lapse de 60 seg','La herramienta que más uso esta semana','Error de diseño común y cómo evitarlo','Recurso gratuito que debes conocer']
     },
     linkedin: {
@@ -1943,7 +1943,7 @@ const ideasData = {
     },
     linkedin: {
       texto: ['Lo que la industria musical me enseñó sobre emprendimiento creativo','Cómo los músicos independientes están redefiniendo el modelo de negocio musical','El ROI del contenido creativo: lecciones de la música aplicadas a los negocios','Por qué las habilidades de un músico son perfectas para el trabajo en equipo','Streaming, NFTs y el futuro de los derechos musicales: lo que viene'],
-      carrusel: ['El negocio de la música independiente en 2025','Cómo monetizar tu música más allá del streaming','Estrategia de redes sociales para artistas musicales','Derechos musicales: lo que todo artista debe proteger','Cómo construir una comunidad de fans en redes sociales']
+      carrusel: ['El negocio de la música independiente en 2026','Cómo monetizar tu música más allá del streaming','Estrategia de redes sociales para artistas musicales','Derechos musicales: lo que todo artista debe proteger','Cómo construir una comunidad de fans en redes sociales']
     },
     twitter: {
       texto: ['Hilo: lo que aprendí de mis primeros 1 millón de streams','Thread: cómo distribuyo y promuevo mi música sin sello','Lista: plugins gratuitos que uso en mi producción cada semana','Debate: ¿streaming le paga justo a los artistas?','Tip del día: la estrategia de lanzamiento que más me ha funcionado']
